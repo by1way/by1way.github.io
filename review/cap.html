@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Review | By1way</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Review</h1><a id="logo" href="/.">By1way</a><p class="description"></p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Review</h1><div class="post-content"><h2 id="CAP-theorem"><a href="#CAP-theorem" class="headerlink" title="CAP theorem"></a>CAP theorem</h2><p>CAP定理</p>
+<p>In theoretical computer science, the CAP theorem, also named Brewer’s theorem after computer scientist Eric Brewer, states that it is impossible for a distributed data store to simultaneously provide more than two out of the following three guarantees:</p>
+<p>Consistency: Every read receives the most recent write or an error<br>Availability: Every request receives a (non-error) response – without the guarantee that it contains the most recent write<br>Partition tolerance: The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes<br>1、计算机科学理论，CAP定理，布鲁尔定理 计算机科学家 Eric Brewer 不可能 分布式数据存储 同时提供 超过两个 下面的三个保证</p>
+<blockquote>
+<blockquote>
+<p>ME：在计算机科学理论中，CAP定理也被称为Brewer定理，计算机科学家Eric Brewer指出：对于一个分布式数据存储不可能同时提供超过以下三个条件中的两条件：<br>Google:在理论计算机科学中，CAP定理，也称为计算机科学家Eric Brewer之后的Brewer定理，指出分布式数据存储不可能同时提供以下三种保证中的两种：<br>2、C一致性 每个读请求 接收到最近的写入或一个错误<br>ME:一致性：每次读取都会接收到最新的写入或错误<br>Google:一致性：每次读取都会收到最近的写入或错误<br>3、A可用性 每个请求 接收 正确的响应 无法保障 包含最新的写入<br>ME：可用性：每个请求都会接收一个正确的响应，但无法保障这个响应包含最新的写入数据<br>Google:可用性：每个请求都会收到（非错误）响应 - 不保证它包含最新的写入<br>4、P分区容错 系统继续操作 尽管 任何数量的消息 被删除或延迟 通过网络之间的节点<br>ME:分区容错性：系统不被中断，即使不定数据的消息在通过网络传输的过程会被丢失或延迟<br>Google:分区容差：尽管节点之间的网络丢弃（或延迟）任意数量的消息，系统仍继续运行</p>
+</blockquote>
+</blockquote>
+<p><br><br>In particular, the CAP theorem implies that in the presence of a network partition, one has to choose between consistency and availability. Note that consistency as defined in the CAP theorem is quite different from the consistency guaranteed in ACID database transactions</p>
+<p>1、特定情况下 CAP定理 暗示 网络分区的存在 不得不在一致性和可用性方面做出选择<br>ME:在一定的情况下，由于网络分区的存在，CAP定理更倾向于在一致性和可用性方面做出选择<br>2、注意 一致性 被定义 在CAP定理中 相当不同于 一致性 ACID 数据库事务中的保证<br>ME：需要注意的是，关于一致性的定义在这儿需要区别于数据库事务对ACID保证的一致性<br>Google:特别是，CAP定理意味着在存在网络分区时，必须在一致性和可用性之间进行选择。 请注意，CAP定理中定义的一致性与ACID数据库事务中保证的一致性完全不同</p>
+<p><br><br>说明：<br>No distributed system is safe from network failures, thus network partitioning generally has to be tolerated. In the presence of a partition, one is then left with two options: consistency or availability. When choosing consistency over availability, the system will return an error or a time-out if particular information cannot be guaranteed to be up to date due to network partitioning. When choosing availability over consistency, the system will always process the query and try to return the most recent available version of the information, even if it cannot guarantee it is up to date due to network partitioning.</p>
+<p>ME:在网络失败的情况下没有分布式系统是安全的，因此网络分区的问题通常都是被容忍的。这种情况下一致性或可用性只能选其一。当选择一致性时，由于网络分区导致不能保障特定的信息得不到最近的更新，因此系统可能会返回错误或者超时。<br>当选择可用性时，系统会不断去查询，并努力返回信息最近的可用版本，即使它不能保障这些信息已经是最新的了。<br>Google:没有分布式系统可以避免网络故障，因此通常必须容忍网络分区。 在存在分区的情况下，可以选择一个分区：一致性或可用性。 在选择一致性而非可用性时，如果由于网络分区而无法保证特定信息是最新的，则系统将返回错误或超时。 在选择可用性而非一致性时，系统将始终处理查询并尝试返回最新的可用信息版本，即使由于网络分区而无法保证其是最新的。</p>
+<p>In the absence of network failure – that is, when the distributed system is running normally – both availability and consistency can be satisfied.<br>ME:假使不存在网络故障，分布式系统正常运行，那也就没必要兼顾可用性和一致性了。<br>Google:在没有网络故障的情况下 - 也就是说，当分布式系统正常运行时 - 可以满足可用性和一致性。<br>CAP is frequently misunderstood as if one has to choose to abandon one of the three guarantees at all times. In fact, the choice is really between consistency and availability only when a network partition or failure happens; at all other times, no trade-off has to be made.<br>ME：CAP经常被误解为，所有情况一旦被选择就必须放弃三个条件中一个。实际上，只有在发生网络分区或者失败发生时才必须在一致性和可用性上做出一个选择。在其他任何情况下，不需要在它们三个中做出权衡<br>Google:CAP经常被误解，好像必须始终选择放弃三种保证中的一种。 实际上，只有在发生网络分区或故障时，才能在一致性和可用性之间进行选择; 在所有其他时间，不需要进行任何权衡。</p>
+<p>Database systems designed with traditional ACID guarantees in mind such as RDBMS choose consistency over availability, whereas systems designed around the BASE philosophy, common in the NoSQL movement for example, choose availability over consistency.</p>
+<p>ME：数据库系统被设计为事务ACID保障，比如在关系型数据中选择一致性而不是可用性。而系统围绕BASE哲学进行设计，以NOSQL迁移为例，就选择了可用性而不是一致性。(这个译的不咋滴)<br>Google:考虑到传统ACID设计的数据库系统，例如RDBMS选择一致性而非可用性，而围绕BASE理念设计的系统（例如NoSQL运动中常见的）选择可用性而不是一致性。</p>
+<p>The PACELC theorem builds on CAP by stating that even in the absence of partitioning, another trade-off between latency and consistency occurs.<br>ME:PACELC定理在CAP的基础上指出：即使在一个存储网络分区的情况下，另一个关于潜伏性和一致性的权衡也会出现 </p>
+<p><br><br>历史<br>According to University of California, Berkeley computer scientist Eric Brewer, the theorem first appeared in autumn 1998.It was published as the CAP principle in 1999 and presented as a conjecture by Brewer at the 2000 Symposium on Principles of Distributed Computing (PODC). In 2002, Seth Gilbert and Nancy Lynch of MIT published a formal proof of Brewer’s conjecture, rendering it a theorem.<br>ME：根据加利福尼亚大学伯克利计算机科学家Eric Brewer的说法：这个定理在1998年秋天第一次提出，在1999年被公开发表为CAP原理，并在2000年PODC座谈会被作为Brewer的一种推测。在2002年，MIT的Seth Gilbert和Nancy Lynch证实了Brewer的推测，并把它作为一个定理。<br>Google:根据加州大学伯克利分校计算机科学家Eric Brewer的说法，该定理于1998年秋季首次出现。它于1999年作为CAP原理出版，并作为Brewer在2000年分布式计算原理（PODC）研讨会上的一个猜想。 2002年，麻省理工学院的Seth Gilbert和Nancy Lynch发表了Brewer猜想的正式证明，使其成为一个定理。</p>
+<p>In 2012, Brewer clarified some of his positions, including why the often-used “two out of three” concept can be misleading or misapplied, and the different definition of consistency used in CAP relative to the one used in ACID.<br>ME:2012年，Brewer澄清了他的一些定位，包括：为什么经常使用“三分之二”这样的概念，这会引起相当的误导或者误用；还有CAP中使用的一致性的不同定义相对于ACID中使用的一致性<br>Google:2012年，Brewer澄清了他的一些立场，包括为什么经常使用的“三分之二”概念可能会误导或误用，以及CAP中使用的一致性的不同定义与ACID中使用的一致。<br>A similar theorem stating the trade-off between consistency and availability in distributed systems was published by Birman and Friedman in 1996. The result of Birman and Friedman restricted this lower bound to non-commuting operations.<br>ME：在1996年Birman and Friedman发表了在一类似的关于分布工系统中一致性和可用性中权衡的定理。Birman和Friedman的结果限制了非通勤操作的下限<br>Google:Birman和Friedman在1996年发表了一个类似的定理，说明了分布式系统中一致性和可用性之间的权衡.Birman和Friedman的结果限制了这种非通勤操作的下限。</p>
+</div></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'https://by1way.github.io/review/cap.html';
+    this.page.identifier = 'review/cap.html';
+    this.page.title = 'Review';
+  };</script><script type="text/javascript" id="disqus-lazy-load-script">$.ajax({
+url: 'https://disqus.com/next/config.json',
+timeout: 2500,
+type: 'GET',
+success: function(){
+  var d = document;
+  var s = d.createElement('script');
+  s.src = '//harmingway.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', + new Date());
+  (d.head || d.body).appendChild(s);
+  $('.disqus_click_btn').css('display', 'none');
+},
+error: function() {
+  $('.disqus_click_btn').css('display', 'block');
+}
+});</script><script type="text/javascript" id="disqus-click-load">$('.btn_click_load').click(() => {  //click to load comments
+    (() => { // DON'T EDIT BELOW THIS LINE
+        var d = document;
+        var s = d.createElement('script');
+        s.src = '//harmingway.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    $('.disqus_click_btn').css('display','none');
+});</script><script type="text/javascript" id="disqus-count-script">$(function() {
+     var xhr = new XMLHttpRequest();
+     xhr.open('GET', '//disqus.com/next/config.json', true);
+     xhr.timeout = 2500;
+     xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+         $('.post-meta .post-comments-count').show();
+         var s = document.createElement('script');
+         s.id = 'dsq-count-scr';
+         s.src = 'https://harmingway.disqus.com/count.js';
+         s.async = true;
+         (document.head || document.body).appendChild(s);
+       }
+     };
+     xhr.ontimeout = function () { xhr.abort(); };
+     xhr.send(null);
+   });
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"><input type="hidden" name="sitesearch" value="https://by1way.github.io"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/attendance/">attendance</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/ARTS/" style="font-size: 15px;">ARTS</a> <a href="/tags/Link/" style="font-size: 15px;">Link</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/04/02/ARTS-week03/">ARTS-week03</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/02/ARTS-week02/">ARTS-week02</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/02/ARTS-week01/">ARTS-week01</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/02/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//harmingway.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a title="this is  for you" target="_blank">this is  for you</a><ul></ul><a title="this is  for you" target="_blank">this is  for you</a><ul></ul><a title="this is  for you" target="_blank">this is  for you</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">By1way.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
