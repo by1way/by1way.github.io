@@ -16,49 +16,12 @@
 <p>The PACELC theorem builds on CAP by stating that even in the absence of partitioning, another trade-off between latency and consistency occurs.<br>ME:PACELC定理在CAP的基础上指出：即使在一个存储网络分区的情况下，另一个关于潜伏性和一致性的权衡也会出现 </p>
 <p><br><br>历史<br>According to University of California, Berkeley computer scientist Eric Brewer, the theorem first appeared in autumn 1998.It was published as the CAP principle in 1999 and presented as a conjecture by Brewer at the 2000 Symposium on Principles of Distributed Computing (PODC). In 2002, Seth Gilbert and Nancy Lynch of MIT published a formal proof of Brewer’s conjecture, rendering it a theorem.<br>ME：根据加利福尼亚大学伯克利计算机科学家Eric Brewer的说法：这个定理在1998年秋天第一次提出，在1999年被公开发表为CAP原理，并在2000年PODC座谈会被作为Brewer的一种推测。在2002年，MIT的Seth Gilbert和Nancy Lynch证实了Brewer的推测，并把它作为一个定理。<br>Google:根据加州大学伯克利分校计算机科学家Eric Brewer的说法，该定理于1998年秋季首次出现。它于1999年作为CAP原理出版，并作为Brewer在2000年分布式计算原理（PODC）研讨会上的一个猜想。 2002年，麻省理工学院的Seth Gilbert和Nancy Lynch发表了Brewer猜想的正式证明，使其成为一个定理。</p>
 <p>In 2012, Brewer clarified some of his positions, including why the often-used “two out of three” concept can be misleading or misapplied, and the different definition of consistency used in CAP relative to the one used in ACID.<br>ME:2012年，Brewer澄清了他的一些定位，包括：为什么经常使用“三分之二”这样的概念，这会引起相当的误导或者误用；还有CAP中使用的一致性的不同定义相对于ACID中使用的一致性<br>Google:2012年，Brewer澄清了他的一些立场，包括为什么经常使用的“三分之二”概念可能会误导或误用，以及CAP中使用的一致性的不同定义与ACID中使用的一致。<br>A similar theorem stating the trade-off between consistency and availability in distributed systems was published by Birman and Friedman in 1996. The result of Birman and Friedman restricted this lower bound to non-commuting operations.<br>ME：在1996年Birman and Friedman发表了在一类似的关于分布工系统中一致性和可用性中权衡的定理。Birman和Friedman的结果限制了非通勤操作的下限<br>Google:Birman和Friedman在1996年发表了一个类似的定理，说明了分布式系统中一致性和可用性之间的权衡.Birman和Friedman的结果限制了这种非通勤操作的下限。</p>
-</div></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
-    this.page.url = 'https://by1way.github.io/review/cap.html';
-    this.page.identifier = 'review/cap.html';
-    this.page.title = 'Review';
-  };</script><script type="text/javascript" id="disqus-lazy-load-script">$.ajax({
-url: 'https://disqus.com/next/config.json',
-timeout: 2500,
-type: 'GET',
-success: function(){
-  var d = document;
-  var s = d.createElement('script');
-  s.src = '//harmingway.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', + new Date());
-  (d.head || d.body).appendChild(s);
-  $('.disqus_click_btn').css('display', 'none');
-},
-error: function() {
-  $('.disqus_click_btn').css('display', 'block');
-}
-});</script><script type="text/javascript" id="disqus-click-load">$('.btn_click_load').click(() => {  //click to load comments
-    (() => { // DON'T EDIT BELOW THIS LINE
-        var d = document;
-        var s = d.createElement('script');
-        s.src = '//harmingway.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', + new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-    $('.disqus_click_btn').css('display','none');
-});</script><script type="text/javascript" id="disqus-count-script">$(function() {
-     var xhr = new XMLHttpRequest();
-     xhr.open('GET', '//disqus.com/next/config.json', true);
-     xhr.timeout = 2500;
-     xhr.onreadystatechange = function () {
-       if (xhr.readyState === 4 && xhr.status === 200) {
-         $('.post-meta .post-comments-count').show();
-         var s = document.createElement('script');
-         s.id = 'dsq-count-scr';
-         s.src = 'https://harmingway.disqus.com/count.js';
-         s.async = true;
-         (document.head || document.body).appendChild(s);
-       }
-     };
-     xhr.ontimeout = function () { xhr.abort(); };
-     xhr.send(null);
-   });
-</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"><input type="hidden" name="sitesearch" value="https://by1way.github.io"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/attendance/">attendance</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/ARTS/" style="font-size: 15px;">ARTS</a> <a href="/tags/Link/" style="font-size: 15px;">Link</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/04/13/ARTS-week04/">ARTS-week04</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/02/ARTS-week03/">ARTS-week03</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/02/ARTS-week02/">ARTS-week02</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/02/ARTS-week01/">ARTS-week01</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/02/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//harmingway.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://wild2pro.com/" title="写程序的厨子" target="_blank">写程序的厨子</a><ul></ul><a title="this is  for you" target="_blank">this is  for you</a><ul></ul><a title="this is  for you" target="_blank">this is  for you</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">By1way.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+</div></div><div id="lv-container" data-id="city" data-uid="MTAyMC80MzczNi8yMDI3NQ=="><script>(function(d, s) {
+   var j, e = d.getElementsByTagName(s)[0];
+   if (typeof LivereTower === 'function') { return; }
+   j = d.createElement(s);
+   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+   j.async = true;
+   e.parentNode.insertBefore(j, e);
+})(document, 'script');
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"><input type="hidden" name="sitesearch" value="https://by1way.github.io"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/attendance/">attendance</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/ARTS/" style="font-size: 15px;">ARTS</a> <a href="/tags/Link/" style="font-size: 15px;">Link</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/04/13/ARTS-week04/">ARTS-week04</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/02/ARTS-week03/">ARTS-week03</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/02/ARTS-week02/">ARTS-week02</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/02/ARTS-week01/">ARTS-week01</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/02/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://wild2pro.com/" title="写程序的厨子" target="_blank">写程序的厨子</a><ul></ul><a title="this is  for you" target="_blank">this is  for you</a><ul></ul><a title="this is  for you" target="_blank">this is  for you</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">By1way.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
