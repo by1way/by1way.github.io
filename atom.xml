@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://by1way.github.io/"/>
-  <updated>2019-05-31T10:47:13.724Z</updated>
+  <updated>2019-06-02T16:02:04.631Z</updated>
   <id>https://by1way.github.io/</id>
   
   <author>
@@ -17,17 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ARTS-week11</title>
+    <link href="https://by1way.github.io/2019/06/02/ARTS-week11/"/>
+    <id>https://by1way.github.io/2019/06/02/ARTS-week11/</id>
+    <published>2019-06-02T15:13:51.000Z</published>
+    <updated>2019-06-02T16:02:04.631Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1、Algorithm"><a href="#1、Algorithm" class="headerlink" title="1、Algorithm"></a>1、Algorithm</h2><p><a href="/algorithm/Algorithm-232.html">Algorithm-232. Implement Queue using Stacks <font color="#FF0000">&radic;</font></a></p><h2 id="2、Review"><a href="#2、Review" class="headerlink" title="2、Review"></a>2、Review</h2><p><a href="/review/podc.html">分布式系统原理 <font color="#FF0000">&radic;</font></a></p><h2 id="3、Tips"><a href="#3、Tips" class="headerlink" title="3、Tips"></a>3、Tips</h2><p><a href="/tips/reading.html">一个人是他所有读过的书的总和 <font color="#FF0000">&radic;</font></a></p><h2 id="4、Share"><a href="#4、Share" class="headerlink" title="4、Share"></a>4、Share</h2><p><a href="/tips/ddd.html">关于领域驱动设计的分享 <font color="#FF0000">&radic;</font></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;font color=&quot;#FF0000&quot;&gt;Part Algorithm&lt;/font&gt;:leetcode 232. Implement Queue using Stacks &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Review&lt;/font&gt;:分布式系统原理  &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Tips&lt;/font&gt;:一个人是他所有读过的书的总和   &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Share&lt;/font&gt;:领域驱动设计   &amp;radic;&lt;br/&gt;
+    
+    </summary>
+    
+      <category term="attendance" scheme="https://by1way.github.io/categories/attendance/"/>
+    
+    
+      <category term="ARTS" scheme="https://by1way.github.io/tags/ARTS/"/>
+    
+      <category term="Link" scheme="https://by1way.github.io/tags/Link/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ARTS-week10</title>
     <link href="https://by1way.github.io/2019/05/26/ARTS-week10/"/>
     <id>https://by1way.github.io/2019/05/26/ARTS-week10/</id>
     <published>2019-05-26T02:13:51.000Z</published>
-    <updated>2019-05-31T10:47:13.724Z</updated>
+    <updated>2019-06-02T15:51:41.062Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1、Algorithm"><a href="#1、Algorithm" class="headerlink" title="1、Algorithm"></a>1、Algorithm</h2><p><a href="/algorithm/Algorithm-155.html">Algorithm-155. 最小栈 <font color="#FF0000">&radic;</font></a></p><h2 id="2、Review"><a href="#2、Review" class="headerlink" title="2、Review"></a>2、Review</h2><p><a href="/review/fill.html">看看你能做对几个，全对有奖！  <font color="#FF0000">&radic;</font></a></p><h2 id="3、Tips"><a href="#3、Tips" class="headerlink" title="3、Tips"></a>3、Tips</h2><p><a href="/tips/tomcathost.html">tomcat多host配置 <font color="#FF0000">&radic;</font></a></p><h2 id="4、Share"><a href="#4、Share" class="headerlink" title="4、Share"></a>4、Share</h2><p><a href="/tips/haveatry.html">如果你真的牛逼，考一个系统分析师来看看？ <font color="#FF0000">&radic;</font></a></p>]]></content>
     
     <summary type="html">
     
-      &lt;font color=&quot;#FF0000&quot;&gt;Part Algorithm&lt;/font&gt;:leetcode 155. 最小栈 &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Review&lt;/font&gt;:看看你能做对几个，全对有奖！  &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Tips&lt;/font&gt;:tomcat多host配置   &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Share&lt;/font&gt;:如果你真的牛逼，考一个系统分析师来看看？   &amp;radic;&lt;br/&gt;
+      Part Algorithm:leetcode 155. 最小栈 &lt;br/&gt; Part Review:看看你能做对几个，全对有奖！  &lt;br/&gt; Part Tips:tomcat多host配置   &lt;br/&gt; Part Share:如果你真的牛逼，考一个系统分析师来看看？   &lt;br/&gt;
     
     </summary>
     
@@ -52,6 +76,30 @@
     <summary type="html">
     
       Part Algorithm:leetcode 202.快乐数 &lt;br/&gt; Part Review:分布式系统原理  &lt;br/&gt; Part Tips:shiro设置自定义Token   &lt;br/&gt; Part Share:白话中台战略  &lt;br/&gt;
+    
+    </summary>
+    
+      <category term="attendance" scheme="https://by1way.github.io/categories/attendance/"/>
+    
+    
+      <category term="ARTS" scheme="https://by1way.github.io/tags/ARTS/"/>
+    
+      <category term="Link" scheme="https://by1way.github.io/tags/Link/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ARTS-week09</title>
+    <link href="https://by1way.github.io/2019/05/19/hello-world/"/>
+    <id>https://by1way.github.io/2019/05/19/hello-world/</id>
+    <published>2019-05-19T02:13:51.000Z</published>
+    <updated>2019-05-31T10:52:30.985Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1、Algorithm"><a href="#1、Algorithm" class="headerlink" title="1、Algorithm"></a>1、Algorithm</h2><p><a href="/algorithm/Algorithm-202.html">Algorithm-202.快乐数 <font color="#FF0000">&radic;</font></a></p><h2 id="2、Review"><a href="#2、Review" class="headerlink" title="2、Review"></a>2、Review</h2><p><a href="/review/podc.html">分布式系统原理 <font color="#FF0000">&radic;</font></a></p><h2 id="3、Tips"><a href="#3、Tips" class="headerlink" title="3、Tips"></a>3、Tips</h2><p><a href="/tips/http.html">http协议为什么是无状态的 <font color="#FF0000">&radic;</font></a></p><h2 id="4、Share"><a href="#4、Share" class="headerlink" title="4、Share"></a>4、Share</h2><p><a href="/tips/graphql.html">GraphQL <font color="#FF0000">&radic;</font></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;font color=&quot;#FF0000&quot;&gt;Part Algorithm&lt;/font&gt;:leetcode 202.快乐数 &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Review&lt;/font&gt;:分布式系统原理  &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Tips&lt;/font&gt;:shiro设置自定义Token   &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Share&lt;/font&gt;:白话中台战略   &amp;radic;&lt;br/&gt;
     
     </summary>
     
@@ -253,27 +301,6 @@
       <category term="ARTS" scheme="https://by1way.github.io/tags/ARTS/"/>
     
       <category term="Link" scheme="https://by1way.github.io/tags/Link/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://by1way.github.io/2019/04/02/hello-world/"/>
-    <id>https://by1way.github.io/2019/04/02/hello-world/</id>
-    <published>2019-04-02T02:07:30.550Z</published>
-    <updated>2019-04-02T02:07:30.550Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
     
   </entry>
   
