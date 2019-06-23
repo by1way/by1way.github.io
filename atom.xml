@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://by1way.github.io/"/>
-  <updated>2019-06-09T16:11:27.886Z</updated>
+  <updated>2019-06-23T15:07:36.556Z</updated>
   <id>https://by1way.github.io/</id>
   
   <author>
@@ -17,17 +17,65 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ARTS-week14</title>
+    <link href="https://by1way.github.io/2019/06/23/ARTS-week14/"/>
+    <id>https://by1way.github.io/2019/06/23/ARTS-week14/</id>
+    <published>2019-06-23T15:13:51.000Z</published>
+    <updated>2019-06-23T15:07:36.556Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1、Algorithm"><a href="#1、Algorithm" class="headerlink" title="1、Algorithm"></a>1、Algorithm</h2><p><a href="/algorithm/Algorithm-9.html">Algorithm-9. Valid Parentheses <font color="#FF0000">&radic;</font></a></p><h2 id="2、Review"><a href="#2、Review" class="headerlink" title="2、Review"></a>2、Review</h2><p><a href="/review/podc.html">分布式系统原理 <font color="#FF0000">&radic;</font></a></p><h2 id="3、Tips"><a href="#3、Tips" class="headerlink" title="3、Tips"></a>3、Tips</h2><p><a href="/tips/presist.html">到底该不该坚持下去 <font color="#FF0000">&radic;</font></a></p><h2 id="4、Share"><a href="#4、Share" class="headerlink" title="4、Share"></a>4、Share</h2><p><a href="/tips/pdman.html">推荐一款数据库建模工具PDMan <font color="#FF0000">&radic;</font></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;font color=&quot;#FF0000&quot;&gt;Part Algorithm&lt;/font&gt;:leetcode 9. Valid Parentheses &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Review&lt;/font&gt;:分布式系统原理  &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Tips&lt;/font&gt;:到底该不该坚持下去   &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Share&lt;/font&gt;:推荐一款数据库建模工具PDMan   &amp;radic;&lt;br/&gt;
+    
+    </summary>
+    
+      <category term="attendance" scheme="https://by1way.github.io/categories/attendance/"/>
+    
+    
+      <category term="ARTS" scheme="https://by1way.github.io/tags/ARTS/"/>
+    
+      <category term="Link" scheme="https://by1way.github.io/tags/Link/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ARTS-week13</title>
+    <link href="https://by1way.github.io/2019/06/20/ARTS-week13/"/>
+    <id>https://by1way.github.io/2019/06/20/ARTS-week13/</id>
+    <published>2019-06-20T15:13:51.000Z</published>
+    <updated>2019-06-23T14:59:23.034Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1、Algorithm"><a href="#1、Algorithm" class="headerlink" title="1、Algorithm"></a>1、Algorithm</h2><p><a href="/algorithm/Algorithm-20.html">Algorithm-20. Valid Parentheses <font color="#FF0000">&radic;</font></a></p><h2 id="2、Review"><a href="#2、Review" class="headerlink" title="2、Review"></a>2、Review</h2><p><a href="/review/podc.html">分布式系统原理 <font color="#FF0000">&radic;</font></a></p><h2 id="3、Tips"><a href="#3、Tips" class="headerlink" title="3、Tips"></a>3、Tips</h2><p><a href="/tips/tkarch.html">思考框架 <font color="#FF0000">&radic;</font></a></p><h2 id="4、Share"><a href="#4、Share" class="headerlink" title="4、Share"></a>4、Share</h2><p><a href="/tips/es6.html">ES6入门教育 <font color="#FF0000">&radic;</font></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;font color=&quot;#FF0000&quot;&gt;Part Algorithm&lt;/font&gt;:leetcode 20. Valid Parentheses &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Review&lt;/font&gt;:分布式系统原理  &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Tips&lt;/font&gt;:思考框架   &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Share&lt;/font&gt;:ES6   &amp;radic;&lt;br/&gt;
+    
+    </summary>
+    
+      <category term="attendance" scheme="https://by1way.github.io/categories/attendance/"/>
+    
+    
+      <category term="ARTS" scheme="https://by1way.github.io/tags/ARTS/"/>
+    
+      <category term="Link" scheme="https://by1way.github.io/tags/Link/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ARTS-week12</title>
     <link href="https://by1way.github.io/2019/06/09/ARTS-week12/"/>
     <id>https://by1way.github.io/2019/06/09/ARTS-week12/</id>
     <published>2019-06-09T15:13:51.000Z</published>
-    <updated>2019-06-09T16:11:27.886Z</updated>
+    <updated>2019-06-23T14:50:29.520Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1、Algorithm"><a href="#1、Algorithm" class="headerlink" title="1、Algorithm"></a>1、Algorithm</h2><p><a href="/algorithm/Algorithm-232.html">Algorithm-232. Implement Queue using Stacks <font color="#FF0000">&radic;</font></a></p><h2 id="2、Review"><a href="#2、Review" class="headerlink" title="2、Review"></a>2、Review</h2><p><a href="/review/podc.html">分布式系统原理 <font color="#FF0000">&radic;</font></a></p><h2 id="3、Tips"><a href="#3、Tips" class="headerlink" title="3、Tips"></a>3、Tips</h2><p><a href="/tips/openssh.html">openSSH升级 <font color="#FF0000">&radic;</font></a></p><h2 id="4、Share"><a href="#4、Share" class="headerlink" title="4、Share"></a>4、Share</h2><p><a href="/tips/tecmgr.html">技术管理星空图 <font color="#FF0000">&radic;</font></a></p>]]></content>
     
     <summary type="html">
     
-      &lt;font color=&quot;#FF0000&quot;&gt;Part Algorithm&lt;/font&gt;:leetcode 232. Implement Queue using Stacks &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Review&lt;/font&gt;:分布式系统原理  &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Tips&lt;/font&gt;:openSSH升级   &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Share&lt;/font&gt;:技术管理星空图   &amp;radic;&lt;br/&gt;
+      Part Algorithm:leetcode 232. Implement Queue using Stacks&lt;br/&gt; Part Review:分布式系统原理  &lt;br/&gt; Part Tips:openSSH升级   &lt;br/&gt; Part Share:技术管理星空图   &lt;br/&gt;
     
     </summary>
     
