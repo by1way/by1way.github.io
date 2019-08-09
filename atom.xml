@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://by1way.github.io/"/>
-  <updated>2019-07-01T06:02:29.328Z</updated>
+  <updated>2019-08-09T07:55:03.119Z</updated>
   <id>https://by1way.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>01.分布式文档服务</title>
+    <link href="https://by1way.github.io/2019/08/09/fastdfs/"/>
+    <id>https://by1way.github.io/2019/08/09/fastdfs/</id>
+    <published>2019-08-09T07:43:51.000Z</published>
+    <updated>2019-08-09T07:55:03.119Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="写在前面的"><a href="#写在前面的" class="headerlink" title="写在前面的"></a>写在前面的</h4><pre><code>打算用三篇文章来写fastDFS，但是作为程序员的我，在还没有做好理论研究的基础上就贸然做了一单机版的测试环境，让自己好尝鲜。这倒是有点符合自己的性格，先不说这些没用的了。表表自己的打算：01.分布式文档服务搭建，只有自己亲自动手试验了才能有较为深入的理解，才能更好的跟其他同类产品进行比较，这也算是郑晔老师“以终为始”指导思想的一个实践吧；02.分布式文档服务理论基础，这篇想写的内容包含基础的架构，设计思路（为何这么设计？这么设计有什么优势？）以及跟其他同类型产品的多维度比较。最终给出选择的原因03.分布式文档服务的高级篇，如何跟开发语言进行集成，如何提高文档服务的可用性。</code></pre><h4 id="fastDFS文档服务搭建"><a href="#fastDFS文档服务搭建" class="headerlink" title="fastDFS文档服务搭建"></a>fastDFS文档服务搭建</h4><pre><code>同事给推荐了一个教程写的很详细，但是真正在实践的时候却没有一个明确的指导，而且里面涉及到的版本也都很早了。所在一开始我是按着人家的教程但是所有版本都用的最新的，前面几部还挺顺利，但真正到了最后挂载nginx服务的时候，各种各样的问题就都来了。百思不得解，弄着弄着我都想放弃了。但没有搞定的这种说法在我的脑海中不停的乱跳，于是就从github上人家开发的wiki找到了，我认为最正宗的解法。先附上地址：[fastdfs文档服务搭建教程](https://github.com/happyfish100/fastdfs/wiki)从开始到完成一共用了不到10分钟，这使得我对这款产品的好感真是由然而生呀。后来想了想，估计之前最大的错误就是把它认为成任何版本都是可以相互兼容的，导致一个坑一个坑的去填。这从侧面也给我了一个启示，要学就要学最正宗的技术，当然这需要自己的亲身实践才能得到最后的结论，那么问题是最正宗的技术在哪儿的呢？从开源软件产品的角度来看，一般都会在人家的官网上，什么csdn、博客园、简书之类的技术博客，写个故事还行，对学习没有好处，可能真正觉得有好处的就是写作者了吧，可看到自己写的系列文章被传的哪儿都是，或者有一篇文章被访问了几百万次。</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      拥有一个自己的文档服务器一直都是我的梦想，而fastDFS实现了它。搭建的过程其实很简单，但是因为网上不良资料的误导，导致浪费了不少的时间。所以我要推荐最正宗的
+    
+    </summary>
+    
+      <category term="文档服务器" scheme="https://by1way.github.io/categories/%E6%96%87%E6%A1%A3%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="FastDFS" scheme="https://by1way.github.io/tags/FastDFS/"/>
+    
+      <category term="分布式文档服务器" scheme="https://by1way.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E6%A1%A3%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>echarts全国地图分享</title>
