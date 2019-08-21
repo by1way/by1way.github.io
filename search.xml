@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[分享一个宝库给你]]></title>
+    <url>%2F2019%2F08%2F14%2Frecomm%2F</url>
+    <content type="text"><![CDATA[这不是一篇软文事先声明哈，这肯定不是一篇软文。大家都知道，咱老李是一个热心的人，看到好的东西就一定要分享给大家。这次也不例外。最看不得的就是那种拿着开源的东西去到处忽悠的，好东西就大家一块儿用呗。 这里是地址切到正题：我说的宝库在这儿猜你就不信，来来来，咱们看图说话(ps:还可以点更多哟！)]]></content>
+      <categories>
+        <category>宝库</category>
+      </categories>
+      <tags>
+        <tag>资源</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[01.分布式文档服务]]></title>
+    <url>%2F2019%2F08%2F09%2Ffastdfs%2F</url>
+    <content type="text"><![CDATA[写在前面的打算用三篇文章来写fastDFS，但是作为程序员的我，在还没有做好理论研究的基础上就贸然做了一单机版的测试环境，让自己好尝鲜。这倒是有点符合自己的性格，先不说这些没用的了。表表自己的打算： 01.分布式文档服务搭建，只有自己亲自动手试验了才能有较为深入的理解，才能更好的跟其他同类产品进行比较，这也算是郑晔老师“以终为始”指导思想的一个实践吧； 02.分布式文档服务理论基础，这篇想写的内容包含基础的架构，设计思路（为何这么设计？这么设计有什么优势？）以及跟其他同类型产品的多维度比较。最终给出选择的原因 03.分布式文档服务的高级篇，如何跟开发语言进行集成，如何提高文档服务的可用性。 fastDFS文档服务搭建同事给推荐了一个教程写的很详细，但是真正在实践的时候却没有一个明确的指导，而且里面涉及到的版本也都很早了。所在一开始我是按着人家的教程但是所有版本都用的最新的，前面几部还挺顺利，但真正到了最后挂载nginx服务的时候，各种各样的问题就都来了。百思不得解，弄着弄着我都想放弃了。但没有搞定的这种说法在我的脑海中不停的乱跳，于是就从github上人家开发的wiki找到了，我认为最正宗的解法。 先附上地址：[fastdfs文档服务搭建教程](https://github.com/happyfish100/fastdfs/wiki) 从开始到完成一共用了不到10分钟，这使得我对这款产品的好感真是由然而生呀。后来想了想，估计之前最大的错误就是把它认为成任何版本都是可以相互兼容的，导致一个坑一个坑的去填。这从侧面也给我了一个启示，要学就要学最正宗的技术，当然这需要自己的亲身实践才能得到最后的结论，那么问题是最正宗的技术在哪儿的呢？从开源软件产品的角度来看，一般都会在人家的官网上，什么csdn、博客园、简书之类的技术博客，写个故事还行，对学习没有好处，可能真正觉得有好处的就是写作者了吧，可看到自己写的系列文章被传的哪儿都是，或者有一篇文章被访问了几百万次。]]></content>
+      <categories>
+        <category>文档服务器</category>
+      </categories>
+      <tags>
+        <tag>FastDFS</tag>
+        <tag>分布式文档服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[echarts全国地图分享]]></title>
+    <url>%2F2019%2F07%2F01%2Fecharts-map%2F</url>
+    <content type="text"><![CDATA[先看看效果图,这个效果还是挺好的，做个免费可视化的大屏还真是可以的。 附上两个文件的下载链接：echartsMap，全国各省、市、县的地图数据iDataV-master，这个是有好几个大屏显示效果的demo,绝对的干货]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>Map</tag>
+        <tag>Echarts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[echarts全国地图分享]]></title>
+    <url>%2F2019%2F07%2F01%2Fechart%2F</url>
+    <content type="text"><![CDATA[先看看效果图,这个效果还是挺好的，做个免费可视化的大屏还真是可以的。在这儿我也做资源的搬运工吧，把地图的数据以及使用地图能做的效果展示给大家看，相信可以帮助到你！ 附上两个文件的下载链接（别客气，可以直接下载的无毒）：echartsMap，全国各省、市、县的地图数据iDataV-master，这个是有好几个大屏显示效果的demo,绝对的干货]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>Map</tag>
+        <tag>Echarts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARTS-week14]]></title>
+    <url>%2F2019%2F06%2F23%2FARTS-week14%2F</url>
+    <content type="text"><![CDATA[1、AlgorithmAlgorithm-9. Valid Parentheses &radic; 2、Review分布式系统原理 &radic; 3、Tips到底该不该坚持下去 &radic; 4、Share推荐一款数据库建模工具PDMan &radic;]]></content>
+      <categories>
+        <category>attendance</category>
+      </categories>
+      <tags>
+        <tag>ARTS</tag>
+        <tag>Link</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARTS-week13]]></title>
+    <url>%2F2019%2F06%2F20%2FARTS-week13%2F</url>
+    <content type="text"><![CDATA[1、AlgorithmAlgorithm-20. Valid Parentheses &radic; 2、Review分布式系统原理 &radic; 3、Tips思考框架 &radic; 4、ShareES6入门教育 &radic;]]></content>
+      <categories>
+        <category>attendance</category>
+      </categories>
+      <tags>
+        <tag>ARTS</tag>
+        <tag>Link</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARTS-week12]]></title>
+    <url>%2F2019%2F06%2F09%2FARTS-week12%2F</url>
+    <content type="text"><![CDATA[1、AlgorithmAlgorithm-232. Implement Queue using Stacks &radic; 2、Review分布式系统原理 &radic; 3、TipsopenSSH升级 &radic; 4、Share技术管理星空图 &radic;]]></content>
+      <categories>
+        <category>attendance</category>
+      </categories>
+      <tags>
+        <tag>ARTS</tag>
+        <tag>Link</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARTS-week11]]></title>
+    <url>%2F2019%2F06%2F02%2FARTS-week11%2F</url>
+    <content type="text"><![CDATA[1、AlgorithmAlgorithm-232. Implement Queue using Stacks &radic; 2、Review分布式系统原理 &radic; 3、Tips一个人是他所有读过的书的总和 &radic; 4、Share关于领域驱动设计的分享 &radic;]]></content>
+      <categories>
+        <category>attendance</category>
+      </categories>
+      <tags>
+        <tag>ARTS</tag>
+        <tag>Link</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARTS-week10]]></title>
+    <url>%2F2019%2F05%2F26%2FARTS-week10%2F</url>
+    <content type="text"><![CDATA[1、AlgorithmAlgorithm-155. 最小栈 &radic; 2、Review看看你能做对几个，全对有奖！ &radic; 3、Tipstomcat多host配置 &radic; 4、Share如果你真的牛逼，考一个系统分析师来看看？ &radic;]]></content>
+      <categories>
+        <category>attendance</category>
+      </categories>
+      <tags>
+        <tag>ARTS</tag>
+        <tag>Link</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARTS-week09]]></title>
+    <url>%2F2019%2F05%2F19%2FARTS-week09%2F</url>
+    <content type="text"><![CDATA[1、AlgorithmAlgorithm-202.快乐数 &radic; 2、Review分布式系统原理 &radic; 3、Tipshttp协议为什么是无状态的 &radic; 4、ShareGraphQL &radic;]]></content>
+      <categories>
+        <category>attendance</category>
+      </categories>
+      <tags>
+        <tag>ARTS</tag>
+        <tag>Link</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARTS-week08]]></title>
+    <url>%2F2019%2F05%2F12%2FARTS-week08%2F</url>
+    <content type="text"><![CDATA[1、AlgorithmAlgorithm-887.鸡蛋掉落 &radic; 2、Review分布式系统原理 &radic; 3、Tipsshiro设置自定义Token &radic; 4、Share白话中台战略 &radic;]]></content>
+      <categories>
+        <category>attendance</category>
+      </categories>
+      <tags>
+        <tag>ARTS</tag>
+        <tag>Link</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARTS-week07]]></title>
+    <url>%2F2019%2F05%2F05%2FARTS-week07%2F</url>
+    <content type="text"><![CDATA[1、AlgorithmAlgorithm-997.找到小镇的法官 2、Review分布式系统原理 3、TipsSQL Server数据库sa账户解锁 4、Share消息实时推送]]></content>
+      <categories>
+        <category>attendance</category>
+      </categories>
+      <tags>
+        <tag>ARTS</tag>
+        <tag>Link</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARTS-week06]]></title>
+    <url>%2F2019%2F04%2F27%2FARTS-week06%2F</url>
+    <content type="text"><![CDATA[1、AlgorithmAlgorithm-4:Median of Two Sorted Arrays 2、Reviewjava archive 分布式系统原理 3、Tipsjar和war的区别 4、Share服务器推送]]></content>
+      <categories>
+        <category>attendance</category>
+      </categories>
+      <tags>
+        <tag>ARTS</tag>
+        <tag>Link</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARTS-week05]]></title>
+    <url>%2F2019%2F04%2F21%2FARTS-week05%2F</url>
+    <content type="text"><![CDATA[1、AlgorithmAlgorithm-455:Assign Cookies &radic; 2、Review分布式系统原理 &radic; 3、TipsemailJS使用 &radic; 4、ShareRust粗浅理解 &radic;]]></content>
+      <categories>
+        <category>attendance</category>
+      </categories>
+      <tags>
+        <tag>ARTS</tag>
+        <tag>Link</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARTS-week04]]></title>
+    <url>%2F2019%2F04%2F13%2FARTS-week04%2F</url>
+    <content type="text"><![CDATA[1、AlgorithmAlgorithm-234:回文链表 &radic; 2、Review分布式系统原理 &radic; 3、Tips用数组、链表实现栈 &radic; 4、Share阅读分享 &radic;数组总结 &radic;链表总结 &radic;堆总结 &radic;]]></content>
+      <categories>
+        <category>attendance</category>
+      </categories>
+      <tags>
+        <tag>ARTS</tag>
+        <tag>Link</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARTS-week03]]></title>
+    <url>%2F2019%2F04%2F02%2FARTS-week03%2F</url>
+    <content type="text"><![CDATA[1、AlgorithmAlgorithm-141:给定一个链表，检测是否有环 &radic;Algorithm-19:移除链表中倒数第n个元素 &radic;Algorithm-21:合并有序链表 &radic;Algorithm-61:旋转链表 &radic;Algorithm-876:链表的中间结点 &radic; 2、ReviewCAP定理 &radic; 3、Tipsmysql Isolation &radic; 4、Sharejava lambda &radic;]]></content>
+      <categories>
+        <category>attendance</category>
+      </categories>
+      <tags>
+        <tag>ARTS</tag>
+        <tag>Link</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARTS-week02]]></title>
+    <url>%2F2019%2F04%2F02%2FARTS-week02%2F</url>
+    <content type="text"><![CDATA[1、AlgorithmAlgorithm-86. Partition List1234567891011121314151617181920212223242526272829303132333435363738394041424344/** * Definition for singly-linked list. * public class ListNode &#123; * int val; * ListNode next; * ListNode(int x) &#123; val = x; &#125; * &#125; */class Solution &#123; public ListNode partition(ListNode head, int x) &#123; ListNode part=null;//保存头指针 ListNode tail=null; ListNode part1= null; ListNode tail1=null; while(head!=null)&#123; ListNode dataNode=new ListNode(head.val); if(head.val&lt;x)&#123; if(part==null) part=tail=dataNode; else&#123; tail.next=dataNode;//将新节点连接到链表的尾部 tail=dataNode;////tail永远存储最后一个节点的地址 &#125; &#125;else&#123; if(part1==null) part1=tail1=dataNode; else&#123; tail1.next=dataNode;//将新节点连接到链表的尾部 tail1=dataNode;////tail永远存储最后一个节点的地址 &#125; &#125; head=head.next; &#125; if(tail==null) return part1; tail.next=part1; return part; &#125;&#125;//执行用时 : 1 ms, 在Partition List的Java提交中击败了84.18% 的用户//内存消耗 : 34.8 MB, 在Partition List的Java提交中击败了0.94% 的用户 2、ReviewBitcoin :A Peer to Peer Electronic Cash System比特币：点对点的电子现金系统Abstract:A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to annother without going through a financial institution .Digital Signatures provide part of the solution,but the main benefits are lost if a trusted third party is still required to prevent double-spending.We propose a solution to the double-spending problem using a peer-to-peer network.The network timestamps transactions by hashing them into an ongoing chainof hash-based proof of work , forming a record that cannot be changed without redoing the proof-of-work.The longest chain not only serves as proof of the sequence of events witnessed ,but proof that it came from the largest pool of CPU power.As long as a majority of CPU power is controlled by nodes that are not cooperating to attack the network , they’ll generate the longest chain and outpace attackers.The network itself requires minimal structure.Messages are broadcast on the best effort basis, and nodes can leave and rejoin the network at will,accepting the longest proof-of-work chain as proof of what happened while they were gone.组词：纯粹 点对点 版本 电子现金 允许 直接发送在线支付 从一方到另一方 无需通过金融机构造句：1、一个纯粹的点对点电子现金系统是允许不通过金融机构，来完成从一方到另一方的直接在线支付。组词：数字签名 提供 部分解决方案 但是 最大的收益 丢掉 是否需要一个可信的第三方 阻止“双花”造句：2、数据签名为其提供了部分的解决方案，但是最大的收益是一个可信的、能阻止“双花”的第三方可以丢掉了组词：我们的目的 解决方案 双花问题 通过点对点的网络造句：3、我们的目标就是通过这样一个点对点的网络来解决“双花”问题 组词：网络时间戳 交易 做哈希 基于哈希工作量证明r 不间断的链 形成不可篡改的记录造句：4、对网络时间戳交易做哈希，并把他们链接到基于哈希工作量证明的不间断链上，以此来形成不可篡改的记录。组词：最长的链 不仅 作用于 事件的顺序证明，而且证明了 CPU算力的最大资源池。造句：5、最长的链不仅可以证明交易事件的先后顺序，还可以证明它是来自于最大CPU算力的资源池组词：只要 主要的 CPU算力 被控制 节点（不合作 去攻击网络），他们会形成最长的链并超过攻击者造句：6、只要大部分的CPU算力被这些攻击网络的节点所控制，他们就会形成最长的链并成为超级攻击者组词：网络本身 需要 最小结构造句：7、网络本身需要最小的结构组词：消息 广播 尽力而为 节点 离开 重新加入 网络 随意 接收 最长工作量证明链 证据 在他们离开期间发生了什么造句：8、消息被全网尽最大可能的传播，网络中的节点也可以随意的离开和重新加入，但这些节点得下载他们离开期间所产生的最长的链Introduction:Commerce on the Internet has come to rely almost exclusively on financial institutions serving astrusted third parties to process electronic payments.While the system works well enough formost transactions, it still suffers from the inherent weaknesses of the trust based model.Completely non-reversible transactions are not really possible, since financial institutions cannotavoid mediating disputes.The cost of mediation increases transaction costs, limiting theminimum practical transaction size and cutting off the possibility for small casual transactions,and there is a broader cost in the loss of ability to make non-reversible payments for non-reversible services.With the possibility of reversal, the need for trust spreads.Merchants must be wary of their customers, hassling them for more information than they would otherwise need.A certain percentage of fraud is accepted as unavoidable.These costs and payment uncertaintiescan be avoided in person by using physical currency, but no mechanism exists to make paymentsover a communications channel without a trusted party.What is needed is an electronic payment system based on cryptographic proof instead of trust,allowing any two willing parties to transact directly with each other without the need for a trustedthird party. Transactions that are computationally impractical to reverse would protect sellersfrom fraud, and routine escrow mechanisms could easily be implemented to protect buyers. Inthis paper, we propose a solution to the double-spending problem using a peer-to-peer distributedtimestamp server to generate computational proof of the chronological order of transactions. Thesystem is secure as long as honest nodes collectively control more CPU power than anycooperating group of attacker nodes. 组词：商业 互联网（电商？） 依赖 几乎完全 金融机构 服务 可信任的第三方 进行电子支付造句：1、电商几乎完全依赖于可信的第三方金融机构服务来完成电子支付。组词：虽然 系统 正常工作 对大部分交易来说就足够了 但仍然 受制于 基础信用模型固有缺陷造句：2、只要系统能够正常运转，对于大部分交易来说足够了，但这种模式仍然受制于基础信用模型的固有缺陷组词：完全不可逆的交易是不可能出现的 金融机构不可能避免调节纠纷造句：3、完全不可逆的交易是真的不可能，就像金融机构不可能避免需要调节纠纷一样。组词：调节的花费 增长 交易花费 限制 最小实现交易大小 消失小型临时交易的可能性 较大的花费 制造不可逆支付能力的丢失 不可逆服务造句：4、调节纠纷的费用甚至超过了交易本身的花费，限制实际交易的最小大小，并切断小型临时交易的可能性。还有一个花费较大的点就是在实现对不可逆服务的不可逆支付能力的丢失上。组词：可逆的可能性 对于信任的需要 传播开来造句：5、对于可逆的可能性，对于信任的需要被广泛传播开来组词：商人必须警惕他们的客户，跟他们为需要更多信息而争论造句：6、商人必须警惕他们的客户，并跟他们为需要更多信息而进行争论 3、Tipscrsctl stop res -all oracle 集群的停机顺序为，先停监听-&gt;实例-&gt;服务-&gt;cluster 软件或者直接用上面的命令，可以用-t 查看是否全是offline 在linux 环境下 su user、su - user、su -user 有什么区别呢？使用su userx 切换到userx用户之后，不可以再使用service命令了，使用su - userx就可以使用service命令。这两者的区别是su只是切换了用户的身份，但shell环境没有改变（还是su之前的用户），而su -则连同用户以及shell环境一起切换成了新用户的环境，只有切换了shell环境才会出现path变量错误，报command not found 可以能过pwd命令来区别。 周末部里要断电，被要求关机。一大堆的东西该怎么关呢？1、先把业务系统给停止，再停止中间件及其他应用软件，停止数据库（12c 做的rac，就是上面那个命令的，不过需要grid用户，在使用该用户的时候发生了su user 与su - user的区别问题），所有服务都停止了之后就是关机断电了，最后一部关存储了。存储这块用的是杭州xx，竟然没有控制端，还需要用网线直连才能使用，最终竟然还需要让我把本机上的jdk都卸载了再去装他们那个7.0，完全都处理好了最后还是不行，被告知是因为机器问题。what the fuck,停是停了，不知道断电之后再重启是个什么球样子，希望周一一切都ok,验证过了的确是Ok 4、Sharebitcoin]]></content>
+      <categories>
+        <category>attendance</category>
+      </categories>
+      <tags>
+        <tag>ARTS</tag>
+        <tag>Link</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARTS-week01]]></title>
+    <url>%2F2019%2F04%2F02%2FARTS-week01%2F</url>
+    <content type="text"><![CDATA[1、Algorithm/**Given an array nums and a value val, remove all instances of that value in-place and return the new length. Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory. The order of elements can be changed. It doesn’t matter what you leave beyond the new length.还有这么奇葩的题？正常的解法执行用时 : 8 ms, 在Remove Element的Java提交中击败了71.39% 的用户内存消耗 : 37.6 MB, 在Remove Element的Java提交中击败了0.97% 的用户 */ Algorithm-27. Remove Element1234567891011121314class Solution &#123; public int removeElement(int[] nums, int val) &#123; int k=0; for(int i=0;i&lt;nums.length;i++)&#123; if(val!=nums[i])&#123; nums[k]=nums[i]; k++; &#125; &#125; return k; &#125;&#125; Algorithm-206. Reverse Linked List12345678910111213141516171819202122232425262728293031323334353637class Solution &#123; public ListNode reverseList(ListNode head) &#123; ListNode reverse=null;//最终返回 ListNode nodeData=null;//临时节点 while(head!=null)&#123; nodeData=new ListNode(head.val); if(reverse==null)&#123; reverse=nodeData; &#125;else&#123; nodeData.next=reverse; reverse=nodeData; &#125; head=head.next; &#125; return reverse; &#125; public ListNode reverseList01(ListNode head) &#123; ListNode reverse=null;//最终返回 ListNode nodeData=null;//临时节点 while(head!=null)&#123; nodeData=head.next; head.next=reverse; reverse=head; head=nodeData; &#125; return reverse; &#125; //说实话递归这个还是没搞太懂，一周以后再看看 public ListNode reverseList02(ListNode head) &#123; if(head==null||head.next==null) return head; ListNode reverse=reverseList02(head.next); head.next.next=head; head.next=null; return reverse; &#125;&#125; 2、ReviewFrom Dapper, a Large Scale Distributed Systems Tracing Infrastructure three design goals of Dapper: a.low overhead:a sample of just one out of thousands of requests provides sufficient information for many common uses of the tracing data. b.Application_level transparency: Dapper is restricted to a low enough level in the software stack that even largescale distributed systems like Google web search could be traced without additional annotations. c.Scalability: handle the size of Google’s services and clusters for at least the next few years other similiar tracing systems: a.Magpie b.X-Trace c.Pinpoint a tree of nested RPCs model traces using trees,spans annotation. span id parent span id 3、Tips关于MySql的版本问题 查看Mysql当前的版本 已登录: 12a.select @@versionb.select version() 未登录: 12a.mysql -V(大写字母)b.mysql --version(两个横线) 各自版本 5.0:2005年添加了存储过程，服务端游标，触发器，查询优化以及分布式事务功能 5.1:2008年发布，增加一个崩溃恢复功能的MyISAM,使用表级锁，可以做到读写不冲突 5.5:2010年发布，默认存储引擎改为InnoDB,有多个回滚段 5.6:2013年发布，InnoDB可以限制大体量表打开的时候占用内存过多的问题，InnoDB性能加强 5.7:2015年发布，查询性能大幅提升，比5.6提升1倍降低了建立数据库连接的时间 8.0:对Mysql源码进行了重构，对Mysql Optimizer优化器进行改进，支持隐藏索引，基本上和MyISAM说再见了 其他：这个tips也太水了吧，就在挖个坑吧。这块儿内容我会以专栏的形式补齐。 补丁 Oracle Mysql被扫描出来的安全漏洞也是花样繁多，主要原因还是不同的版本问题。今天就打算修复一下测试服务器上的Mysql漏洞。官网上找了半天还是没有找到对应的补丁在哪儿下载（这估计能成为我想学习英文的主要原因），不过笨人有笨的办法，那就找不用打该补丁的版本喽 MySQL Client, versions 5.5.60 and prior, 5.6.40 and prior, 5.7.22 and prior, 8.0.11 and prior 于是就重新下了一个5.5.62。 安装Mysql，Start Service未响应 这个问题真的是太有意思了，一开始还以为是服务器的问题，好几次重试之后发现，这就是已经卸载没有清理干净的问题了。以Windows为例，默认会在C盘下隐藏目录ProgramData中存在已经安装的版本，直接干掉他，再来一遍over!! 4、Sharedapper]]></content>
+      <categories>
+        <category>attendance</category>
+      </categories>
+      <tags>
+        <tag>ARTS</tag>
+        <tag>Link</tag>
+      </tags>
+  </entry>
+</search>
