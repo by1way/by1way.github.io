@@ -1,0 +1,58 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title> | By1way</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + '23548c5ffb96043176d784e058b0ea36';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">By1way</h1><a id="logo" href="/.">By1way</a><p class="description">用心记录每一份成长、每一滴收获、每一个新奇</p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/mq/"><i class="fa fa-quora"> 消息队列</i></a><a href="/booklist/"><i class="fa fa-book"> 读书清单</i></a><a href="/emotion/"><i class="fa fa-heart"> 个人情感</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-content"><p>课程目标：<br>spring基本架构及各子模块之间的依赖关系<br>spring前世今生<br>spring版本升级规律<br>gradle构建spring5</p>
+<p>spring</p>
+<p>spring基于pojo来升级，来简化开发。</p>
+<p>简化开发的策略<br>1、基于pojo的轻量级和最小侵入性编程<br>2、通过依赖注入和面向接口松耦合<br>3、基于切面 和惯性进行声明式编程<br>4、通过切面 和模板减少样板式代码</p>
+<p>DI==(依赖)=&gt;IOC&lt;==(依赖)AOP</p>
+<p>IOC:控制反转，把对象控制权交给spring,由ioc容器统一管理。<br>DI:依赖注入，动态（自动）赋值<br>AOP:切面，连接点，切入点，</p>
+<p>spring模块图</p>
+<p>核心窗口：beans、core、context、Expression</p>
+<p>aop：aspects,Instrument,Mesaging</p>
+<p>数据访问：jdbc,orm,oxm,jms<br>web</p>
+<p>spring-core:依赖注入ioc与di的基本实现<br>spring-beans:bean工厂与Bean装配<br>spring-context:定义基础的spring的context上下文即ioc容器<br>spring-context-support：对spring ioc容器的扩展与支持，以及ioc子容器<br>spring-context-indexer：spring的类管理组件和classpath扫描<br>spring-expression:spring表达式语言</p>
+<p>spring-aop:面向切面编程的应用模块,整合asm，cglib，jdkproxy<br>spring-aspects：集成aspectJ,aop应用框架<br>spring-instrument：动态class loading模块，</p>
+<p>spring-jdbc:spring提供的jdkbc抽象框架的主要实现模块，用于简化spring jdbc操作<br>spring-tx:springjdbc事务控制模块<br>spring-orm：主要集成hibernate,java persitence api(jpa)和java data objects （jdo)<br>spring-oxm:将java对象映射成，xml数据，或者将xml数据映射 成java对象<br>spring-jms：java messaging service 能够发送和接收信息</p>
+<p>spring-web：提供了最基础的web支持，主要建立 于核心容器之上，通过servlet或者listener来初始化ioc窗口<br>spring-mvc:实现了spring mvc ,的web应用<br>spring-websocket：主要是与web前端的全双工通讯协议<br>spring-webflux:一个新的非堵塞函数式reactive web框架，可以用来建立 异步，非阻塞，事件驱动 的服务</p>
+<p>版本规则：<br>x.y.z<br>x主版本号，当api的兼容性发生变化 时，x需递增<br>y次版本号，当增加功能是（不影响api兼容性）y需递增<br>z修订号，当做bug修复时，z需递增 </p>
+<p>为什么内存还有2g多，一个tomcat都 启动不了</p>
+<h1 id="spring-Ioc容器初始化流程"><a href="#spring-Ioc容器初始化流程" class="headerlink" title="spring Ioc容器初始化流程"></a>spring Ioc容器初始化流程</h1><p>IOC，控制反转：就是反情感的先我们代码里面需要实现的对象创建、依赖的代码，反转给容器来帮忙实现</p>
+<p>DI 依赖注入：就是批对象是被 动接受依赖类而不是自己主动去找，换句话说就是批对象不是从窗口中查找 它依赖的类，而是在容器实例化对象的时候主动将它依赖的类注入给它</p>
+<p>对象 和对象 的关系 怎么表示？<br>xml/properties<br>用来表示 对象关系 的配置文件</p>
+<p>描述对象 关系 的文件存放 在哪里<br>classpath/network/filesystem/servletContext<br>web.xml classpath:web.xxx</p>
+<p>如何统一配置文件的标准？<br>BeanDefinition,把配置文件保存到该类的对象中，初始化到容器中，采用<code>单例模式</code><br>顶级对象，保存配置文件的标准，BeanDefinition 在Ioc容器里</p>
+<p>如何对不同的配置文件进行解析<br>策略模式。spring核心类,BeanFactory最顶层接口。</p>
+<p>BeanFactory 编译容器<br>BeanDefinitaion 存储信息<br>BeanDefinitaionReader 读取信息</p>
+<p>Ioc容器初始化过程：</p>
+<ol>
+<li>定位（定位配置文件和扫描相关注解）</li>
+<li>加载-将配置信息载入到内存中</li>
+<li>注册-根据载入的信息，将对象初始化对IOC容器中</li>
+</ol>
+<p>详细过程</p>
+<ol>
+<li>寻找入口-refresh()-&gt;获取配置文件路径getResource() -&gt;容器开始启动refreshBeanfactory()-&gt;开始解析配置文件路径getResourceByPath -&gt;载入配置文件路径loadBeanDefinitions()-&gt;分配路径处理策略deletage -&gt;解析配置文件路径(调用defaultBeanDefinitionReader())-&gt;加载配置文件信息-&gt;开始解析配置文件loadDocument()</li>
+<li>-&gt;分配 解析配置文件策略BeanDefinitionDocumentLoader-&gt;将配置文件载入到内存registerBeanDefinition()-&gt;载入bean元素parseDefaultElment()-&gt;载入property元素-&gt;输入property子元素-&gt;载入list元素</li>
+<li>-&gt;分配注册策略Utils.registerBeanDefinition()-&gt;开始 向容器注册DefaultListableBeanFactory.registerBeanDefinition()</li>
+</ol>
+<p>DispacthcerServlet 加载九大组件</p>
+<p>容器是通过继承来完成的</p>
+</div></div><div id="lv-container" data-id="city" data-uid="MTAyMC80MzczNi8yMDI3NQ=="><script>(function(d, s) {
+   var j, e = d.getElementsByTagName(s)[0];
+   if (typeof LivereTower === 'function') { return; }
+   j = d.createElement(s);
+   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+   j.async = true;
+   e.parentNode.insertBefore(j, e);
+})(document, 'script');
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/attendance/">attendance</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/专业英语/">专业英语</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/分享/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/宝库/">宝库</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/文档服务器/">文档服务器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/">读书</a><span class="category-list-count">2</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/ARTS/" style="font-size: 15px;">ARTS</a> <a href="/tags/Link/" style="font-size: 15px;">Link</a> <a href="/tags/资源/" style="font-size: 15px;">资源</a> <a href="/tags/阅读/" style="font-size: 15px;">阅读</a> <a href="/tags/分享/" style="font-size: 15px;">分享</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/Echarts/" style="font-size: 15px;">Echarts</a> <a href="/tags/FastDFS/" style="font-size: 15px;">FastDFS</a> <a href="/tags/分布式文档服务器/" style="font-size: 15px;">分布式文档服务器</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/ARTS-week21/">程序员的未来在哪儿</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/12/ARTS-week20/">计算机专用英语-DAY06</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/11/ARTS-week19/">计算机专用英语-DAY05</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/10/ARTS-week18/">计算机专用英语-DAY04</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/09/ARTS-week17/">计算机专用英语-DAY03</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/08/ARTS-week16/">计算机专用英语-DAY02</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/07/ARTS-week15/">计算机专用英语-DAY01</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/06/wechat/">分享一个公众号给你吧</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/21/booklist/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/14/recomm/">分享一个宝库给你</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://wild2pro.com/" title="写程序的厨子" target="_blank">写程序的厨子</a><ul></ul><a href="https://lilyssh.cn/" title="lilyssh(新认识的一个技术牛人)" target="_blank">lilyssh(新认识的一个技术牛人)</a><ul></ul><a href="https://by1way.github.io/" title="我自己" target="_blank">我自己</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2020 <a href="/." rel="nofollow">By1way.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Carol.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title> | By1way</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + '23548c5ffb96043176d784e058b0ea36';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">By1way</h1><a id="logo" href="/.">By1way</a><p class="description">用心记录每一份成长、每一滴收获、每一个新奇</p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/mq/"><i class="fa fa-quora"> 消息队列</i></a><a href="/booklist/"><i class="fa fa-book"> 读书清单</i></a><a href="/emotion/"><i class="fa fa-heart"> 个人情感</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-content"><p>spring-boot-starter-xxx是spring官方提供的starter,xxx-spring-boot-starter是第三方提供给spring的starter.</p>
+<p>starter机制帮助我们完成了项目启动所需的相关jar包，</p>
+<h4 id="spring-boot是如何完成bean的配置的"><a href="#spring-boot是如何完成bean的配置的" class="headerlink" title="spring-boot是如何完成bean的配置的"></a>spring-boot是如何完成bean的配置的</h4><p>传统的springmvc项目中bean都在相应的xml文件中进行配置，而starter通过引入相应的autoconfigure包，并通过注解（@Configuration @Bean)来创建一个基于java的配置类，并以此来代替xml配置文件。</p>
+<p>@Configuration:注解的类可以看作是能生产让IOC容器管理的Bean实例的工厂<br>@Bean：注解告诉spring,一个带Bean注解的方法将返回一个对象，该对象应该被注册到IOC容器中，</p>
+<p>以mybatis-spring-boot-starter为例，通过MybatisAutoConfiguration这个类，自动帮我们生成了SqlSessionFactory这些Mybatis的重要实例，并交给spring的容器去管理，从而完成Bean的自动注册。</p>
+<p>sprin-boot的注解</p>
+<ul>
+<li><p>@ConditionalOnBean，仅在当前上下文中存在某个bean时，才会实例化这个Bean。</p>
+</li>
+<li><p>@ConditionalOnClass，某个class位于类路径上，才会实例化这个Bean。</p>
+</li>
+<li><p>@ConditionalOnExpression，当表达式为true的时候，才会实例化这个Bean。</p>
+</li>
+<li><p>@ConditionalOnMissingBean，仅在当前上下文中不存在某个bean时，才会实例化这个Bean。</p>
+</li>
+<li><p>@ConditionalOnMissingClass，某个class在类路径上不存在的时候，才会实例化这个Bean。</p>
+</li>
+<li><p>@ConditionalOnNotWebApplication，不是web应用时才会实例化这个Bean。</p>
+</li>
+<li><p>@AutoConfigureAfter，在某个bean完成自动配置后实例化这个bean。</p>
+</li>
+<li><p>@AutoConfigureBefore，在某个bean完成自动配置前实例化这个bean</p>
+</li>
+</ul>
+<p>spring-boot提供了DataSourceAutoConfiguration这个类，该类在spring-boot-autoconfigure.jar中，这个包自动帮我们配置了很多好，如：jdbc、kafka、loggin、mail、mongo等，当然这些配置呢也只有在引入相应的jar包之后才会生效。</p>
+<p>Bean如何获取参数</p>
+<p>@ConfigurationProperties 注解的作用是把yml或者properties配置文件转化为Bean<br>@EnableConfigurationProperties:使@ConfigurationProperties注解生效。<br>但这些Bean又是如何被发现和加载的呢？</p>
+<p>@SpringBootApplication注解内容：</p>
+<p>@Configuration的作用上面我们已经知道了，被注解的类将成为一个bean配置类。</p>
+<p>@ComponentScan的作用就是自动扫描并加载符合条件的组件，比如@Component和@Repository等，最终将这些bean定义加载到spring容器中。</p>
+<p>@EnableAutoConfiguration 这个注解的功能很重要，借助@Import的支持，收集和注册依赖包中相关的bean定义。</p>
+<p>通过反射机制将spring.factories中@Configuration类实例化为对应的java实列</p>
+<p>如果要让一个普通类交给Spring容器管理，通常有以下方法：</p>
+<p>1、使用 @Configuration与@Bean 注解</p>
+<p>2、使用@Controller @Service @Repository @Component 注解标注该类，然后启用@ComponentScan自动扫描</p>
+<p>3、使用@Import 方法(springboot使用了这种方式)</p>
+<p>自动配置的关键几步以及相应的注解总结如下：</p>
+<p>1、@Configuration&amp;与@Bean-&gt;基于java代码的bean配置</p>
+<p>2、@Conditional-&gt;设置自动配置条件依赖</p>
+<p>3、@EnableConfigurationProperties与@ConfigurationProperties-&gt;读取配置文件转换为bean。</p>
+<p>4、@EnableAutoConfiguration、@AutoConfigurationPackage 与@Import-&gt;实现bean发现与加载。</p>
+</div></div><div id="lv-container" data-id="city" data-uid="MTAyMC80MzczNi8yMDI3NQ=="><script>(function(d, s) {
+   var j, e = d.getElementsByTagName(s)[0];
+   if (typeof LivereTower === 'function') { return; }
+   j = d.createElement(s);
+   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+   j.async = true;
+   e.parentNode.insertBefore(j, e);
+})(document, 'script');
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/attendance/">attendance</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/专业英语/">专业英语</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/分享/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/宝库/">宝库</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/文档服务器/">文档服务器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/">读书</a><span class="category-list-count">2</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/ARTS/" style="font-size: 15px;">ARTS</a> <a href="/tags/Link/" style="font-size: 15px;">Link</a> <a href="/tags/资源/" style="font-size: 15px;">资源</a> <a href="/tags/阅读/" style="font-size: 15px;">阅读</a> <a href="/tags/分享/" style="font-size: 15px;">分享</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/Echarts/" style="font-size: 15px;">Echarts</a> <a href="/tags/FastDFS/" style="font-size: 15px;">FastDFS</a> <a href="/tags/分布式文档服务器/" style="font-size: 15px;">分布式文档服务器</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/ARTS-week21/">程序员的未来在哪儿</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/12/ARTS-week20/">计算机专用英语-DAY06</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/11/ARTS-week19/">计算机专用英语-DAY05</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/10/ARTS-week18/">计算机专用英语-DAY04</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/09/ARTS-week17/">计算机专用英语-DAY03</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/08/ARTS-week16/">计算机专用英语-DAY02</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/07/ARTS-week15/">计算机专用英语-DAY01</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/06/wechat/">分享一个公众号给你吧</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/21/booklist/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/14/recomm/">分享一个宝库给你</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://wild2pro.com/" title="写程序的厨子" target="_blank">写程序的厨子</a><ul></ul><a href="https://lilyssh.cn/" title="lilyssh(新认识的一个技术牛人)" target="_blank">lilyssh(新认识的一个技术牛人)</a><ul></ul><a href="https://by1way.github.io/" title="我自己" target="_blank">我自己</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2020 <a href="/." rel="nofollow">By1way.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Carol.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
