@@ -1,0 +1,79 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>消息队列选型 | By1way</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + '23548c5ffb96043176d784e058b0ea36';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">消息队列选型</h1><a id="logo" href="/.">By1way</a><p class="description">用心记录每一份成长、每一滴收获、每一个新奇</p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a class="current" href="/mq/"><i class="fa fa-quora"> 消息队列</i></a><a href="/booklist/"><i class="fa fa-book"> 读书清单</i></a><a href="/emotion/"><i class="fa fa-heart"> 个人情感</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">消息队列选型</h1><div class="post-content"><hr>
+<h3 id="主流消息队列对比"><a href="#主流消息队列对比" class="headerlink" title="主流消息队列对比"></a>主流消息队列对比</h3><h4 id="1-RabbitMQ（开箱即用，易于维护）"><a href="#1-RabbitMQ（开箱即用，易于维护）" class="headerlink" title="1. RabbitMQ（开箱即用，易于维护）"></a>1. RabbitMQ（开箱即用，易于维护）</h4><ul>
+<li>RabbitMQ的优点<ul>
+<li>基于Erlang实现，支持AMQP协议(这是一个什么协议？),轻量级的消息队列，非常容易部署和使用</li>
+<li>支持非常灵活的路由配置，在生产者（producer)和消费者（Queue)之间增加了一个类似交换机功能的Exchange模块</li>
+<li>路由规则可以将生产者发出的消息分发到不同的队列中，可自定义实现</li>
+<li>支持客户端语言最多</li>
+</ul>
+</li>
+<li>RabbitMQ的不足<ul>
+<li>对消息堆积的支持不太好，大量消息堆积会导致性能急剧下降</li>
+<li>性能一般，每秒钟可以处理几万到十几万条消息</li>
+<li>二次开发比较困难</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-RocketMQ（处理在线业务）"><a href="#2-RocketMQ（处理在线业务）" class="headerlink" title="2. RocketMQ（处理在线业务）"></a>2. RocketMQ（处理在线业务）</h4><ul>
+<li>Rocket的优点<ul>
+<li>基于Java实现，阿里开源，Apache顶级项目，经受多过次“双十一”的考验，性能、稳定性、可靠性值得信赖</li>
+<li>中文社区活跃，功能特性齐全</li>
+<li>可实现毫秒级响应，每秒钟大概能处理几十万条消息</li>
+<li>易于二次开发</li>
+</ul>
+</li>
+<li>Rocket的不足<ul>
+<li>国产消息队列，在国际上不太流行，与周边生态系统的集成和兼容程序要略逊一筹</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-Kafka（处理海量消息）"><a href="#3-Kafka（处理海量消息）" class="headerlink" title="3. Kafka（处理海量消息）"></a>3. Kafka（处理海量消息）</h4><ul>
+<li>Kafka的优点<ul>
+<li>使用Scala和Java语言开发，LinkedIn开源，Apache顶级项目</li>
+<li>设计上大量使用批量和异步的思想，拥有超高性能</li>
+<li>异步收发性能最好，每秒钟大概能处理几十万条消息</li>
+<li>周边生态系统的兼容性是最好的，尤其在大数据和流计算领域，几乎所有的相关开源软件系统都会优先支持Kafka</li>
+</ul>
+</li>
+<li>Kafka的不足<ul>
+<li>不适合在线业务场景</li>
+<li>同步收发消息的响应时延比较高</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="其他消息队列-不推荐使用"><a href="#其他消息队列-不推荐使用" class="headerlink" title="其他消息队列(不推荐使用)"></a>其他消息队列(不推荐使用)</h3><h4 id="1-ActiveMQ"><a href="#1-ActiveMQ" class="headerlink" title="1. ActiveMQ"></a>1. ActiveMQ</h4><ul>
+<li>最老牌开源消息队列，十年前唯一可供选择的开源消息队列 </li>
+<li>社区不活跃</li>
+<li>性能差异较大不适用于当今互联网应用场景</li>
+</ul>
+<h4 id="2-ZeroMQ"><a href="#2-ZeroMQ" class="headerlink" title="2. ZeroMQ"></a>2. ZeroMQ</h4><ul>
+<li>不能称为是一个消息队列，只是一个消息队列的多线程网络库</li>
+<li>可将消息队列的功能集成到系统中</li>
+</ul>
+<h4 id="3-Pulsar"><a href="#3-Pulsar" class="headerlink" title="3. Pulsar"></a>3. Pulsar</h4><ul>
+<li>新兴开源的消息队列产品</li>
+<li>Yahoo开发，现处于成长期，流行度、稳定度不高</li>
+<li>采用存储和计算分离的设计，可能会引领未来消息队列的一个方向，可以关注一下</li>
+</ul>
+</div></div><div id="lv-container" data-id="city" data-uid="MTAyMC80MzczNi8yMDI3NQ=="><script>(function(d, s) {
+   var j, e = d.getElementsByTagName(s)[0];
+   if (typeof LivereTower === 'function') { return; }
+   j = d.createElement(s);
+   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+   j.async = true;
+   e.parentNode.insertBefore(j, e);
+})(document, 'script');
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/attendance/">attendance</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/专业英语/">专业英语</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/分享/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/宝库/">宝库</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/文档服务器/">文档服务器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/">读书</a><span class="category-list-count">2</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/ARTS/" style="font-size: 15px;">ARTS</a> <a href="/tags/Link/" style="font-size: 15px;">Link</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/Echarts/" style="font-size: 15px;">Echarts</a> <a href="/tags/阅读/" style="font-size: 15px;">阅读</a> <a href="/tags/分享/" style="font-size: 15px;">分享</a> <a href="/tags/资源/" style="font-size: 15px;">资源</a> <a href="/tags/FastDFS/" style="font-size: 15px;">FastDFS</a> <a href="/tags/分布式文档服务器/" style="font-size: 15px;">分布式文档服务器</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/ARTS-week21/">程序员的未来在哪儿</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/12/ARTS-week20/">计算机专用英语-DAY06</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/11/ARTS-week19/">计算机专用英语-DAY05</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/10/ARTS-week18/">计算机专用英语-DAY04</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/09/ARTS-week17/">计算机专用英语-DAY03</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/08/ARTS-week16/">计算机专用英语-DAY02</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/07/ARTS-week15/">计算机专用英语-DAY01</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/06/wechat/">分享一个公众号给你吧</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/21/booklist/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/14/recomm/">分享一个宝库给你</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://wild2pro.com/" title="写程序的厨子" target="_blank">写程序的厨子</a><ul></ul><a href="https://lilyssh.cn/" title="lilyssh(新认识的一个技术牛人)" target="_blank">lilyssh(新认识的一个技术牛人)</a><ul></ul><a href="https://by1way.github.io/" title="我自己" target="_blank">我自己</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2020 <a href="/." rel="nofollow">By1way.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Carol.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

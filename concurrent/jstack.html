@@ -1,0 +1,63 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title> | By1way</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + '23548c5ffb96043176d784e058b0ea36';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">By1way</h1><a id="logo" href="/.">By1way</a><p class="description">用心记录每一份成长、每一滴收获、每一个新奇</p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/mq/"><i class="fa fa-quora"> 消息队列</i></a><a href="/booklist/"><i class="fa fa-book"> 读书清单</i></a><a href="/emotion/"><i class="fa fa-heart"> 个人情感</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-content"><p>Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.202-b08 mixed mode):</p>
+<p>“Service Thread” #10 daemon prio=9 os_prio=0 tid=0x000000001db7f000 nid=0x53e4 runnable [0x0000000000000000]<br>   java.lang.Thread.State: RUNNABLE</p>
+<p>“C1 CompilerThread2” #9 daemon prio=9 os_prio=2 tid=0x000000001daf4000 nid=0x5844 waiting on condition [0x0000000000000000]<br>   java.lang.Thread.State: RUNNABLE</p>
+<p>“C2 CompilerThread1” #8 daemon prio=9 os_prio=2 tid=0x000000001da97000 nid=0x3c28 waiting on condition [0x0000000000000000]<br>   java.lang.Thread.State: RUNNABLE</p>
+<p>“C2 CompilerThread0” #7 daemon prio=9 os_prio=2 tid=0x000000001da96800 nid=0x3378 waiting on condition [0x0000000000000000]<br>   java.lang.Thread.State: RUNNABLE</p>
+<p>“Monitor Ctrl-Break” #6 daemon prio=5 os_prio=0 tid=0x000000001d85e000 nid=0x639c runnable [0x000000001e37e000]<br>   java.lang.Thread.State: RUNNABLE<br>        at java.net.SocketInputStream.socketRead0(Native Method)<br>        at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<br>        at java.net.SocketInputStream.read(SocketInputStream.java:171)<br>        at java.net.SocketInputStream.read(SocketInputStream.java:141)<br>        at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)<br>        at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)<br>        at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)</p>
+<pre><code>- locked &lt;0x000000076b9ca980&gt; (a java.io.InputStreamReader)
+at java.io.InputStreamReader.read(InputStreamReader.java:184)
+at java.io.BufferedReader.fill(BufferedReader.java:161)
+at java.io.BufferedReader.readLine(BufferedReader.java:324)
+- locked &lt;0x000000076b9ca980&gt; (a java.io.InputStreamReader)
+at java.io.BufferedReader.readLine(BufferedReader.java:389)
+at com.intellij.rt.execution.application.AppMainV2$1.run(AppMainV2.java:64)
+</code></pre><p>“Attach Listener” #5 daemon prio=5 os_prio=2 tid=0x000000001d4c3800 nid=0x5144 waiting on condition [0x0000000000000000]<br>   java.lang.Thread.State: RUNNABLE</p>
+<p>“Signal Dispatcher” #4 daemon prio=9 os_prio=2 tid=0x000000001c0c4800 nid=0x5d48 runnable [0x0000000000000000]<br>   java.lang.Thread.State: RUNNABLE</p>
+<p>“Finalizer” #3 daemon prio=8 os_prio=1 tid=0x0000000002b3a000 nid=0x535c in Object.wait() [0x000000001d41f000]<br>   java.lang.Thread.State: WAITING (on object monitor)<br>        at java.lang.Object.wait(Native Method)</p>
+<pre><code>- waiting on &lt;0x000000076b708ed0&gt; (a java.lang.ref.ReferenceQueue$Lock)
+at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+- locked &lt;0x000000076b708ed0&gt; (a java.lang.ref.ReferenceQueue$Lock)
+at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:216)
+</code></pre><p>“Reference Handler” #2 daemon prio=10 os_prio=2 tid=0x0000000002b37000 nid=0x4c74 in Object.wait() [0x000000001d31e000]<br>   java.lang.Thread.State: WAITING (on object monitor)<br>        at java.lang.Object.wait(Native Method)</p>
+<pre><code>- waiting on &lt;0x000000076b706bf8&gt; (a java.lang.ref.Reference$Lock)
+at java.lang.Object.wait(Object.java:502)
+at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+- locked &lt;0x000000076b706bf8&gt; (a java.lang.ref.Reference$Lock)
+at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+</code></pre><p>“main” #1 prio=5 os_prio=0 tid=0x0000000002a47000 nid=0x6374 waiting on condition [0x000000000286e000]<br>   java.lang.Thread.State: WAITING (parking)<br>        at sun.misc.Unsafe.park(Native Method)</p>
+<pre><code>- parking to wait for  &lt;0x000000076bb079c8&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+at com.byway.chain.SaveRequestProcessor.run(SaveRequestProcessor.java:37)
+at com.byway.chain.ChainTest.setup(ChainTest.java:13)
+at com.byway.chain.ChainTest.main(ChainTest.java:21)
+</code></pre><p>“VM Thread” os_prio=2 tid=0x000000001c077800 nid=0x6068 runnable</p>
+<p>“GC task thread#0 (ParallelGC)” os_prio=0 tid=0x0000000002a5c800 nid=0x341c runnable</p>
+<p>“GC task thread#1 (ParallelGC)” os_prio=0 tid=0x0000000002a5e000 nid=0x3af4 runnable</p>
+<p>“GC task thread#2 (ParallelGC)” os_prio=0 tid=0x0000000002a60800 nid=0x4c50 runnable</p>
+<p>“GC task thread#3 (ParallelGC)” os_prio=0 tid=0x0000000002a62800 nid=0x4fc0 runnable</p>
+<p>“VM Periodic Task Thread” os_prio=2 tid=0x000000001db84000 nid=0x4488 waiting on condition</p>
+<p>JNI global references: 12</p>
+</div></div><div id="lv-container" data-id="city" data-uid="MTAyMC80MzczNi8yMDI3NQ=="><script>(function(d, s) {
+   var j, e = d.getElementsByTagName(s)[0];
+   if (typeof LivereTower === 'function') { return; }
+   j = d.createElement(s);
+   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+   j.async = true;
+   e.parentNode.insertBefore(j, e);
+})(document, 'script');
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/attendance/">attendance</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/专业英语/">专业英语</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/分享/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/宝库/">宝库</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/文档服务器/">文档服务器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/">读书</a><span class="category-list-count">2</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/ARTS/" style="font-size: 15px;">ARTS</a> <a href="/tags/Link/" style="font-size: 15px;">Link</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/Echarts/" style="font-size: 15px;">Echarts</a> <a href="/tags/阅读/" style="font-size: 15px;">阅读</a> <a href="/tags/分享/" style="font-size: 15px;">分享</a> <a href="/tags/资源/" style="font-size: 15px;">资源</a> <a href="/tags/FastDFS/" style="font-size: 15px;">FastDFS</a> <a href="/tags/分布式文档服务器/" style="font-size: 15px;">分布式文档服务器</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/ARTS-week21/">程序员的未来在哪儿</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/12/ARTS-week20/">计算机专用英语-DAY06</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/11/ARTS-week19/">计算机专用英语-DAY05</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/10/ARTS-week18/">计算机专用英语-DAY04</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/09/ARTS-week17/">计算机专用英语-DAY03</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/08/ARTS-week16/">计算机专用英语-DAY02</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/07/ARTS-week15/">计算机专用英语-DAY01</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/06/wechat/">分享一个公众号给你吧</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/21/booklist/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/14/recomm/">分享一个宝库给你</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://wild2pro.com/" title="写程序的厨子" target="_blank">写程序的厨子</a><ul></ul><a href="https://lilyssh.cn/" title="lilyssh(新认识的一个技术牛人)" target="_blank">lilyssh(新认识的一个技术牛人)</a><ul></ul><a href="https://by1way.github.io/" title="我自己" target="_blank">我自己</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2020 <a href="/." rel="nofollow">By1way.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Carol.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

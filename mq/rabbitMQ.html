@@ -1,0 +1,169 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>RabbitMQ | By1way</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + '23548c5ffb96043176d784e058b0ea36';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">RabbitMQ</h1><a id="logo" href="/.">By1way</a><p class="description">用心记录每一份成长、每一滴收获、每一个新奇</p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a class="current" href="/mq/"><i class="fa fa-quora"> 消息队列</i></a><a href="/booklist/"><i class="fa fa-book"> 读书清单</i></a><a href="/emotion/"><i class="fa fa-heart"> 个人情感</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">RabbitMQ</h1><div class="post-content"><h3 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h3><h4 id="典型应用场景"><a href="#典型应用场景" class="headerlink" title="典型应用场景"></a>典型应用场景</h4><ol>
+<li>跨系统的异步通信</li>
+<li>应用内的同步变异步</li>
+<li>基于Pub/Sub模型实现的事件驱动</li>
+<li>利用RabbitMQ实现事务的最终一致性</li>
+</ol>
+<h4 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h4><p>AMQP协议：Advanced Message Queuing Protocol,一个提供统一消息服务的应用层标准高级消息队列协议，是应用层协议的一个开放标准为面向消息的中间件设计。<code>基于此协议的客户端与消息中间件可传递消息</code> ，并不受客户端/中间件产品，不同的开发语言等条件的限制。<br>AMQP的实现 有：RabbitMQ、OpenAMQ、等</p>
+<h4 id="RabbitMQ的特性"><a href="#RabbitMQ的特性" class="headerlink" title="RabbitMQ的特性"></a>RabbitMQ的特性</h4><ul>
+<li>可靠性</li>
+<li>灵活路由</li>
+<li>消息集群</li>
+<li>高可用</li>
+<li>多种协议 </li>
+<li>多种语言客户端</li>
+<li>管理界面</li>
+<li>插件机制</li>
+</ul>
+<h4 id="工作模型"><a href="#工作模型" class="headerlink" title="工作模型"></a>工作模型</h4><p>Producer</p>
+<p>Broker<br>    Virtual Host<br>        Exchange<br>            Queue<br>            Queue<br>    Virtual Host<br>        Exchange<br>            Queue<br>            Queue<br>            Queue<br>Connection<br>    Channel</p>
+<p>Consumer</p>
+<h4 id="三种交换机模型"><a href="#三种交换机模型" class="headerlink" title="三种交换机模型"></a>三种交换机模型</h4><p>Headers模式的交换机<br>Direct Exchange直接交换机：按key进行绑定（路由关键字==绑定关键字）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">basicPublish(<span class="string">"Direct_EXCHANGE"</span>,<span class="string">"Key3"</span>,<span class="string">"消息内容"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>Topic Exchange主题交换机：<br>*代表一个单词，#代表0个或多个单词.分隔<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">basicPublish(<span class="string">"TOPIC_EXCHANGE"</span>,<span class="string">"bj.#"</span>,<span class="string">"消息内容"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>Fanout Exchange广播交换机：不需要绑定</p>
+<h4 id="进阶知识"><a href="#进阶知识" class="headerlink" title="进阶知识"></a>进阶知识</h4><h5 id="x-message-ttl-消息存活时间"><a href="#x-message-ttl-消息存活时间" class="headerlink" title="x-message-ttl 消息存活时间"></a>x-message-ttl 消息存活时间</h5><h5 id="DLQ-dead-letter-Queue死信队列"><a href="#DLQ-dead-letter-Queue死信队列" class="headerlink" title="DLQ dead letter Queue死信队列"></a>DLQ dead letter Queue死信队列</h5><p>DLX Dead Letter Exchange<br>哪些情况下消息会变成死信</p>
+<ol>
+<li>消息过期</li>
+<li>消息被拒绝</li>
+<li>队列达到最长度，先入队的消息会被删除</li>
+</ol>
+<p>变成死信之后会去哪？<br>DLX_EXCHANGE 死信队列</p>
+<h5 id="优先级队列"><a href="#优先级队列" class="headerlink" title="优先级队列"></a>优先级队列</h5><p>可以设置消息的优先级</p>
+<h5 id="延迟队列"><a href="#延迟队列" class="headerlink" title="延迟队列"></a>延迟队列</h5><p>延迟队列插件<br>1、过期时间TTL+死信队列DLX 实现延迟队列</p>
+<h4 id="RPC实现"><a href="#RPC实现" class="headerlink" title="RPC实现"></a>RPC实现</h4><p>使用两个队列来实现的，关键点是correlationId,来保证server接收到消息之后顺利返回给客户端</p>
+<h4 id="可靠性投递分析"><a href="#可靠性投递分析" class="headerlink" title="可靠性投递分析"></a>可靠性投递分析</h4><ol>
+<li>确保省发送到RabbitMQ服务器</li>
+<li>确保路由到正确的队列</li>
+<li>确保在队列正确的存储</li>
+<li>确保消息 从队列正确的投递到消费者</li>
+<li>其他</li>
+</ol>
+<h5 id="确保发送到RabbitMQ服务器"><a href="#确保发送到RabbitMQ服务器" class="headerlink" title="确保发送到RabbitMQ服务器"></a>确保发送到RabbitMQ服务器</h5><ul>
+<li>Transaction模式:不建议在生产环境使用效率比较低,100%保证消息提供者发送消息到broker,是阻塞的方式</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">channel.txSelect();<span class="comment">//将channel设置成事务模式 </span></span><br><span class="line">channel.txCommit();<span class="comment">//提交事务</span></span><br><span class="line">channel.txRollback();<span class="comment">//回滚事务</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>确认模式Confirm模式，可批量</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">channel.confirmSelect();<span class="comment">//将channel设置成confirm协议</span></span><br><span class="line">channel.waitForConfirms();</span><br></pre></td></tr></table></figure>
+<h5 id="路由保证"><a href="#路由保证" class="headerlink" title="路由保证"></a>路由保证</h5><ol>
+<li><p>ReturnListener</p>
+</li>
+<li><p>备份交换机</p>
+</li>
+</ol>
+<h5 id="消息存储"><a href="#消息存储" class="headerlink" title="消息存储"></a>消息存储</h5><ol>
+<li>队列持久化<br>durable=true</li>
+<li>交换机持久化<br>durable=true</li>
+<li>消息持久化<br>设置deliveryMode=2</li>
+</ol>
+<h5 id="消费者确认"><a href="#消费者确认" class="headerlink" title="消费者确认"></a>消费者确认</h5><p>channel.basicAck();//手工应答<br>channel.basicReject();//单条拒绝<br>channel.basicNack();//批量拒绝</p>
+<h5 id="消息什么时候从队列删除？"><a href="#消息什么时候从队列删除？" class="headerlink" title="消息什么时候从队列删除？"></a>消息什么时候从队列删除？</h5><ol>
+<li>在ack=true的情况下是发送给消费者之后</li>
+<li>在ack=false的情况下可以等待业务消费完之后</li>
+</ol>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ol>
+<li>消费者回调：</li>
+<li>补偿机制</li>
+<li>消息幂等性</li>
+<li>消息顺序性</li>
+</ol>
+<h4 id="高开用架构"><a href="#高开用架构" class="headerlink" title="高开用架构"></a>高开用架构</h4><p>集群:支持局域网部署<br>镜像队列<br>HA方案</p>
+<h5 id="实践经验总结"><a href="#实践经验总结" class="headerlink" title="实践经验总结"></a>实践经验总结</h5><ol>
+<li>配置文件和命名规范（元数据放到资源文件中）</li>
+<li>调用封装</li>
+<li>信息落库（消息的可追溯、可重发）+定时任务（效率降低、占用磁盘空间）</li>
+<li>如何减少连接数</li>
+<li>生产者先发送消息还是先登记业务表？</li>
+<li>谁来创建对象（交换机、队列、绑定关系）—-消费者</li>
+<li>运维监控</li>
+<li>其他插件</li>
+</ol>
+<h5 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h5><ol>
+<li>消息队列的作用与使用场景</li>
+</ol>
+<ul>
+<li>思路–》流程：异步（批量数据异步处理如批量上传文件）、削峰（高负载任务负载均衡，电商秒杀）、解耦（串行任务并行化：退货流程解耦）、广播（基于发布/订阅模型实现一对多通信）</li>
+</ul>
+<ol start="2">
+<li><p>创建队列和交换机的方法</p>
+</li>
+<li><p>多个消费者监听一个生产者时，消息如何分发</p>
+</li>
+</ol>
+<ul>
+<li>轮询（round-robin)</li>
+<li>公平分发（fair dispatch）</li>
+</ul>
+<ol start="4">
+<li>无法被路由的消息去了哪里</li>
+</ol>
+<ul>
+<li>没有任何配置，这条消息肯定是丢了解决方案如下 ：</li>
+<li>使用mandatory=true配合ReturnListener 实现消息回发</li>
+<li>声明交换机时，指定备份交换机</li>
+</ul>
+<ol start="5">
+<li>消息在什么时候变成死信</li>
+</ol>
+<ul>
+<li>队列消息到达死信队列时才被称为死信</li>
+<li>过期</li>
+<li>拒绝</li>
+<li>队列达到上限</li>
+</ul>
+<ol start="6">
+<li>如何实现延迟队列</li>
+</ol>
+<ul>
+<li>过期时间TTL+死信队列</li>
+<li>插件</li>
+</ul>
+<ol start="7">
+<li>如何保证消息的可靠性投递</li>
+</ol>
+<ul>
+<li>生产者发送消息到broker(事务，confirm)</li>
+<li>保证消息从交换机路由到正确的队列见(4)</li>
+<li>消息正确的存储(对交换机队列和消息做持久化)</li>
+<li>消息从队列发送到消费者（开启手工应答，补偿机制）</li>
+</ul>
+<ol start="8">
+<li>消息幂等性<br>消息唯一ID(为每条消息产一个唯一的ID)</li>
+<li>如何在服务端和消费端做限流</li>
+</ol>
+<ul>
+<li>服务端（内存和磁盘）40% 1G</li>
+<li>质量服务保证Qos，设置prefetchCount</li>
+<li>网关接入层限制</li>
+</ul>
+<ol start="10">
+<li>如何保证消息的顺序性<br>一个队列一个消费者可以保证顺序性<br>全局ID,messageID parentMessageID</li>
+<li>集群模式和集群节点类型</li>
+</ol>
+<ul>
+<li>普通模式(消息不同步)</li>
+<li>镜像模式</li>
+</ul>
+<p>DISC-磁盘<br>RAM-内存</p>
+</div></div><div id="lv-container" data-id="city" data-uid="MTAyMC80MzczNi8yMDI3NQ=="><script>(function(d, s) {
+   var j, e = d.getElementsByTagName(s)[0];
+   if (typeof LivereTower === 'function') { return; }
+   j = d.createElement(s);
+   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+   j.async = true;
+   e.parentNode.insertBefore(j, e);
+})(document, 'script');
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/attendance/">attendance</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/专业英语/">专业英语</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/分享/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/宝库/">宝库</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/文档服务器/">文档服务器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/">读书</a><span class="category-list-count">2</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/ARTS/" style="font-size: 15px;">ARTS</a> <a href="/tags/Link/" style="font-size: 15px;">Link</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/Echarts/" style="font-size: 15px;">Echarts</a> <a href="/tags/阅读/" style="font-size: 15px;">阅读</a> <a href="/tags/分享/" style="font-size: 15px;">分享</a> <a href="/tags/资源/" style="font-size: 15px;">资源</a> <a href="/tags/FastDFS/" style="font-size: 15px;">FastDFS</a> <a href="/tags/分布式文档服务器/" style="font-size: 15px;">分布式文档服务器</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/ARTS-week21/">程序员的未来在哪儿</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/12/ARTS-week20/">计算机专用英语-DAY06</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/11/ARTS-week19/">计算机专用英语-DAY05</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/10/ARTS-week18/">计算机专用英语-DAY04</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/09/ARTS-week17/">计算机专用英语-DAY03</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/08/ARTS-week16/">计算机专用英语-DAY02</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/07/ARTS-week15/">计算机专用英语-DAY01</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/06/wechat/">分享一个公众号给你吧</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/21/booklist/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/14/recomm/">分享一个宝库给你</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://wild2pro.com/" title="写程序的厨子" target="_blank">写程序的厨子</a><ul></ul><a href="https://lilyssh.cn/" title="lilyssh(新认识的一个技术牛人)" target="_blank">lilyssh(新认识的一个技术牛人)</a><ul></ul><a href="https://by1way.github.io/" title="我自己" target="_blank">我自己</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2020 <a href="/." rel="nofollow">By1way.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Carol.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

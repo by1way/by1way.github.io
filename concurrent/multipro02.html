@@ -1,0 +1,92 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>并发编程-02 | By1way</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + '23548c5ffb96043176d784e058b0ea36';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">并发编程-02</h1><a id="logo" href="/.">By1way</a><p class="description">用心记录每一份成长、每一滴收获、每一个新奇</p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/mq/"><i class="fa fa-quora"> 消息队列</i></a><a href="/booklist/"><i class="fa fa-book"> 读书清单</i></a><a href="/emotion/"><i class="fa fa-heart"> 个人情感</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">并发编程-02</h1><div class="post-content"><h3 id="多线程基本原理"><a href="#多线程基本原理" class="headerlink" title="多线程基本原理"></a>多线程基本原理</h3><h4 id="有序性"><a href="#有序性" class="headerlink" title="有序性"></a>有序性</h4><p>有序性产生的原因：是JVM编译器为了优化性能有时候会对代码的先后顺序进行重排，导致代码的执行顺序不一，并由此会产生一系列诡异的问题。简单一句话：导致有序性的原因是编译优化<br>有序性的含义很明确，就是指程序按照代码的先后顺序执行。<br>在java中可通过synchronized或volatile关键字来保证其有序性，当然这都是基于Java内存模型来解决的</p>
+<h4 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h4><p>大家都知道，线程在CPU上执行的前提是获得时间片，获得时间片后线程就获得CPU执行权，时间片用完就必须得把执行权交接给下一个线程。CPU的执行是以指令为最小单位的，这个单位并不是我们传统意义上的一行代码（一行代码也可能包含多个指令）。既然这样的话，就有得玩了，那就必须得定义好原子性这范围了。</p>
+<p>我们把一个或多个操作在CPU上的执行过程中不被中断的特性叫作原子性。</p>
+<p>保证原子性最简单的方式就是操作系统指令，但这是非常不容易的。</p>
+<p>在java中对于这种常见问题的解决方案就是加锁，比如synchronized和lock都可以实现。这种方案可以归属于互斥锁的方案</p>
+<h4 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h4><p>一个线程对共享变量的修改，另外一个线程能够立刻看到，我们称为可见性。</p>
+<p>导致可见性的原因是缓存，导致有序性的原因是编译优化，那解决可见性、有序性最直接的办法就是禁用缓存和编译优化。<br>Java 内存模型规范了 JVM 如何提供按需禁用缓存和编译优化的方法。具体来说，这些方法包括 volatile、synchronized 和 final 三个关键字，以及六项 Happens-Before 规则。其它两个关键字都很常用，但是final怎么也玩一玩？final就是在向编译器发出一种信号<code>我是final，我生而不变，请使劲优化我</code></p>
+<h5 id="Happens-Before-规则"><a href="#Happens-Before-规则" class="headerlink" title="Happens-Before 规则"></a>Happens-Before 规则</h5><p>正确的理解 ：前面一个操作的结果对后续操作是可见的</p>
+<ol>
+<li>程序的顺序性规则：在一个线程中，按照程序顺序前面的操作Happens-Before于后续的任意操作</li>
+<li>volatile变量规则：对一个volatile变量的修改，Happens-Before于后续任何对于这个变量的读操作</li>
+<li>传递性：如果AHappens-Before于B,BHappens-Before于C,那个AHappens-Before于C</li>
+<li>管程中的锁：对一个锁的解锁操作Happens-Before于后续所有对这个锁的加锁</li>
+<li>线程的start()规则 ：主线程A启动子线程B后，子线程B能够看到主线程在启动子线程B前的操作</li>
+<li>线程的join()规则：主线程A等待子线程B完成（主线程 A 通过调用子线程 B 的 join() 方法实现），当子线程 B 完成后（主线程 A 中 join() 方法返回），主线程能够看到子线程的操作。</li>
+<li>线程中断规则：对线程interrupt()方法的调用先行发生于被中断线程的代码检测到中断事件的发生，可以通过Thread.interrupted()方法检测到是否有中断发生。</li>
+<li>对象终结规则：一个对象的初始化完成(构造函数执行结束)先行发生于它的finalize()方法的开始。</li>
+</ol>
+<p>ps：管程是一种通用的同步原语，在 Java 中指的就是 synchronized，synchronized 是 Java 里对管程的实现</p>
+<h4 id="synchronized锁"><a href="#synchronized锁" class="headerlink" title="synchronized锁"></a>synchronized锁</h4><p>synchronized基本作用：</p>
+<ol>
+<li>确保线程互斥的访问同步代码</li>
+<li>保证共享变量的修改能够及时可见</li>
+<li>有效解决重排序问题</li>
+</ol>
+<p>synchronized用法：</p>
+<ol>
+<li>修饰实例方法</li>
+<li>修饰静态方法</li>
+<li>修饰代码块</li>
+</ol>
+<p>Synchronized是通过对象内部的一个叫做监视器锁（monitor管程）来实现的，监视器锁本质又是依赖于底层的操作系统的Mutex Lock来实现的。而操作系统实现线程之间的切换这就需要从用户态转换到核心态，这个成本非常高，状态之间的转换需要相对比较长的时间，这就是为什么Synchronized效率低的原因。所以这种依赖于操作系统Mutex Lock所实现的锁我们称之为“重量级锁”。JDK中对Synchronized做的种种优化，其核心都是为了减少这种重量级锁的使用。JDK1.6以后，为了减少获得锁和释放锁所带来的性能消耗，提高性能，引入了“轻量级锁”和“偏向锁”。</p>
+<h4 id="锁的状态"><a href="#锁的状态" class="headerlink" title="锁的状态"></a>锁的状态</h4><p>无锁-&gt;{偏向锁-&gt;轻量级锁}-&gt;重量级锁（真正意义的加锁），锁的升级是单向的并不会出降级</p>
+<p>假如有两个线程Ta和Tb，JVM做锁优化</p>
+<ol>
+<li>只有Ta去访问-&gt;引入偏向锁（记录Ta的线程ID、偏向锁标记为1)</li>
+<li>Ta和Tb交替访问-&gt;引入轻量级锁（自旋）</li>
+<li>多个线程同时访问-&gt;阻塞</li>
+</ol>
+<p>升级锁过程：偏向锁\轻量级锁\重量级锁</p>
+<p><img src="/concurrent/multipro02_files/1.jpg" alt="锁状态"></p>
+<h5 id="偏向锁"><a href="#偏向锁" class="headerlink" title="偏向锁"></a>偏向锁</h5><p>偏向锁升级过程，</p>
+<p>CAS-乐观锁，（Compare and swap)、CompareAndSet</p>
+<p>java1.6以前，基于重量级锁实现</p>
+<p>自旋<br>for(;;){<br>    if(cas()){<br>        return;//绝大部分的线程在获得锁以后，在非常短的时间内很快会释放<br>    }<br>}</p>
+<p>ps:绝大部分的线程在获得锁以后，在非常短的时间内很快会释放。自旋会占用CPU资源，所以在指定的自旋次数之后，还是没有获取得轻量级锁，会锁膨胀成重量级锁-&gt;阻塞</p>
+<p>jvm参数设置自旋次数，preBlockSpin<br>自适应自旋，基于上一次自旋次数来判断</p>
+<p>偏向锁则是在只有一个线程执行同步块时进一步提高性能</p>
+<h5 id="轻量级锁"><a href="#轻量级锁" class="headerlink" title="轻量级锁"></a>轻量级锁</h5><p>加锁过程：<br>解锁过程：</p>
+<p>轻量级锁是为了在线程交替执行同步块时提高性能</p>
+<h5 id="重量级锁"><a href="#重量级锁" class="headerlink" title="重量级锁"></a>重量级锁</h5><p>升级到重量级锁以后，没有获得锁的线程会被阻塞（Blocked状态）。</p>
+<p>重量级锁基于对象监视器(Monitor—管程)来实现</p>
+<p>管程模型，分别是：Hasen 模型、Hoare 模型和 MESA 模型。其中，现在广泛应用的是 MESA 模型</p>
+<p>偏向锁—–&gt;轻量级锁<br>cas  —–&gt;自旋锁/自适应自旋锁</p>
+<p>无锁-&gt;轻量级锁–&gt;重量级锁</p>
+<h4 id="锁的区别"><a href="#锁的区别" class="headerlink" title="锁的区别"></a>锁的区别</h4><p><img src="/concurrent/multipro02_files/2.jpg" alt="锁对比"></p>
+<h4 id="Wait-notify-nofityAll"><a href="#Wait-notify-nofityAll" class="headerlink" title="Wait/notify/nofityAll"></a>Wait/notify/nofityAll</h4><p>wait是通过对象的monitor对象来实现的，只要在同一对象上去调用notify/notifyAll方法，就可以唤醒对应对象monitor上等待的线程了。notify和notifyAll的区别在于前者只能唤醒monitor上的一个线程，对其他线程没有影响，而notifyAll则唤醒所有的线程</p>
+<h4 id="sleep-yield-join"><a href="#sleep-yield-join" class="headerlink" title="sleep/yield/join"></a>sleep/yield/join</h4><p>sleep：是让当前线程暂停指定的时间（毫秒）,注意区别wait方法依赖于同步，而sleep方法可以直接调用。sleep方法只是暂时让出CPU的执行权，并不释放锁。而wait方法则需要释放锁。</p>
+<p>yield：暂停当前线程，以便其他线程有机会执行，不过不能指定暂停的时间，并且也不能保证当前线程马上停止。</p>
+<p>join：父线程等待子线程执行完成后再执行，换句话说就是<code>将异步执行的线程合并为同步的线程</code>。</p>
+<h4 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h4><p>作用：</p>
+<ol>
+<li>防止重排序</li>
+<li>实现可见性</li>
+<li>保证原子性（别误会，是无法保证多个操作是具有原子性的）</li>
+</ol>
+<p>对于volatile关键字的误解：</p>
+<ul>
+<li>把volatile关键字当成一种锁机制，认为给变量加上了volatile后，就好像是给函数加上了synchronized关键字一样，不同的线程对于特定线程的访问会去加锁</li>
+<li>把volatile当成一种原子化操作机制，认为加上volatile之后，对于变量的自增操作就会变成原子性的了</li>
+</ul>
+</div></div><div id="lv-container" data-id="city" data-uid="MTAyMC80MzczNi8yMDI3NQ=="><script>(function(d, s) {
+   var j, e = d.getElementsByTagName(s)[0];
+   if (typeof LivereTower === 'function') { return; }
+   j = d.createElement(s);
+   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+   j.async = true;
+   e.parentNode.insertBefore(j, e);
+})(document, 'script');
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/attendance/">attendance</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/专业英语/">专业英语</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/分享/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/宝库/">宝库</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/文档服务器/">文档服务器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/">读书</a><span class="category-list-count">2</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/ARTS/" style="font-size: 15px;">ARTS</a> <a href="/tags/Link/" style="font-size: 15px;">Link</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/Echarts/" style="font-size: 15px;">Echarts</a> <a href="/tags/阅读/" style="font-size: 15px;">阅读</a> <a href="/tags/分享/" style="font-size: 15px;">分享</a> <a href="/tags/资源/" style="font-size: 15px;">资源</a> <a href="/tags/FastDFS/" style="font-size: 15px;">FastDFS</a> <a href="/tags/分布式文档服务器/" style="font-size: 15px;">分布式文档服务器</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/ARTS-week21/">程序员的未来在哪儿</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/12/ARTS-week20/">计算机专用英语-DAY06</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/11/ARTS-week19/">计算机专用英语-DAY05</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/10/ARTS-week18/">计算机专用英语-DAY04</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/09/ARTS-week17/">计算机专用英语-DAY03</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/08/ARTS-week16/">计算机专用英语-DAY02</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/07/ARTS-week15/">计算机专用英语-DAY01</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/06/wechat/">分享一个公众号给你吧</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/21/booklist/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/14/recomm/">分享一个宝库给你</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://wild2pro.com/" title="写程序的厨子" target="_blank">写程序的厨子</a><ul></ul><a href="https://lilyssh.cn/" title="lilyssh(新认识的一个技术牛人)" target="_blank">lilyssh(新认识的一个技术牛人)</a><ul></ul><a href="https://by1way.github.io/" title="我自己" target="_blank">我自己</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2020 <a href="/." rel="nofollow">By1way.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Carol.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
