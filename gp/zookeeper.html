@@ -1,0 +1,75 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title> | By1way</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + '23548c5ffb96043176d784e058b0ea36';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">By1way</h1><a id="logo" href="/.">By1way</a><p class="description">用心记录每一份成长、每一滴收获、每一个新奇</p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/mq/"><i class="fa fa-quora"> 消息队列</i></a><a href="/booklist/"><i class="fa fa-book"> 读书清单</i></a><a href="/emotion/"><i class="fa fa-heart"> 个人情感</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-content"><h4 id="zookeeper概述（分布式协调服务）"><a href="#zookeeper概述（分布式协调服务）" class="headerlink" title="zookeeper概述（分布式协调服务）"></a>zookeeper概述（分布式协调服务）</h4><p>一、zookeeper集群安装<br>myid zoo.cfg</p>
+<p>二、zookeeper数据模型（znode)</p>
+<p>三、 节点特性（持久化、临时节点、有序节点、同级节点必须唯一、临时节点不存在子节点）</p>
+<p>四、节点的stat信息</p>
+<p>五、watcher机制</p>
+<p>六、应用场景：</p>
+<ol>
+<li>注册中心（watcher 监听感知）</li>
+<li>配置中心</li>
+<li>负载均衡</li>
+<li>分布式锁</li>
+</ol>
+<h4 id="zookeeper实现原理"><a href="#zookeeper实现原理" class="headerlink" title="zookeeper实现原理"></a>zookeeper实现原理</h4><p>一、了解zookeeper的由来</p>
+<p>zookeeper的设计猜想</p>
+<ol>
+<li>防止单点故障<br> 集群方案（leader follower)<br> 还可以分担请求</li>
+<li>每个节点的数据是一致的（必须有leader)<br> leader master<br> redis-cluster(无中心)</li>
+<li>leader挂了怎么办？数据如何恢复？选举机制</li>
+<li>如何保证数据一致性？分布式事务，2PC协议（二阶段提交）<br> 2PC，二阶段提交，事务协调者机制<br> 跨节点事务<br> 基于2PC来实现数据同步</li>
+</ol>
+<p>结论：</p>
+<ol>
+<li>为什么要用zab来实现选举</li>
+<li>为什么要做集群</li>
+<li>为什么要用2pc做数据一致性</li>
+</ol>
+<p>ZAB协议：<br>用于<code>崩溃恢复</code>的<code>原子广播</code>协议，基于paxos协议衍生算法。<br>依赖ZAB协议来实现分布式的<code>数据一致性</code>(zookeeper类似于主备的形式，通过ZAB协议保证在集群里面各数据节点的数据一致性)</p>
+<p>原子广播：改进版的2PC,zxid64位自增ID</p>
+<ol>
+<li>对每个消息生成一个zxid</li>
+<li>带有zxid的消息作为一个事务分发给集群中的每一个foller节点</li>
+<li>把事务写入到磁盘，返回ack</li>
+<li>leader收到合法数量请求的ack以后再发起commit请求</li>
+</ol>
+<p>投票不需要observer的参与，但是必须要和leader节点保持数据同步</p>
+<p>崩溃恢复（针对数据层来说）:leader挂掉之后 </p>
+<ol>
+<li>leader失去过半的follower节点的联系</li>
+<li>当leader服务挂了</li>
+</ol>
+<p>集群进入到崩溃恢复阶段，对于数据恢复来说，有两点需要考虑，<code>1.已经被处理的消息不能丢失</code>，（当leader收到合法数量的ack后,会向各follower发起commit请求同时也会向本地的leader发起commit,这是正常流程。但会出现这种情况，如果部分follower在收到commit命令之前，leader挂了，就导致部分收到，部分没收到，这个时候，<code>ZAB协议要保证已经处理的消息不能丢失</code>;<code>2.被丢弃的消息不能再次出现</code>(当leader节点在收到事务请求之后，在生成proposal之前，leader挂了，这个时候就要满足leader被重新选举出来以后，新选举出来的leader,能够让这条已经被丢失的消息被其它的节点都丢弃掉)，两个前提</p>
+<p>ZAB的设计思想</p>
+<ol>
+<li>新选举出来的leader服务器， 是集群中zxid是最大事务（乐观锁）的话，那么新选举出来的leader一定具备已经提交的提案。这样就可以保证已经处理的消息被提交</li>
+<li>Epoch概念，每产生一个新的leader选举，新的leader的epoch会+1，zxid是64位的数据，低32位表示 消息计数器，高32位存储epoch编号。这样可以保证老的leader恢复以后不会再成为leader,被丢弃的消息也不能再次出现。</li>
+</ol>
+<p>理解ZAB协议<br>leader选举：fast leader做选举，选举指标：zxid最大(64位)【事务id越大表示数据越新】、myid(服务器id,sid)【myid越大，在leader选举中权重越大）<br>epoch（每一轮投票，epoch会递增）</p>
+<p>选举状态：LOOKING、LEADING、FOLLOWING、OBSERVING</p>
+<p>选举过程：<br>启动的时候初始化，每个server会发送（myid,zxid,epoch),发布给集群中的每一个节点，每一个节点收到这些信息之后，进行投票。投票过程中会比较对应的这些数据：检查zxid，如果比较大，会把zxid最大的节点投为leader，如果zxid相同，则去检查myid，myid比较大的投为leader，投票完之后会进行投票统计，根据结果处理。</p>
+<p>集群：<br>角色：leader follower observer</p>
+<ol>
+<li>如果是读请求，可以在任意节点为去处理数据 </li>
+<li>如果是写请求，那么这个请求会转发给leader去处理<br> leader在接收到事务请求（request)之后，会把这个事务(request)发送给集群中每一个节点(除observer之外)，follower节点在接收请求之后，会为返回一个ACK给leader。leader一旦发现过半数的节点是同意的，就会提交该事务（commit),并返回结果（response）给客户端<br> Observer是一个观察者的角色，可以了解集群中的状态变化 ，并对这些状态进行同步。不参与投票。奇数节点（过半节点投票）</li>
+</ol>
+</div></div><div id="lv-container" data-id="city" data-uid="MTAyMC80MzczNi8yMDI3NQ=="><script>(function(d, s) {
+   var j, e = d.getElementsByTagName(s)[0];
+   if (typeof LivereTower === 'function') { return; }
+   j = d.createElement(s);
+   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+   j.async = true;
+   e.parentNode.insertBefore(j, e);
+})(document, 'script');
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/attendance/">attendance</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/专业英语/">专业英语</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/分享/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/宝库/">宝库</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/文档服务器/">文档服务器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构师训练营/">架构师训练营</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/">读书</a><span class="category-list-count">2</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/ARTS/" style="font-size: 15px;">ARTS</a> <a href="/tags/Link/" style="font-size: 15px;">Link</a> <a href="/tags/资源/" style="font-size: 15px;">资源</a> <a href="/tags/阅读/" style="font-size: 15px;">阅读</a> <a href="/tags/分享/" style="font-size: 15px;">分享</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/Echarts/" style="font-size: 15px;">Echarts</a> <a href="/tags/FastDFS/" style="font-size: 15px;">FastDFS</a> <a href="/tags/分布式文档服务器/" style="font-size: 15px;">分布式文档服务器</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/06/16/architect02/">第二周作业</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/ARTS-week21/">程序员的未来在哪儿</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/12/ARTS-week20/">计算机专用英语-DAY06</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/11/ARTS-week19/">计算机专用英语-DAY05</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/10/ARTS-week18/">计算机专用英语-DAY04</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/09/ARTS-week17/">计算机专用英语-DAY03</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/08/ARTS-week16/">计算机专用英语-DAY02</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/07/ARTS-week15/">计算机专用英语-DAY01</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/06/wechat/">分享一个公众号给你吧</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/23/sources/">资源</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://wild2pro.com/" title="写程序的厨子" target="_blank">写程序的厨子</a><ul></ul><a href="https://lilyssh.cn/" title="lilyssh(新认识的一个技术牛人)" target="_blank">lilyssh(新认识的一个技术牛人)</a><ul></ul><a href="https://by1way.github.io/" title="我自己" target="_blank">我自己</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2020 <a href="/." rel="nofollow">By1way.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Carol.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
