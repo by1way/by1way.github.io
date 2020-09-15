@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://by1way.github.io/"/>
-  <updated>2020-06-16T14:28:29.455Z</updated>
+  <updated>2020-09-15T06:48:03.361Z</updated>
   <id>https://by1way.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://by1way.github.io/2020/09/15/readingmethod/"/>
+    <id>https://by1way.github.io/2020/09/15/readingmethod/</id>
+    <published>2020-09-15T06:47:57.035Z</published>
+    <updated>2020-09-15T06:48:03.361Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="7S阅读法"><a href="#7S阅读法" class="headerlink" title="7S阅读法"></a>7S阅读法</h2><h3 id="S1-提问，阅读一篇文章或一本书之前自问四个问题"><a href="#S1-提问，阅读一篇文章或一本书之前自问四个问题" class="headerlink" title="S1 提问，阅读一篇文章或一本书之前自问四个问题"></a>S1 提问，阅读一篇文章或一本书之前自问四个问题</h3><ol><li>我为什么想要读它</li><li>它对我来说有多重要</li><li>我要获得哪些信息</li><li>我打算把阅读获得的知识有在哪些方面</li></ol><h3 id="S2-速览"><a href="#S2-速览" class="headerlink" title="S2 速览"></a>S2 速览</h3><p>​    通过快速扫视全文，发现关键词和关键句子，在大脑中进行整合，简单理解作者传达的信息。</p><p><code>S1和S2就是快速阅读法，适用于休闲读书或深度阅读之前的准备</code></p><h3 id="S3-融合，用摘录法记录关键词和标记不易理解的段落"><a href="#S3-融合，用摘录法记录关键词和标记不易理解的段落" class="headerlink" title="S3 融合，用摘录法记录关键词和标记不易理解的段落"></a>S3 融合，用摘录法记录关键词和标记不易理解的段落</h3><h3 id="S4-重构，用自己的语言，重述内容"><a href="#S4-重构，用自己的语言，重述内容" class="headerlink" title="S4 重构，用自己的语言，重述内容"></a>S4 重构，用自己的语言，重述内容</h3><h3 id="S5-回忆，通过提问回忆习得的知识"><a href="#S5-回忆，通过提问回忆习得的知识" class="headerlink" title="S5 回忆，通过提问回忆习得的知识"></a>S5 回忆，通过提问回忆习得的知识</h3><pre><code>1. 作者是在文中讲了什么2. 作者是如何讲述认证的3. 内容和我有什么关系4. 读完后对我来说有什么用</code></pre><p><code>S3、S4、S5是深度阅读阶段，回忆与重构正是我所用的阅读笔记的做法</code></p><h3 id="S6-延伸，寻找相关材料，扩展知识的深度和广度"><a href="#S6-延伸，寻找相关材料，扩展知识的深度和广度" class="headerlink" title="S6 延伸，寻找相关材料，扩展知识的深度和广度"></a>S6 延伸，寻找相关材料，扩展知识的深度和广度</h3><h3 id="S7-交流，包括书面、口头、行动等沟通形式"><a href="#S7-交流，包括书面、口头、行动等沟通形式" class="headerlink" title="S7 交流，包括书面、口头、行动等沟通形式"></a>S7 交流，包括书面、口头、行动等沟通形式</h3><pre><code>1. 提出疑问，解决作者未能回答的问题2. 结合自身情况，把知识变成行动指南3. 分享观点，在与他人的碰撞中得到新思路</code></pre><h2 id="读书若是缺少思考和行动，还真不如闭目养神"><a href="#读书若是缺少思考和行动，还真不如闭目养神" class="headerlink" title="读书若是缺少思考和行动，还真不如闭目养神"></a>读书若是缺少思考和行动，还真不如闭目养神</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;7S阅读法&quot;&gt;&lt;a href=&quot;#7S阅读法&quot; class=&quot;headerlink&quot; title=&quot;7S阅读法&quot;&gt;&lt;/a&gt;7S阅读法&lt;/h2&gt;&lt;h3 id=&quot;S1-提问，阅读一篇文章或一本书之前自问四个问题&quot;&gt;&lt;a href=&quot;#S1-提问，阅读一篇文章或一本书之
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>第二周作业</title>
@@ -309,12 +330,12 @@
   
   <entry>
     <title>echarts全国地图分享</title>
-    <link href="https://by1way.github.io/2019/07/01/echarts-map/"/>
-    <id>https://by1way.github.io/2019/07/01/echarts-map/</id>
+    <link href="https://by1way.github.io/2019/07/01/echart/"/>
+    <id>https://by1way.github.io/2019/07/01/echart/</id>
     <published>2019-07-01T02:13:51.000Z</published>
-    <updated>2019-08-14T03:29:10.331Z</updated>
+    <updated>2019-07-01T06:02:27.010Z</updated>
     
-    <content type="html"><![CDATA[<p>先看看效果图,这个效果还是挺好的，做个免费可视化的大屏还真是可以的。<br><img src="/2019/07/01/echarts-map/809.png" alt="地图展示"></p><p>附上两个文件的下载链接：<br><a href="/file/echartsMap.rar">echartsMap，全国各省、市、县的地图数据</a><br><a href="/file/iDataV-master.zip">iDataV-master，这个是有好几个大屏显示效果的demo,绝对的干货</a></p>]]></content>
+    <content type="html"><![CDATA[<p>先看看效果图,这个效果还是挺好的，做个免费可视化的大屏还真是可以的。在这儿我也做资源的搬运工吧，把地图的数据以及使用地图能做的效果展示给大家看，相信可以帮助到你！<br><img src="/2019/07/01/echart/908.png" alt="全国地图展示"><br><img src="/2019/07/01/echart/946.png" alt="全省地图展示"><br><img src="/2019/07/01/echart/038.png" alt="全市地图展示"><br><img src="/2019/07/01/echart/809.png" alt="地图展示"></p><p>附上两个文件的下载链接（别客气，可以直接下载的无毒）：<br><a href="/file/echartsMap.rar">echartsMap，全国各省、市、县的地图数据</a><br><a href="/file/iDataV-master.zip">iDataV-master，这个是有好几个大屏显示效果的demo,绝对的干货</a></p>]]></content>
     
     <summary type="html">
     
@@ -333,12 +354,12 @@
   
   <entry>
     <title>echarts全国地图分享</title>
-    <link href="https://by1way.github.io/2019/07/01/echart/"/>
-    <id>https://by1way.github.io/2019/07/01/echart/</id>
+    <link href="https://by1way.github.io/2019/07/01/echarts-map/"/>
+    <id>https://by1way.github.io/2019/07/01/echarts-map/</id>
     <published>2019-07-01T02:13:51.000Z</published>
-    <updated>2019-07-01T06:02:27.010Z</updated>
+    <updated>2019-08-14T03:29:10.331Z</updated>
     
-    <content type="html"><![CDATA[<p>先看看效果图,这个效果还是挺好的，做个免费可视化的大屏还真是可以的。在这儿我也做资源的搬运工吧，把地图的数据以及使用地图能做的效果展示给大家看，相信可以帮助到你！<br><img src="/2019/07/01/echart/908.png" alt="全国地图展示"><br><img src="/2019/07/01/echart/946.png" alt="全省地图展示"><br><img src="/2019/07/01/echart/038.png" alt="全市地图展示"><br><img src="/2019/07/01/echart/809.png" alt="地图展示"></p><p>附上两个文件的下载链接（别客气，可以直接下载的无毒）：<br><a href="/file/echartsMap.rar">echartsMap，全国各省、市、县的地图数据</a><br><a href="/file/iDataV-master.zip">iDataV-master，这个是有好几个大屏显示效果的demo,绝对的干货</a></p>]]></content>
+    <content type="html"><![CDATA[<p>先看看效果图,这个效果还是挺好的，做个免费可视化的大屏还真是可以的。<br><img src="/2019/07/01/echarts-map/809.png" alt="地图展示"></p><p>附上两个文件的下载链接：<br><a href="/file/echartsMap.rar">echartsMap，全国各省、市、县的地图数据</a><br><a href="/file/iDataV-master.zip">iDataV-master，这个是有好几个大屏显示效果的demo,绝对的干货</a></p>]]></content>
     
     <summary type="html">
     
@@ -439,30 +460,6 @@
     <summary type="html">
     
       Part Algorithm:leetcode 232. Implement Queue using Stacks &lt;br/&gt; Part Review:分布式系统原理  &lt;br/&gt; Part Tips:一个人是他所有读过的书的总和  &lt;br/&gt; Part Share:领域驱动设计   &lt;br/&gt;
-    
-    </summary>
-    
-      <category term="attendance" scheme="https://by1way.github.io/categories/attendance/"/>
-    
-    
-      <category term="ARTS" scheme="https://by1way.github.io/tags/ARTS/"/>
-    
-      <category term="Link" scheme="https://by1way.github.io/tags/Link/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ARTS-week10</title>
-    <link href="https://by1way.github.io/2019/05/26/ARTS-week10/"/>
-    <id>https://by1way.github.io/2019/05/26/ARTS-week10/</id>
-    <published>2019-05-26T02:13:51.000Z</published>
-    <updated>2019-06-02T15:51:41.062Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1、Algorithm"><a href="#1、Algorithm" class="headerlink" title="1、Algorithm"></a>1、Algorithm</h2><p><a href="/algorithm/Algorithm-155.html">Algorithm-155. 最小栈 <font color="#FF0000">&radic;</font></a></p><h2 id="2、Review"><a href="#2、Review" class="headerlink" title="2、Review"></a>2、Review</h2><p><a href="/review/fill.html">看看你能做对几个，全对有奖！  <font color="#FF0000">&radic;</font></a></p><h2 id="3、Tips"><a href="#3、Tips" class="headerlink" title="3、Tips"></a>3、Tips</h2><p><a href="/tips/tomcathost.html">tomcat多host配置 <font color="#FF0000">&radic;</font></a></p><h2 id="4、Share"><a href="#4、Share" class="headerlink" title="4、Share"></a>4、Share</h2><p><a href="/tips/haveatry.html">如果你真的牛逼，考一个系统分析师来看看？ <font color="#FF0000">&radic;</font></a></p>]]></content>
-    
-    <summary type="html">
-    
-      Part Algorithm:leetcode 155. 最小栈 &lt;br/&gt; Part Review:看看你能做对几个，全对有奖！  &lt;br/&gt; Part Tips:tomcat多host配置   &lt;br/&gt; Part Share:如果你真的牛逼，考一个系统分析师来看看？   &lt;br/&gt;
     
     </summary>
     
