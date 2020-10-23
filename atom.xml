@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://by1way.github.io/"/>
-  <updated>2020-10-22T10:03:59.879Z</updated>
+  <updated>2020-10-23T09:42:11.059Z</updated>
   <id>https://by1way.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>存储系统实战-1</title>
+    <link href="https://by1way.github.io/2020/10/23/memory-system-01/"/>
+    <id>https://by1way.github.io/2020/10/23/memory-system-01/</id>
+    <published>2020-10-23T01:38:22.000Z</published>
+    <updated>2020-10-23T09:42:11.059Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="购物车如何设计"><a href="#购物车如何设计" class="headerlink" title="购物车如何设计"></a>购物车如何设计</h3><h4 id="购物车存储时需要考虑清楚的问题"><a href="#购物车存储时需要考虑清楚的问题" class="headerlink" title="购物车存储时需要考虑清楚的问题"></a>购物车存储时需要考虑清楚的问题</h4><ul><li>1.用户没登录，在浏览器中加购，关闭浏览器再打开，刚才回购的商品还在吗？(存在)</li><li>2.用户没登录，在浏览器中回购，然后登录，刚才回购的商品还在不在？(存在)</li><li>3.关闭浏览器再打开，上一步回购的商品还在不在？(不存在)</li><li>4.再打开手机，用相同的用户登录 ，第二步回购的商品还在不在？(存在)</li></ul><p><strong>暂存购物车</strong>、<strong>用户购物车</strong></p><h4 id="购物车设计原则"><a href="#购物车设计原则" class="headerlink" title="购物车设计原则"></a>购物车设计原则</h4><ul><li>如果未登录，需要临时暂存购物车的商品；</li><li>用户登录时，把暂存购物车的商品合并到用户购物车中，并且清除暂存购物车；</li><li>用户登陆后，购物车中的商品，需要在浏览器、手机 APP 和微信等等这些终端中都保持同步。</li></ul><h4 id="暂存购物车设计"><a href="#暂存购物车设计" class="headerlink" title="暂存购物车设计"></a>暂存购物车设计</h4><p>一般的设计都会将这批数据存储在客户端，采用Session、Cookie、LocalStorge,APP的本地存储原理也是类似</p><ul><li>Session的缺陷：保留时间短</li><li>Cookie：每次交互都需要把数据给带上，存储上限4K</li><li>LocalStorage:只能由客户端来访问,</li></ul><h4 id="用户购物车设计"><a href="#用户购物车设计" class="headerlink" title="用户购物车设计"></a>用户购物车设计</h4><p>使用关系型数据库来存储购物车数据，如果追求性能或者高开发，也可以选择Redis</p>]]></content>
+    
+    <summary type="html">
+    
+      后端存储实战-专栏学习内容分享
+    
+    </summary>
+    
+      <category term="专栏学习" scheme="https://by1way.github.io/categories/%E4%B8%93%E6%A0%8F%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="课堂笔记" scheme="https://by1way.github.io/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="存储系统" scheme="https://by1way.github.io/tags/%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>存储系统实战-0</title>
@@ -445,30 +469,6 @@
       <category term="Map" scheme="https://by1way.github.io/tags/Map/"/>
     
       <category term="Echarts" scheme="https://by1way.github.io/tags/Echarts/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ARTS-week14</title>
-    <link href="https://by1way.github.io/2019/06/23/ARTS-week14/"/>
-    <id>https://by1way.github.io/2019/06/23/ARTS-week14/</id>
-    <published>2019-06-23T15:13:51.000Z</published>
-    <updated>2019-06-23T15:07:36.556Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1、Algorithm"><a href="#1、Algorithm" class="headerlink" title="1、Algorithm"></a>1、Algorithm</h2><p><a href="/algorithm/Algorithm-9.html">Algorithm-9. Valid Parentheses <font color="#FF0000">&radic;</font></a></p><h2 id="2、Review"><a href="#2、Review" class="headerlink" title="2、Review"></a>2、Review</h2><p><a href="/review/podc.html">分布式系统原理 <font color="#FF0000">&radic;</font></a></p><h2 id="3、Tips"><a href="#3、Tips" class="headerlink" title="3、Tips"></a>3、Tips</h2><p><a href="/tips/presist.html">到底该不该坚持下去 <font color="#FF0000">&radic;</font></a></p><h2 id="4、Share"><a href="#4、Share" class="headerlink" title="4、Share"></a>4、Share</h2><p><a href="/tips/pdman.html">推荐一款数据库建模工具PDMan <font color="#FF0000">&radic;</font></a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;font color=&quot;#FF0000&quot;&gt;Part Algorithm&lt;/font&gt;:leetcode 9. Valid Parentheses &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Review&lt;/font&gt;:分布式系统原理  &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Tips&lt;/font&gt;:到底该不该坚持下去   &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Share&lt;/font&gt;:推荐一款数据库建模工具PDMan   &amp;radic;&lt;br/&gt;
-    
-    </summary>
-    
-      <category term="attendance" scheme="https://by1way.github.io/categories/attendance/"/>
-    
-    
-      <category term="ARTS" scheme="https://by1way.github.io/tags/ARTS/"/>
-    
-      <category term="Link" scheme="https://by1way.github.io/tags/Link/"/>
     
   </entry>
   
