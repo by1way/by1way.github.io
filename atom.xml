@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://by1way.github.io/"/>
-  <updated>2020-09-15T06:48:03.361Z</updated>
+  <updated>2020-10-22T10:03:59.879Z</updated>
   <id>https://by1way.github.io/</id>
   
   <author>
@@ -15,6 +15,78 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>存储系统实战-0</title>
+    <link href="https://by1way.github.io/2020/10/22/memory-system-00/"/>
+    <id>https://by1way.github.io/2020/10/22/memory-system-00/</id>
+    <published>2020-10-22T01:38:22.000Z</published>
+    <updated>2020-10-22T10:03:59.879Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="基础的认识"><a href="#基础的认识" class="headerlink" title="基础的认识"></a>基础的认识</h3><p><strong>凡是那些特别难解决的、让你付出巨大代价的，或者损失惨重的技术问题，几乎都可以归结为存储系统的问题</strong></p><p><strong>存储是系统中最核心、最重要、最关键的组成部分，没有之一</strong></p><p><strong>MySQL、Redis、ElasticSearch、HBase、Hive、MongoDB、RocksDB、CockroachDB 等等，这些存储还真就是谁都替代不了谁，每一种都有它擅长的地方，有它适用的场景，当然也有很突出的短板。如何根据业务系统的特点，选择合适的存储来构建我们的系统，这也是需要学习和掌握的</strong></p><h3 id="如何保证数据准确无误"><a href="#如何保证数据准确无误" class="headerlink" title="如何保证数据准确无误"></a>如何保证数据准确无误</h3><p><strong>合格的订单系统，最基本的要求是数据不能出错</strong></p><h4 id="如何避免重复下单"><a href="#如何避免重复下单" class="headerlink" title="如何避免重复下单"></a>如何避免重复下单</h4><ul><li>让订单服务具备幂等性<ul><li>任意多次执行所产生的影响均与一次执行的影响相同</li><li>利用数据库主键的唯一性约束来解决创建订单服务的幂等性问题（自定义一个订单号生成的服务）</li></ul></li></ul><h4 id="如何解决ABA问题"><a href="#如何解决ABA问题" class="headerlink" title="如何解决ABA问题"></a>如何解决ABA问题</h4><p><strong>对数据的更新也要注意ABA问题</strong></p><ul><li>什么是ABA问题<ul><li>一个简单的例子，假如有两次请求，第一次要求把数据修改为666，当数据库修改成功，在返回响应的时候失败了，而此时第二个请求到了，要把数据修改为888，并且响应成功了。由于第一次申请没有收到正确的响应，所以进行了重试，这时数据又修改成了666。</li></ul></li></ul><ul><li>怎么解决呢？<ul><li>给数据库表增加一列version,也就是版本号的意思，每次查询version都随着数据返回，再更新的时候把version作为更新请求的参数，发送给更新服务</li><li>更新服务在接收到请求后，对比当前数据的version，是否与请求中的一致，如果不一致就拒绝更新。如果一致，就更新数据的同时把version+1。<strong>当前这个更新的过程必须在同一事务里面</strong></li></ul></li></ul><h3 id="商品详情页如何设计"><a href="#商品详情页如何设计" class="headerlink" title="商品详情页如何设计"></a>商品详情页如何设计</h3><h4 id="商品都包括哪些信息"><a href="#商品都包括哪些信息" class="headerlink" title="商品都包括哪些信息"></a>商品都包括哪些信息</h4><ul><li>基本信息</li><li>商品参数</li><li>商品介绍</li><li><h1 id="图片视频"><a href="#图片视频" class="headerlink" title="图片视频"></a>图片视频</h1></li><li>促销信息</li><li>推荐商品</li><li>评价信息</li><li>评论信息</li><li>配送信息</li><li>店铺信息</li></ul><h4 id="商品基本信息如何存储"><a href="#商品基本信息如何存储" class="headerlink" title="商品基本信息如何存储"></a>商品基本信息如何存储</h4><ol><li>商品基本信息的主副标题、价格、颜色等基本、主要属性，都是固定的。数据量不大，建议在数据库中建一张表来保存商品基本信息。然后在数据库前面加一道缓存，基于内存的KV存储。</li><li>前置缓存缓存商品数据，读取请求流程：<br> 2.1. 先去缓存查找，如果找到就直接返回数据<br> 2.2. 如果没有找到就去数据库查询，把返回结果返回，并缓存一份到缓存</li><li>更新时，在更新数据库的同时也要把缓存给删除，来保证数据一致性(Cache Aside缓存更新策略)</li></ol><p><strong>设计商品信息表时，一定要记得保留商品数据的每一个历史版本</strong></p><h5 id="缓存更新策略"><a href="#缓存更新策略" class="headerlink" title="缓存更新策略"></a>缓存更新策略</h5><ul><li>Cache Aside</li><li>Read/Write Through</li><li>Write Behind</li></ul><h4 id="商品参数如何存储"><a href="#商品参数如何存储" class="headerlink" title="商品参数如何存储"></a>商品参数如何存储</h4><p>使用MongoDB保存商品参数，和商品的基本属性一样，都是结构化数据，不同类型的商品，它的参数也完全不一样。</p><h5 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h5><p>MongoDB是一个面向文档存储的NoSQL数据库，在MongoDB中，表、行、列对应概念：Collection、document、field。<br>表结构是不需要事先定义，MongoDB没有表结构。支持把任意数据放在同一张表中。</p><p>MongoDB中的每一行数据，在存储层就是简单地转化成BSON格式。<strong>这是一种更紧凑的JSON</strong>，MongoDB 不支持 SQL，多表联查和复杂事务比较孱弱，不太适合存储一般的数据。对于商品参数信息，数据量大、数据结构不统一，这些 MongoDB 都可以很好的满足。我们也不需要事务和多表联查，MongoDB 简直就是为了保存商品参数量身定制的一样。</p><h4 id="图片和视频如何存储"><a href="#图片和视频如何存储" class="headerlink" title="图片和视频如何存储"></a>图片和视频如何存储</h4><p><strong>保存在对象存储中</strong></p><h5 id="对象存储"><a href="#对象存储" class="headerlink" title="对象存储"></a>对象存储</h5><p>对象存储可以简单理解为一个无限容量的大文件 KV 存储，它的存储单位是对象，其实就是文件，可以是一张图片，一个视频，也可以是其他任何文件。每个对象都有一个唯一的 key，利用这个 key 就可以随时访问对应的对象。基本的功能就是写入、访问和删除对象。</p><h4 id="商品介绍如何存储"><a href="#商品介绍如何存储" class="headerlink" title="商品介绍如何存储"></a>商品介绍如何存储</h4><p><strong>商品介绍的文本，一般都是随着商详页一起静态化，保存在 HTML 文件中</strong></p><p><strong>Tomcat 能能抗的并发量和 Nginx 完全不是一个数量级的</strong></p><p>商详页静态化之后，不仅仅是可以节省服务器资源，还可以利用 CDN 加速，把商详页放到离用户最近的 <strong>CDN 服务器</strong>上，让商详页访问更快。</p><p><code>商品系统的存储需要提供商品的基本信息、商品参数、图片和视频以及商品介绍等等这些数据。商品的基本信息和商品参数分别保存在 MySQL 和 MongoDB 中，用 Redis 作为前置缓存，图片和视频存放在对象存储中，商品介绍随着商详页一起静态化到商详静态页中。</code></p>]]></content>
+    
+    <summary type="html">
+    
+      后端存储实战-专栏学习内容分享
+    
+    </summary>
+    
+      <category term="专栏学习" scheme="https://by1way.github.io/categories/%E4%B8%93%E6%A0%8F%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="课堂笔记" scheme="https://by1way.github.io/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="存储系统" scheme="https://by1way.github.io/tags/%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>架构师训练营课堂笔记01周</title>
+    <link href="https://by1way.github.io/2020/09/28/SATR-01/"/>
+    <id>https://by1way.github.io/2020/09/28/SATR-01/</id>
+    <published>2020-09-28T01:38:22.000Z</published>
+    <updated>2020-09-28T10:15:33.469Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a>写在前面的话</h3><p>训练营已经结束一周了，虽然也做了课程总结以及整个课程的思维导图，脑子里也有了一些东西，但感觉还不是很清晰，所以我想再学习梳理一下。既然有这样的决心，那也一定要相应的计划。说到计划，又开始有点犯愁了，我怕我完不成呀，真的是有点犹豫。因为我还有别的课程要去学。好吧，在这儿经过一番挣扎之后，我还觉得好好计划一下这15周课的总结了。</p><ul><li>9.28-29，第一周</li><li>9.30-10.1，第二周</li><li>10.2-10.3，第三周</li><li>10.4-10.5，第四周</li><li>10.6-10.7，第五周</li><li>10.8-10.9，第六周</li><li>10.10-10.11，第七周</li><li>10.12-10.13，第八周</li><li>10.14-10.15，第九周</li><li>10.16-10.17，第十周</li><li>10.18-10.19，第十一周</li><li>10.20-10.21，第十二周</li><li>10.22-10.23，第十三周</li><li>10.24-10.25，第十四周</li><li>10.26-10.27，第十五周</li></ul><h3 id="第一周"><a href="#第一周" class="headerlink" title="第一周"></a>第一周</h3><p>本节重点</p><ol><li>课程学什么</li><li>课程是怎么设计的</li><li>如何学习这门课程</li><li>通过课程可以收获到什么</li></ol><p>希望训练营能带来一些收获：关于架构的思维方式，解决问题的一些方式，知识体系能够串起来能够领悟它，所以悟性很重要，明白为什么要这样。问题是什么，比如何做对架构而言都更重要一点</p><p>训练营不讲技术的应用，技术的应用不应该是架构所关注的点，用什么样的思维方式去面对问题，能够领悟到问题的本质是什么。</p><p>训练营想训练的是面对问题，思考问题的一种方式，解决问题的思路以及思路背后的关系，然后把这些再统统的整合在一起</p><p>悟性，悟性、悟性。</p><p>ppt是知识的架子。悟到是一层窗户纸</p><h3 id="架构方法（架构师如何做架构）"><a href="#架构方法（架构师如何做架构）" class="headerlink" title="架构方法（架构师如何做架构）"></a>架构方法（架构师如何做架构）</h3><p>架构师输出的是什么？ppt?</p><h4 id="如何成为架构师"><a href="#如何成为架构师" class="headerlink" title="如何成为架构师"></a>如何成为架构师</h4><pre><code>做架构是需要，架构方案、架构设计大家按这个设计进行分工开发做架构的途径：1、要有任命（跳槽、内部晋升）架构师面试大厂offer该如何获取</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      极客大学架构师训练营，主讲李智慧老师，随堂学习笔记
+    
+    </summary>
+    
+      <category term="架构师训练营" scheme="https://by1way.github.io/categories/%E6%9E%B6%E6%9E%84%E5%B8%88%E8%AE%AD%E7%BB%83%E8%90%A5/"/>
+    
+    
+      <category term="分享" scheme="https://by1way.github.io/tags/%E5%88%86%E4%BA%AB/"/>
+    
+      <category term="课堂笔记" scheme="https://by1way.github.io/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习计划</title>
+    <link href="https://by1way.github.io/2020/09/28/plan/"/>
+    <id>https://by1way.github.io/2020/09/28/plan/</id>
+    <published>2020-09-28T01:38:22.000Z</published>
+    <updated>2020-10-23T06:54:25.759Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="到底应该先学哪一个呢？幸福来的太突然"><a href="#到底应该先学哪一个呢？幸福来的太突然" class="headerlink" title="到底应该先学哪一个呢？幸福来的太突然"></a>到底应该先学哪一个呢？幸福来的太突然</h3><p>每天三篇的话，最多也就一个月能完成一个专栏。是不是也挺实际的呀。哈哈</p><ul><li>左耳听风</li><li>DDD实战课（一定要把这个给啃下来）</li><li>许式伟架构课</li><li>消息队列高手课</li><li>Java性能调优实战</li><li>架构实战案例解析</li><li>Java业务开发觉错误100例：这个特配合代码来，没有那么多实践经验的话，也学不太深入，最多也只是走马观花，有个大概的印象，目前不太适合速读</li><li>JVM实战高手</li><li>MySQL实战优化高手</li><li>趣谈网络协议</li><li>重学前端</li><li>设计模式之美</li><li>Spring Cloud 微服务核心技术与实战</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      专栏学习内容分享
+    
+    </summary>
+    
+      <category term="专栏学习" scheme="https://by1way.github.io/categories/%E4%B8%93%E6%A0%8F%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="分享" scheme="https://by1way.github.io/tags/%E5%88%86%E4%BA%AB/"/>
+    
+      <category term="课堂笔记" scheme="https://by1way.github.io/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -330,12 +402,12 @@
   
   <entry>
     <title>echarts全国地图分享</title>
-    <link href="https://by1way.github.io/2019/07/01/echart/"/>
-    <id>https://by1way.github.io/2019/07/01/echart/</id>
+    <link href="https://by1way.github.io/2019/07/01/echarts-map/"/>
+    <id>https://by1way.github.io/2019/07/01/echarts-map/</id>
     <published>2019-07-01T02:13:51.000Z</published>
-    <updated>2019-07-01T06:02:27.010Z</updated>
+    <updated>2019-08-14T03:29:10.331Z</updated>
     
-    <content type="html"><![CDATA[<p>先看看效果图,这个效果还是挺好的，做个免费可视化的大屏还真是可以的。在这儿我也做资源的搬运工吧，把地图的数据以及使用地图能做的效果展示给大家看，相信可以帮助到你！<br><img src="/2019/07/01/echart/908.png" alt="全国地图展示"><br><img src="/2019/07/01/echart/946.png" alt="全省地图展示"><br><img src="/2019/07/01/echart/038.png" alt="全市地图展示"><br><img src="/2019/07/01/echart/809.png" alt="地图展示"></p><p>附上两个文件的下载链接（别客气，可以直接下载的无毒）：<br><a href="/file/echartsMap.rar">echartsMap，全国各省、市、县的地图数据</a><br><a href="/file/iDataV-master.zip">iDataV-master，这个是有好几个大屏显示效果的demo,绝对的干货</a></p>]]></content>
+    <content type="html"><![CDATA[<p>先看看效果图,这个效果还是挺好的，做个免费可视化的大屏还真是可以的。<br><img src="/2019/07/01/echarts-map/809.png" alt="地图展示"></p><p>附上两个文件的下载链接：<br><a href="/file/echartsMap.rar">echartsMap，全国各省、市、县的地图数据</a><br><a href="/file/iDataV-master.zip">iDataV-master，这个是有好几个大屏显示效果的demo,绝对的干货</a></p>]]></content>
     
     <summary type="html">
     
@@ -354,12 +426,12 @@
   
   <entry>
     <title>echarts全国地图分享</title>
-    <link href="https://by1way.github.io/2019/07/01/echarts-map/"/>
-    <id>https://by1way.github.io/2019/07/01/echarts-map/</id>
+    <link href="https://by1way.github.io/2019/07/01/echart/"/>
+    <id>https://by1way.github.io/2019/07/01/echart/</id>
     <published>2019-07-01T02:13:51.000Z</published>
-    <updated>2019-08-14T03:29:10.331Z</updated>
+    <updated>2019-07-01T06:02:27.010Z</updated>
     
-    <content type="html"><![CDATA[<p>先看看效果图,这个效果还是挺好的，做个免费可视化的大屏还真是可以的。<br><img src="/2019/07/01/echarts-map/809.png" alt="地图展示"></p><p>附上两个文件的下载链接：<br><a href="/file/echartsMap.rar">echartsMap，全国各省、市、县的地图数据</a><br><a href="/file/iDataV-master.zip">iDataV-master，这个是有好几个大屏显示效果的demo,绝对的干货</a></p>]]></content>
+    <content type="html"><![CDATA[<p>先看看效果图,这个效果还是挺好的，做个免费可视化的大屏还真是可以的。在这儿我也做资源的搬运工吧，把地图的数据以及使用地图能做的效果展示给大家看，相信可以帮助到你！<br><img src="/2019/07/01/echart/908.png" alt="全国地图展示"><br><img src="/2019/07/01/echart/946.png" alt="全省地图展示"><br><img src="/2019/07/01/echart/038.png" alt="全市地图展示"><br><img src="/2019/07/01/echart/809.png" alt="地图展示"></p><p>附上两个文件的下载链接（别客气，可以直接下载的无毒）：<br><a href="/file/echartsMap.rar">echartsMap，全国各省、市、县的地图数据</a><br><a href="/file/iDataV-master.zip">iDataV-master，这个是有好几个大屏显示效果的demo,绝对的干货</a></p>]]></content>
     
     <summary type="html">
     
@@ -388,78 +460,6 @@
     <summary type="html">
     
       &lt;font color=&quot;#FF0000&quot;&gt;Part Algorithm&lt;/font&gt;:leetcode 9. Valid Parentheses &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Review&lt;/font&gt;:分布式系统原理  &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Tips&lt;/font&gt;:到底该不该坚持下去   &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Share&lt;/font&gt;:推荐一款数据库建模工具PDMan   &amp;radic;&lt;br/&gt;
-    
-    </summary>
-    
-      <category term="attendance" scheme="https://by1way.github.io/categories/attendance/"/>
-    
-    
-      <category term="ARTS" scheme="https://by1way.github.io/tags/ARTS/"/>
-    
-      <category term="Link" scheme="https://by1way.github.io/tags/Link/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ARTS-week13</title>
-    <link href="https://by1way.github.io/2019/06/20/ARTS-week13/"/>
-    <id>https://by1way.github.io/2019/06/20/ARTS-week13/</id>
-    <published>2019-06-20T15:13:51.000Z</published>
-    <updated>2019-06-23T14:59:23.034Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1、Algorithm"><a href="#1、Algorithm" class="headerlink" title="1、Algorithm"></a>1、Algorithm</h2><p><a href="/algorithm/Algorithm-20.html">Algorithm-20. Valid Parentheses <font color="#FF0000">&radic;</font></a></p><h2 id="2、Review"><a href="#2、Review" class="headerlink" title="2、Review"></a>2、Review</h2><p><a href="/review/podc.html">分布式系统原理 <font color="#FF0000">&radic;</font></a></p><h2 id="3、Tips"><a href="#3、Tips" class="headerlink" title="3、Tips"></a>3、Tips</h2><p><a href="/tips/tkarch.html">思考框架 <font color="#FF0000">&radic;</font></a></p><h2 id="4、Share"><a href="#4、Share" class="headerlink" title="4、Share"></a>4、Share</h2><p><a href="/tips/es6.html">ES6入门教育 <font color="#FF0000">&radic;</font></a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;font color=&quot;#FF0000&quot;&gt;Part Algorithm&lt;/font&gt;:leetcode 20. Valid Parentheses &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Review&lt;/font&gt;:分布式系统原理  &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Tips&lt;/font&gt;:思考框架   &amp;radic;&lt;br/&gt; &lt;font color=&quot;#FF0000&quot;&gt;Part Share&lt;/font&gt;:ES6   &amp;radic;&lt;br/&gt;
-    
-    </summary>
-    
-      <category term="attendance" scheme="https://by1way.github.io/categories/attendance/"/>
-    
-    
-      <category term="ARTS" scheme="https://by1way.github.io/tags/ARTS/"/>
-    
-      <category term="Link" scheme="https://by1way.github.io/tags/Link/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ARTS-week12</title>
-    <link href="https://by1way.github.io/2019/06/09/ARTS-week12/"/>
-    <id>https://by1way.github.io/2019/06/09/ARTS-week12/</id>
-    <published>2019-06-09T15:13:51.000Z</published>
-    <updated>2019-06-23T14:50:29.520Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1、Algorithm"><a href="#1、Algorithm" class="headerlink" title="1、Algorithm"></a>1、Algorithm</h2><p><a href="/algorithm/Algorithm-232.html">Algorithm-232. Implement Queue using Stacks <font color="#FF0000">&radic;</font></a></p><h2 id="2、Review"><a href="#2、Review" class="headerlink" title="2、Review"></a>2、Review</h2><p><a href="/review/podc.html">分布式系统原理 <font color="#FF0000">&radic;</font></a></p><h2 id="3、Tips"><a href="#3、Tips" class="headerlink" title="3、Tips"></a>3、Tips</h2><p><a href="/tips/openssh.html">openSSH升级 <font color="#FF0000">&radic;</font></a></p><h2 id="4、Share"><a href="#4、Share" class="headerlink" title="4、Share"></a>4、Share</h2><p><a href="/tips/tecmgr.html">技术管理星空图 <font color="#FF0000">&radic;</font></a></p>]]></content>
-    
-    <summary type="html">
-    
-      Part Algorithm:leetcode 232. Implement Queue using Stacks&lt;br/&gt; Part Review:分布式系统原理  &lt;br/&gt; Part Tips:openSSH升级   &lt;br/&gt; Part Share:技术管理星空图   &lt;br/&gt;
-    
-    </summary>
-    
-      <category term="attendance" scheme="https://by1way.github.io/categories/attendance/"/>
-    
-    
-      <category term="ARTS" scheme="https://by1way.github.io/tags/ARTS/"/>
-    
-      <category term="Link" scheme="https://by1way.github.io/tags/Link/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ARTS-week11</title>
-    <link href="https://by1way.github.io/2019/06/02/ARTS-week11/"/>
-    <id>https://by1way.github.io/2019/06/02/ARTS-week11/</id>
-    <published>2019-06-02T15:13:51.000Z</published>
-    <updated>2019-06-09T16:07:22.038Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1、Algorithm"><a href="#1、Algorithm" class="headerlink" title="1、Algorithm"></a>1、Algorithm</h2><p><a href="/algorithm/Algorithm-232.html">Algorithm-232. Implement Queue using Stacks <font color="#FF0000">&radic;</font></a></p><h2 id="2、Review"><a href="#2、Review" class="headerlink" title="2、Review"></a>2、Review</h2><p><a href="/review/podc.html">分布式系统原理 <font color="#FF0000">&radic;</font></a></p><h2 id="3、Tips"><a href="#3、Tips" class="headerlink" title="3、Tips"></a>3、Tips</h2><p><a href="/tips/reading.html">一个人是他所有读过的书的总和 <font color="#FF0000">&radic;</font></a></p><h2 id="4、Share"><a href="#4、Share" class="headerlink" title="4、Share"></a>4、Share</h2><p><a href="/tips/ddd.html">关于领域驱动设计的分享 <font color="#FF0000">&radic;</font></a></p>]]></content>
-    
-    <summary type="html">
-    
-      Part Algorithm:leetcode 232. Implement Queue using Stacks &lt;br/&gt; Part Review:分布式系统原理  &lt;br/&gt; Part Tips:一个人是他所有读过的书的总和  &lt;br/&gt; Part Share:领域驱动设计   &lt;br/&gt;
     
     </summary>
     
