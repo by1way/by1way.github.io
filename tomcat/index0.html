@@ -1,0 +1,177 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title> | By1way</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + '23548c5ffb96043176d784e058b0ea36';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">By1way</h1><a id="logo" href="/.">By1way</a><p class="description">用心记录每一份成长、每一滴收获、每一个新奇</p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-content"><h3 id="Tomcat-源码剖析"><a href="#Tomcat-源码剖析" class="headerlink" title="Tomcat 源码剖析"></a>Tomcat 源码剖析</h3><ul>
+<li>Part01 :揭开Tomcat套娃式架构设计的神秘面纱<ul>
+<li>架构属于设计层次，而源码是对设计的实现</li>
+<li>具体到Tomcat，它的架构设计比较独特，属于套娃式架构设计</li>
+</ul>
+</li>
+<li>Part02: 源码剖析经验技巧分享（源代码剖析的原则、方法和技巧）</li>
+<li>Part03: 源码级梳理Tomcat实例构建的脉络（Tomcat启动过程源码分析，启动过程是怎样的）</li>
+<li>Part04: 源码级剖析Servlet请求处理链路（Servlet请求是如何被Tomcat处理的）</li>
+</ul>
+<h4 id="Tomcat套娃式架构设计"><a href="#Tomcat套娃式架构设计" class="headerlink" title="Tomcat套娃式架构设计"></a>Tomcat套娃式架构设计</h4><ol>
+<li>Tomcat有什么功能？（需求）<br> 核心功能：<ul>
+<li>http服务器：接收请求-Socket通信（TCP/IP），解析http报文</li>
+<li>Servlet容器：很多servlet(自带的和自定义的)，找到具体的servlet，然后来处理具体的请求</li>
+</ul>
+</li>
+<li><p>Tomcat架构是怎样的（架构就是为了完成功能需求所做的设计）</p>
+<ul>
+<li><p>什么tomcat架构？为了实现上述核心功能，tomcat进行了很多的封装设计，封装出了很多的组件，组件与组件之间的送给就构成了所谓的tomcat架构</p>
+<p><img src="/tomcat/index0_files/1.jpg" alt="架构图"><br>核心组件：</p>
+</li>
+<li>连接器组件Connector:就是为了完成http服务器功能的。组件名称：Coyote<ul>
+<li>EndPoint组件：socket通讯，I/O模型（BIO/NIO/NIO2/APR)，监听端口，通信端点（TCP/IP协议）—ProtocolHandle组件</li>
+<li>Processor组件：报文解析(HTTP协议/AJP协议-发布静态资源)—ProtocolHandle组件</li>
+<li>Adapter组件：将Request转换成ServletRequest,ServletResponse转换成Response</li>
+</ul>
+</li>
+<li><p>Container组件：就是为了完成Servlet功能，组件名称：Catalina</p>
+<ul>
+<li>Engine</li>
+<li>Host</li>
+<li>Context</li>
+<li>Wrapper</li>
+</ul>
+</li>
+<li><p>Server组件：代表一个Tomcat实例，server.xml</p>
+<ul>
+<li>Service组件，代表一个服务集合<ul>
+<li>Connector组件</li>
+<li>Connector组件</li>
+</ul>
+</li>
+<li>Service组件</li>
+</ul>
+<p>因为Catalina组件是Tomcat的核心，所以通常也Tomcat实例是一个Catalina实例。多个Connector只能对应一个Contrainer容器</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="3">
+<li><p>Tomcat套娃式架构设计的好处</p>
+<p> 套娃式设计</p>
+<ul>
+<li><p>Server-代表一个tomcat实例</p>
+<ul>
+<li>Service-对外提供具体的服务<ul>
+<li>Connector<ul>
+<li>ProtocolHandle<ul>
+<li>Endpoint</li>
+<li>Processor</li>
+</ul>
+</li>
+<li>Adapter</li>
+</ul>
+</li>
+<li>Container<ul>
+<li>Engine-servlet容器<ul>
+<li>Host<ul>
+<li>Context<ul>
+<li>Wrapper-一个wraaper对应一个servlet<ul>
+<li>servlet</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>对照server.xml来看</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">Server</span> <span class="attr">port</span>=<span class="string">"8205"</span> <span class="attr">shutdown</span>=<span class="string">"SHUTDOWN"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Listener</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.startup.VersionLoggerListener"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Listener</span> <span class="attr">SSLEngine</span>=<span class="string">"on"</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.core.AprLifecycleListener"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Listener</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.core.JasperListener"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Listener</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.core.JreMemoryLeakPreventionListener"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Listener</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Listener</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.core.ThreadLocalLeakPreventionListener"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">GlobalNamingResources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Resource</span> <span class="attr">auth</span>=<span class="string">"Container"</span> <span class="attr">description</span>=<span class="string">"User database that can be updated and saved"</span> <span class="attr">factory</span>=<span class="string">"org.apache.catalina.users.MemoryUserDatabaseFactory"</span> <span class="attr">name</span>=<span class="string">"UserDatabase"</span> <span class="attr">pathname</span>=<span class="string">"conf/tomcat-users.xml"</span> <span class="attr">type</span>=<span class="string">"org.apache.catalina.UserDatabase"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">GlobalNamingResources</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Service</span> <span class="attr">name</span>=<span class="string">"Catalina"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Connector</span> <span class="attr">executor</span>=<span class="string">"tomcatThreadPool"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">port</span>=<span class="string">"8080"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8209"</span> <span class="attr">protocol</span>=<span class="string">"AJP/1.3"</span> <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Engine</span> <span class="attr">defaultHost</span>=<span class="string">"localhost"</span> <span class="attr">name</span>=<span class="string">"Catalina"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Realm</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.realm.LockOutRealm"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Realm</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.realm.UserDatabaseRealm"</span> <span class="attr">resourceName</span>=<span class="string">"UserDatabase"</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">Realm</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Host</span> <span class="attr">appBase</span>=<span class="string">"webapps"</span> <span class="attr">autoDeploy</span>=<span class="string">"true"</span> <span class="attr">name</span>=<span class="string">"localhost"</span> <span class="attr">unpackWARs</span>=<span class="string">"true"</span>&gt;</span>	        </span><br><span class="line">		<span class="tag">&lt;<span class="name">Valve</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.valves.AccessLogValve"</span> <span class="attr">directory</span>=<span class="string">"logs"</span> <span class="attr">pattern</span>=<span class="string">"%h %l %u %t &amp;quot;%r&amp;quot; %s %b"</span> <span class="attr">prefix</span>=<span class="string">"localhost_access_log."</span> <span class="attr">suffix</span>=<span class="string">".txt"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Host</span>&gt;</span>	      </span><br><span class="line">    <span class="tag">&lt;/<span class="name">Engine</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">Service</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Server</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>这种设计方式有什么好处呢？
+* 组件关系特别清晰，便于组件生命周期的管理
+* 正好和xml配置文件中标签的的包含方式对应上，那么在后续对解读xml及封装对象的过程就很容易对应
+* 子容器继承父容器的一些配置
+</code></pre><h4 id="源码剖析经验技巧"><a href="#源码剖析经验技巧" class="headerlink" title="源码剖析经验技巧"></a>源码剖析经验技巧</h4><p><strong>剖析源代码需要讲究一些原则，注意一些方法和技巧，否则就会很容易在源代码的海洋中迷失自己</strong></p>
+<ul>
+<li>好处：提高我们的架构思维，深入认识代码，深入理解项目（框架）</li>
+<li>原则：<ul>
+<li>定焦原则（抓主线，去分析，不要漫无目的的去看）</li>
+<li>宏观原则（上帝视角，先脉络后枝叶，不要尝试去读懂每一行代码）</li>
+</ul>
+</li>
+<li>方法和技巧<ul>
+<li>善用断点模式（调用栈）</li>
+<li>善用反调（不知道这一个方法在哪些地方被用到了）</li>
+<li>doXXX,service()，干具体活的</li>
+<li>见名思意</li>
+<li>多用多练</li>
+</ul>
+</li>
+</ul>
+<h4 id="源码构建"><a href="#源码构建" class="headerlink" title="源码构建"></a>源码构建</h4><p>JasperInitializer需要手动填加？为什么</p>
+<h4 id="Tomcat启动过程源码分析"><a href="#Tomcat启动过程源码分析" class="headerlink" title="Tomcat启动过程源码分析"></a>Tomcat启动过程源码分析</h4><p><code>思考一下：tomcat要启动，肯定要把架构中提到的组件 进行实例化（实例化创建--&gt;销毁；生命周期），Tomcat中那么多的组件 ，为了统一规范他们的生命周期，Tomcat抽象出了lifeCycle（生命周期接口）</code></p>
+<p>Lifecycle生命周期接口方法</p>
+<ul>
+<li>init()</li>
+<li>start()</li>
+<li>stop()</li>
+<li>destroy()<br><img src="/tomcat/index0_files/2.jpg" alt="实现接口"></li>
+</ul>
+<ul>
+<li>WebResourceRoot</li>
+<li>Container<ul>
+<li>Wrapper</li>
+<li>Context</li>
+<li>Engine</li>
+</ul>
+</li>
+<li>Executor</li>
+<li>LifecycleBase</li>
+<li>WebResourceSet</li>
+<li>WebappClassLoaderBase</li>
+<li>Service</li>
+<li>Server</li>
+</ul>
+<h5 id="Tomcat启动入口分析"><a href="#Tomcat启动入口分析" class="headerlink" title="Tomcat启动入口分析"></a>Tomcat启动入口分析</h5><p>start.sh–&gt;catalina.sh start–&gt;java xxx.jar org.apache.catalina.startup.Bootstrap start</p>
+<h5 id="Tomcat启动流程分析"><a href="#Tomcat启动流程分析" class="headerlink" title="Tomcat启动流程分析"></a>Tomcat启动流程分析</h5><ul>
+<li>init：catalinaDaemon=catalina对象，daemon=Bootstrap</li>
+<li>daemon.load():调用catalina.load()</li>
+<li>daemon.start():调用catalina.start()</li>
+</ul>
+<p>catalina.load()初始化阶段：一级一级的初始化（对象的实例化）；connector组件endpoint(socket通信端口绑定，尚未accept)</p>
+<p>catalina.start()启动阶段：一级一级的启动，开始accept接收请求。</p>
+<p><img src="/tomcat/index0_files/3.jpg" alt="tomcat启动之load加载初始化过程图"></p>
+<p><img src="/tomcat/index0_files/4.jpg" alt="start过程"></p>
+<p>Engine在启动的时候用了多线程，这样的话，多个host就可以并行实例化了，加快tomcat的启动速度<br>还引入了一些监听器</p>
+<h5 id="Servlet请求处理链路源码分析"><a href="#Servlet请求处理链路源码分析" class="headerlink" title="Servlet请求处理链路源码分析"></a>Servlet请求处理链路源码分析</h5><ul>
+<li>从源码层次分析一个servlet是如何被Tomcat处理的</li>
+</ul>
+<p>一个servlet请求—&gt;最终是需要找到能够处理当前servlet请求的servlet实例—-&gt;servlet.service()</p>
+<p>connector-&gt;engine-&gt;host-&gt;context-&gt;wrapper<br>当一个servlet请求到来的时候，tomcat是通过怎么样的锁定机制锁定到servlet并执行的<br>poller方法</p>
+<p><img src="/tomcat/index0_files/5.jpg" alt></p>
+<ul>
+<li>请求链路示例<br>Poller线程</li>
+</ul>
+</div></div><div id="lv-container" data-id="city" data-uid="MTAyMC80MzczNi8yMDI3NQ=="><script>(function(d, s) {
+   var j, e = d.getElementsByTagName(s)[0];
+   if (typeof LivereTower === 'function') { return; }
+   j = d.createElement(s);
+   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+   j.async = true;
+   e.parentNode.insertBefore(j, e);
+})(document, 'script');
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/NoSQL数据/">NoSQL数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/attendance/">attendance</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/专业英语/">专业英语</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/专栏学习/">专栏学习</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/分享/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/宝库/">宝库</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/文档服务器/">文档服务器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构师视角/">架构师视角</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构师训练营/">架构师训练营</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构探索/">架构探索</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/">读书</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/重启/">重启</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/原始分布式时代/" style="font-size: 15px;">原始分布式时代</a> <a href="/tags/重启/" style="font-size: 15px;">重启</a> <a href="/tags/单体系统/" style="font-size: 15px;">单体系统</a> <a href="/tags/SOA时代/" style="font-size: 15px;">SOA时代</a> <a href="/tags/后微服务时代/" style="font-size: 15px;">后微服务时代</a> <a href="/tags/无服务时代/" style="font-size: 15px;">无服务时代</a> <a href="/tags/微服务时代/" style="font-size: 15px;">微服务时代</a> <a href="/tags/远程服务调用/" style="font-size: 15px;">远程服务调用</a> <a href="/tags/ARTS/" style="font-size: 15px;">ARTS</a> <a href="/tags/Link/" style="font-size: 15px;">Link</a> <a href="/tags/资源/" style="font-size: 15px;">资源</a> <a href="/tags/课堂笔记/" style="font-size: 15px;">课堂笔记</a> <a href="/tags/分享/" style="font-size: 15px;">分享</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/Echarts/" style="font-size: 15px;">Echarts</a> <a href="/tags/阅读/" style="font-size: 15px;">阅读</a> <a href="/tags/FastDFS/" style="font-size: 15px;">FastDFS</a> <a href="/tags/分布式文档服务器/" style="font-size: 15px;">分布式文档服务器</a> <a href="/tags/存储系统/" style="font-size: 15px;">存储系统</a> <a href="/tags/事务处理/" style="font-size: 15px;">事务处理</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/02/07/07-远程服务调用/">07.远程服务调用</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/07/06-无服务时代的探索/">06.无服务时代：不分布式云端系统的起点</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/07/05-后微服务时代的探索/">05.后微服务时代：跨越软件与硬件之间的界限</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/07/04-微服务时代的探索/">04.微服务时代：SOA的革命者</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/07/03-SOA时代的探索/">03.SOA时代：成功理论与失败实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/07/02-单体系统时代的探索/">02.单体系统时代</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/07/01-原始分布式时代的探索/">01.原始分布式时代</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/07/00-日走一卒，重启航/">00.慢慢的我来了</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/07/transaction1/">事务处理一</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/07/transaction3/">事务处理三</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://wild2pro.com/" title="写程序的厨子" target="_blank">写程序的厨子</a><ul></ul><a href="https://lilyssh.cn/" title="lilyssh(新认识的一个技术牛人)" target="_blank">lilyssh(新认识的一个技术牛人)</a><ul></ul><a href="https://www.byway.xyz/" title="我自己" target="_blank">我自己</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2021 <a href="/." rel="nofollow">By1way.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Carol.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
