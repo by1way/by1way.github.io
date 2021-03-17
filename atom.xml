@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://by1way.github.io/"/>
-  <updated>2021-03-16T10:29:04.487Z</updated>
+  <updated>2021-03-17T11:37:54.894Z</updated>
   <id>https://by1way.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>08.远程服务调用</title>
+    <link href="https://by1way.github.io/2021/03/07/08/"/>
+    <id>https://by1way.github.io/2021/03/07/08/</id>
+    <published>2021-03-07T03:44:51.000Z</published>
+    <updated>2021-03-17T11:37:54.894Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="周志明架构课-架构师视角"><a href="#周志明架构课-架构师视角" class="headerlink" title="周志明架构课-架构师视角"></a>周志明架构课-架构师视角</h2><h3 id="08-远程服务调用：如何选择适合自己的RPC框架"><a href="#08-远程服务调用：如何选择适合自己的RPC框架" class="headerlink" title="08.远程服务调用：如何选择适合自己的RPC框架"></a>08.远程服务调用：如何选择适合自己的RPC框架</h3><p>这一篇先来个图图：</p><p><img src="/2021/03/07/08/08.png" alt="如何选择适合自己的RPC框架？"></p><p>今天就看图说话啦。</p><p>大家先想一下，世面上有很多的RPC框架，各种讲解RPC框架的教程，大家也都是有一个学一个。今天学学dubbo，明天学学gRPC的，那这些RPC都有什么共性吗？为什么会有这么多RPC呢？为什么没有一个通用的RPC框架呢？这些问题是不是大家也都想过，不过存在即有理，接下来我们就从RPC最核心的内容来看看，这些问题有没有一个答案。</p><h4 id="RPC要解决什么问题？"><a href="#RPC要解决什么问题？" class="headerlink" title="RPC要解决什么问题？"></a>RPC要解决什么问题？</h4><p>看到这问题是不是有点懵圏了。RPC要解决什么问题？不就是解决远程服务通讯的问题吗？不是的这个问题的意思就是要想从0开发一个RPC，都需要解决什么问题。</p><h5 id="1-数据如何表示"><a href="#1-数据如何表示" class="headerlink" title="1. 数据如何表示"></a>1. 数据如何表示</h5><p>​    首先就是解决数据表示的问题，什么意思呢？各个语言各种操作系统都有不小的差异那怎么才能保证数据在源和在目标表示 的意义是一样的呢。这说的也就是数据如何表示 的意思了。再具体一点就是参数、返回值之类的这些玩艺儿。</p><p>​    在明确了问题之后，是不是得想办法解决了，有什么好的解决思路呢？单纯依靠某一方肯定是不行的，至少不公平也会产生不少的纠纷。那好吧，映射到现实社会中，自然而然就是找一个大家都看好的第三方喽。不是玩笑，真的是这么个思路。</p><p>​    因为RPC发展现在已经有很多成熟的方案的了。像gRPC的ProtocolBuffer ，web service的XML Serialization,以及很多轻量级RPC的Json Serialization都可以拿得出手的</p><h5 id="2-数据如何传输"><a href="#2-数据如何传输" class="headerlink" title="2. 数据如何传输"></a>2. 数据如何传输</h5><p>​    既然数据怎么表示这事儿咱们想明白了，那数据的传输过程又该是怎么样的呢？肯定不会是只搞一个序列化的数据流扔给底层传输协议就完事儿了，这里面需要考虑的东西太多了，像超时了怎么办，发生了异常怎么处理，安全认证怎么搞等等方面都是需要考虑的因素，不过既然能把数据如何表示这件事交给第三方，那第三方肯定也是提供了大量的解决办法的，提一个大家都比较熟悉的SOAP,它就能把这件事处理的明明白白的。</p><h5 id="3-方法如何表示"><a href="#3-方法如何表示" class="headerlink" title="3. 方法如何表示"></a>3. 方法如何表示</h5><p>​    这这这，又得解释一下了。先来对比一下本地方法的调用，本地调用某个方法，编译器会直接帮助我们把要调用的方法转换成内存中方法的入口地址，发生调用的时候你直接按顺序执行就ok了。那一换成远程调用，这点优势突然间就没了。那该怎么破呢？要不给每个方法编个号？也是一种办法哈。但更加靠谱的方法还是得搞一套与程序语言无关的接口描述语言（IDL），像WSDL,JSON-WSP都是基于这个参考这个方法来处理的。</p><h4 id="统一的RPC搞法"><a href="#统一的RPC搞法" class="headerlink" title="统一的RPC搞法"></a>统一的RPC搞法</h4><pre><code>怎么样，怎么样有没有发现一个问题，我好喜欢webservice那套产品呀，有了它岂不是也能一统江湖？用它来搞序列化、数据传输、接口描述，简直不能太美了。但是回过头来再瞅瞅WebService现在那副尿样子，真的是想完美想疯了，啥都很标准，啥都很规范。一点都不接地气，真正用过的人，想一想，它简单吗？它通用吗？它的性能好吗？其实通用方面我觉得做的还可以，如果大家都使用的话。可是它压根儿就没有把性能这事儿重视过哪怕一次。那你说说对得起现在这4G的网络，对得起互联网大厂飞速发展吗？更别提5G了。</code></pre><p>​    搞不成啊，搞不成。</p><p>​    不过说实话，要说把简单、通用、性能都完美的结合在一起真的不是那么容易的。</p><h4 id="RPC又要分裂了"><a href="#RPC又要分裂了" class="headerlink" title="RPC又要分裂了"></a>RPC又要分裂了</h4><p>​    既然Web service没戏了，大家就都取多长吧。这个时候各种RPC框架就开始hi了。什么RMI、Thrift、Dubbo、gRPC等等，发展的猛的很。发展归发展，虽然很多都是在重复造轮子，但大部分都还是很有方向的，有注重性能的、有注重简单的，还有注重通用的，但是大家都不会把追求完美做为首要目标了。</p><p>​    典型的发展方向，有这么几个：</p><ul><li>朝着面向对象发展的，比如RMI、.net Remoting，不用说这一派也是朝着通用发展</li><li>朝着性能方向发展的，比如gRPC、Thrift,就是使劲儿的优化。</li><li>朝着简化方向发展的，比如JSON-RPC，没别的就是简单。</li><li>还有更不要脸的，朝着整合方向发展，我自己有各种组件，诶，但我也允许 你用其他RPC的组件。</li></ul><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>​    总结一下吧，RPC要解决的三个问题是所有RPC框架都需要面临的问题，简单、通用、性能三个方面，不同的要求也有各自成熟的产品，你可以结合自己的需求选择最合适的那个，总有一款适合你。</p>]]></content>
+    
+    <summary type="html">
+    
+      远程服务调用
+    
+    </summary>
+    
+      <category term="架构师视角" scheme="https://by1way.github.io/categories/%E6%9E%B6%E6%9E%84%E5%B8%88%E8%A7%86%E8%A7%92/"/>
+    
+    
+      <category term="远程服务调用" scheme="https://by1way.github.io/tags/%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>07.远程服务调用</title>
@@ -150,12 +172,12 @@
   
   <entry>
     <title>01.原始分布式时代</title>
-    <link href="https://by1way.github.io/2021/02/07/01-%E5%8E%9F%E5%A7%8B%E5%88%86%E5%B8%83%E5%BC%8F%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8E%A2%E7%B4%A2/"/>
-    <id>https://by1way.github.io/2021/02/07/01-原始分布式时代的探索/</id>
+    <link href="https://by1way.github.io/2021/02/07/01/"/>
+    <id>https://by1way.github.io/2021/02/07/01/</id>
     <published>2021-02-07T02:04:51.000Z</published>
     <updated>2021-03-16T10:30:43.834Z</updated>
     
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UNIX设计哲学：</span><br><span class="line">保持接口与实现的简单性，比系统的任何其他属性，包括准确性、一致性和完整性都来得更加重要。</span><br></pre></td></tr></table></figure><p>在这个阶段提出的分布式架构的目标：<font color="#FF0000">使用多个独立的分布式服务来共同构建出一个更大型的系统。</font>而这个目标，从历史的局限性就决定了他不可能 是一蹴而就的解决分布式系统中的难题。其中面临的最大问题就是：<font color="red">由于调用本地方法与调用远程方法的差别，如何像调用本地方法一样去调用远程方法</font></p><p>那“远程”二字代表了什么呢？</p><ol><li>首先不可能 用内联等传统编译原理中的优化算法，来提升运行速度</li><li>远程所带来的网络环境问题，包括：<ul><li>远程服务在哪里–&gt;<font color="red">服务发现</font></li><li>有多少个–&gt;<font color="red">负载均衡</font></li><li>网络出现分区，超时出错怎么办–&gt;<font color="red">熔断，隔离降级</font></li><li>方法参与返回结果如何表示 –&gt;<font color="red">序列化协议</font></li><li>如何传输–&gt;<font color="red">传输协议</font></li><li>服务权限怎么管理–&gt;<font color="red">认证授权</font></li><li>如何 保证通信安全–&gt;<font color="red">网络安全层</font></li><li>如何 令调用不同机器服务返回相同的结果–&gt;<font color="red">分布式数据一致性</font></li></ul></li></ol><p>针对大部分问题，DCE从0开始从无到有回答了其中大部分的问题。</p><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>在这个阶段采用分布式架构，为了解决上述各种问题，所付出的代价远远超过了所取得的收益。那接下来该如何发展呢？</p><ol><li>尽快提升单机处理能力，以避免分布式的种种问题</li><li>寻找更完美的解决方案，来应对上述在构筑分布式系统的问题</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">某个功能能够进行分布式，并不意味着它就应该进行分布式，强行追求透明的分布式操作只会自食其果</span><br></pre></td></tr></table></figure><p>行文思路：</p><p><img src="/2021/02/07/01-原始分布式时代的探索/architect_files/image-20210216102359012.png" alt="image-20210216102359012"></p><h4 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">今天以微服务为代表的分布式系统，是如何看待简单的？</span><br></pre></td></tr></table></figure><p>思考：</p><p>微服务所谓的简单，不管是从开发工具、开发形式亦或是运维上来看，都是在趋于看上去的简单。把复杂 留给 自己，简单留给别人。易开发、易部署、易扩展、易运维等等的说法。都在宣誓着把简单作为主要的原则 ，但背后所面临着诸如本节课所有的讨论的问题，都是需要一一关注，一一解决的。所以我觉得这里的简单并不是真正的简单。</p>]]></content>
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UNIX设计哲学：</span><br><span class="line">保持接口与实现的简单性，比系统的任何其他属性，包括准确性、一致性和完整性都来得更加重要。</span><br></pre></td></tr></table></figure><p>在这个阶段提出的分布式架构的目标：<font color="#FF0000">使用多个独立的分布式服务来共同构建出一个更大型的系统。</font>而这个目标，从历史的局限性就决定了他不可能 是一蹴而就的解决分布式系统中的难题。其中面临的最大问题就是：<font color="red">由于调用本地方法与调用远程方法的差别，如何像调用本地方法一样去调用远程方法</font></p><p>那“远程”二字代表了什么呢？</p><ol><li>首先不可能 用内联等传统编译原理中的优化算法，来提升运行速度</li><li>远程所带来的网络环境问题，包括：<ul><li>远程服务在哪里–&gt;<font color="red">服务发现</font></li><li>有多少个–&gt;<font color="red">负载均衡</font></li><li>网络出现分区，超时出错怎么办–&gt;<font color="red">熔断，隔离降级</font></li><li>方法参与返回结果如何表示 –&gt;<font color="red">序列化协议</font></li><li>如何传输–&gt;<font color="red">传输协议</font></li><li>服务权限怎么管理–&gt;<font color="red">认证授权</font></li><li>如何 保证通信安全–&gt;<font color="red">网络安全层</font></li><li>如何 令调用不同机器服务返回相同的结果–&gt;<font color="red">分布式数据一致性</font></li></ul></li></ol><p>针对大部分问题，DCE从0开始从无到有回答了其中大部分的问题。</p><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>在这个阶段采用分布式架构，为了解决上述各种问题，所付出的代价远远超过了所取得的收益。那接下来该如何发展呢？</p><ol><li>尽快提升单机处理能力，以避免分布式的种种问题</li><li>寻找更完美的解决方案，来应对上述在构筑分布式系统的问题</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">某个功能能够进行分布式，并不意味着它就应该进行分布式，强行追求透明的分布式操作只会自食其果</span><br></pre></td></tr></table></figure><p>行文思路：</p><p><img src="/2021/02/07/01/architect_files/image-20210216102359012.png" alt="image-20210216102359012"></p><h4 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">今天以微服务为代表的分布式系统，是如何看待简单的？</span><br></pre></td></tr></table></figure><p>思考：</p><p>微服务所谓的简单，不管是从开发工具、开发形式亦或是运维上来看，都是在趋于看上去的简单。把复杂 留给 自己，简单留给别人。易开发、易部署、易扩展、易运维等等的说法。都在宣誓着把简单作为主要的原则 ，但背后所面临着诸如本节课所有的讨论的问题，都是需要一一关注，一一解决的。所以我觉得这里的简单并不是真正的简单。</p>]]></content>
     
     <summary type="html">
     
@@ -172,8 +194,8 @@
   
   <entry>
     <title>00.慢慢的我来了</title>
-    <link href="https://by1way.github.io/2021/02/07/00-%E6%97%A5%E8%B5%B0%E4%B8%80%E5%8D%92%EF%BC%8C%E9%87%8D%E5%90%AF%E8%88%AA/"/>
-    <id>https://by1way.github.io/2021/02/07/00-日走一卒，重启航/</id>
+    <link href="https://by1way.github.io/2021/02/07/00/"/>
+    <id>https://by1way.github.io/2021/02/07/00/</id>
     <published>2021-02-07T02:00:51.000Z</published>
     <updated>2021-03-16T10:06:03.688Z</updated>
     
@@ -440,30 +462,6 @@
     
     
       <category term="资源" scheme="https://by1way.github.io/tags/%E8%B5%84%E6%BA%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>程序员的未来在哪儿</title>
-    <link href="https://by1way.github.io/2019/12/17/ARTS-week21/"/>
-    <id>https://by1way.github.io/2019/12/17/ARTS-week21/</id>
-    <published>2019-12-17T01:38:22.000Z</published>
-    <updated>2019-12-17T06:36:49.136Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天是普通的一天，我早早的起来为亲爱的老婆大人买了份早餐（两根油条，一碗豆腐脑），本来还想给她买份小笼包的，但是一想到小笼包已经八块钱一笼了还是放弃吧，哦咸菜不要钱，那就多夹两筷子吧，反正也不要钱。六点五十的时候看到老板在公司运营群里面发图片，这个点他已经在公司旁边的包子店吃三块钱一个的包子了，老板又来公司这边了，那就不能去公司太晚吧。所以就跟老婆大人请了假说，不能去送闺女大人上班了，只能辛苦她去送了（其实一直都她自己送的，只是最近我会跟着一块儿去）。看到她同意了，我就赶紧背上昨天刚收到的拼多多上拼到的30多块钱的双肩包，来上班了。</p><h4 id="97年天材架构师"><a href="#97年天材架构师" class="headerlink" title="97年天材架构师"></a>97年天材架构师</h4><p>可能是早上醒的有点早，所以地铁上一篇文章都没有看完就开始眼睛涩了，想睡觉。好吧，既然不想学习了，那就刷一会儿网页吧。</p>]]></content>
-    
-    <summary type="html">
-    
-      别傻了，程序员哪儿有什么未来？你有吗？反正我是没找到
-    
-    </summary>
-    
-      <category term="读书" scheme="https://by1way.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
-    
-    
-      <category term="分享" scheme="https://by1way.github.io/tags/%E5%88%86%E4%BA%AB/"/>
-    
-      <category term="阅读" scheme="https://by1way.github.io/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
