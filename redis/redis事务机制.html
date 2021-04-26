@@ -1,0 +1,63 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title> | By1way</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + '23548c5ffb96043176d784e058b0ea36';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">By1way</h1><a id="logo" href="/.">By1way</a><p class="description">用心记录每一份成长、每一滴收获、每一个新奇</p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-content"><h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p>ACID：原子性、一致性、隔离性、持久性</p>
+<h3 id="事务要求"><a href="#事务要求" class="headerlink" title="事务要求"></a>事务要求</h3><ol>
+<li>原子性：一个事务中的多个操作必须都完成，或者都不完成</li>
+<li>一致性：数据库中的数据在事务执行前后是一致的</li>
+<li>隔离性：要求数据库在执行一个事务时，其它操作无法获取到正在执行事务访问的数据</li>
+<li>持久性：数据库执行事务后，数据的修改要能够被持久化保存下来，当数据库重启后，数据的值是被修改后的值</li>
+</ol>
+<h3 id="Redis如何实现事务"><a href="#Redis如何实现事务" class="headerlink" title="Redis如何实现事务"></a>Redis如何实现事务</h3><ol>
+<li>客户端要使用命令显示的表示一个事务的开启。这个命令就是MULTI</li>
+<li>客户端要把事务中本身要执行的具体操作发送给服务器端，这些操作就是redis本身提供的读写命令，如get、set等。这些操作命令虽然被发ud这到服务端，但是redis实例只是把这个命令都暂存到了一个命令队列中，并不会立即执行。</li>
+<li>客户端向服务端发送提交事务的命令,让redis实际执行第二步中发送的具体命令。这个命令就是EXEC。服务端呢，也是在收到EXEC命令之后，才会实际执行命令队列中的所有命令。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; multi</span><br><span class="line">OK</span><br><span class="line">&gt; decr a</span><br><span class="line">QUEUED</span><br><span class="line">&gt; decr b</span><br><span class="line">QUEUED</span><br><span class="line">&gt; exec</span><br><span class="line">-1</span><br><span class="line">-1</span><br></pre></td></tr></table></figure>
+<p> 等等，但是按照这种思路搞的话，就能够符合ACID的要求了吗？接着来看一下</p>
+<h4 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h4><ul>
+<li>如果客户端发送的命令本身不对，比如说decr 写成了 dacr，命令错了，或者根本就不存在，那在入队的时候就会被判断出来了。这种情况下还是可以保证原子性的</li>
+<li>如果客户端发送的命令错了，但redis实例并没有检查出来，这种情况下原子性就无法保证了</li>
+<li>还有一种情况，就是在执行过程中redis实例挂了，这就会导致事务失败。但是如果开户了AOF的话，这些命令都会被写入AOF文件，可以使用redis-check-aof工具来检查aof文件，通过这种方式可以把未完成的事务操作从aof文件中去除，这样通过AOF来恢复实例后，事务也就不会再被执行了，从而也保证了原子性。</li>
+</ul>
+<p>所以综上：redis并不能很完整的支持原子性</p>
+<h4 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h4><p>也大概有这么几种情况：</p>
+<ul>
+<li>命令入队的时候就报错，这种情况下事务本身就被放弃执行，所以可以保证数据库的一致性。</li>
+<li>命令入队时没有报错，但是实际执行却报错了。这也不会改变数据库的一致性</li>
+<li>EXEC命令执行时实例发生故障。这种情况可redis恢复方式有关</li>
+</ul>
+<ul>
+<li>如果没有开启RDB和AOF,那么实例重启后数据都没有了，这也算是一种一致</li>
+<li>RDB和AOF一样，数据库的一致性也可以得到保证</li>
+</ul>
+<p>综上，redis可以保证事务的一致性</p>
+<h4 id="隔离性"><a href="#隔离性" class="headerlink" title="隔离性"></a>隔离性</h4><p>从EXEC命令执行的前后两个阶段进行分析：</p>
+<ul>
+<li>并发操作在EXEC命令之前进行，此时的隔离性要使用WATCH机制来实现，</li>
+<li><p>并发操作在EXEC命令之后进行，隔离性可以得到保证</p>
+<p>综上，redis可以保证事务的隔离性</p>
+<h4 id="持久性"><a href="#持久性" class="headerlink" title="持久性"></a>持久性</h4><ul>
+<li>RDB模式下，在一个事务之前先进行一次快照，在事务执行之后，如果此时还没有来得及进行下一次快照，redis实例挂了。这种情况就无法保证事务的持久性</li>
+<li>AOF模式下，提供三种级别的日志写模式：Always(同步写回)、everysec（每秒写回）、no（操作系统定时写回），都会存在数据丢失的情况（可能会有很多人怀疑都always了为啥还不能保证数据被持久化了呢。首先因为AOF是写后日志，如果在AOF记录之前挂掉了，这时连AOF日志都没了。这有就是在每次客户端操作的时候并没有把命令写入到AOF文件中，只是写到了aof_buf内存当中，只有当下一个事件来的时候，才会去调用fsync把命令写入到磁盘中。）<br>综上，redis并不能保证事务的持久性</li>
+</ul>
+</li>
+</ul>
+</div></div><div id="lv-container" data-id="city" data-uid="MTAyMC80MzczNi8yMDI3NQ=="><script>(function(d, s) {
+   var j, e = d.getElementsByTagName(s)[0];
+   if (typeof LivereTower === 'function') { return; }
+   j = d.createElement(s);
+   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+   j.async = true;
+   e.parentNode.insertBefore(j, e);
+})(document, 'script');
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/NoSQL数据/">NoSQL数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/attendance/">attendance</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/专业英语/">专业英语</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/专栏学习/">专栏学习</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/分享/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/宝库/">宝库</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/文档服务器/">文档服务器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构师视角/">架构师视角</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构师训练营/">架构师训练营</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构探索/">架构探索</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/">读书</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/重启/">重启</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/原始分布式时代/" style="font-size: 15px;">原始分布式时代</a> <a href="/tags/重启/" style="font-size: 15px;">重启</a> <a href="/tags/单体系统/" style="font-size: 15px;">单体系统</a> <a href="/tags/SOA时代/" style="font-size: 15px;">SOA时代</a> <a href="/tags/后微服务时代/" style="font-size: 15px;">后微服务时代</a> <a href="/tags/无服务时代/" style="font-size: 15px;">无服务时代</a> <a href="/tags/微服务时代/" style="font-size: 15px;">微服务时代</a> <a href="/tags/远程服务调用/" style="font-size: 15px;">远程服务调用</a> <a href="/tags/ARTS/" style="font-size: 15px;">ARTS</a> <a href="/tags/Link/" style="font-size: 15px;">Link</a> <a href="/tags/资源/" style="font-size: 15px;">资源</a> <a href="/tags/课堂笔记/" style="font-size: 15px;">课堂笔记</a> <a href="/tags/分享/" style="font-size: 15px;">分享</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/Echarts/" style="font-size: 15px;">Echarts</a> <a href="/tags/阅读/" style="font-size: 15px;">阅读</a> <a href="/tags/FastDFS/" style="font-size: 15px;">FastDFS</a> <a href="/tags/分布式文档服务器/" style="font-size: 15px;">分布式文档服务器</a> <a href="/tags/存储系统/" style="font-size: 15px;">存储系统</a> <a href="/tags/事务处理/" style="font-size: 15px;">事务处理</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a> <a href="/tags/RESTful服务/" style="font-size: 15px;">RESTful服务</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/04/30/15-事务处理/">15.事务处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/29/14-事务处理/">14.事务处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/28/13-事务处理/">13.事务处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/27/12-事务处理/">12.事务处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/26/11-事务处理/">11.事务处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/25/10-RESTful服务/">10.RESTful服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/24/09-RESTful服务/">09.RESTful服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/31/32-point/">32-point</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/07/08-远程服务调用/">08.远程服务调用</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/07/07-远程服务调用/">07.远程服务调用</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://wild2pro.com/" title="写程序的厨子" target="_blank">写程序的厨子</a><ul></ul><a href="https://lilyssh.cn/" title="lilyssh(新认识的一个技术牛人)" target="_blank">lilyssh(新认识的一个技术牛人)</a><ul></ul><a href="https://www.byway.xyz/" title="我自己" target="_blank">我自己</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2021 <a href="/." rel="nofollow">By1way.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Carol.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

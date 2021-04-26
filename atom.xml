@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://by1way.github.io/"/>
-  <updated>2021-03-17T11:37:54.894Z</updated>
+  <updated>2021-04-25T01:14:24.097Z</updated>
   <id>https://by1way.github.io/</id>
   
   <author>
@@ -17,13 +17,188 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>15.事务处理</title>
+    <link href="https://by1way.github.io/2021/04/30/15-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+    <id>https://by1way.github.io/2021/04/30/15-事务处理/</id>
+    <published>2021-04-30T04:44:51.000Z</published>
+    <updated>2021-04-25T01:14:24.097Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="周志明架构课-架构师视角"><a href="#周志明架构课-架构师视角" class="headerlink" title="周志明架构课-架构师视角"></a>周志明架构课-架构师视角</h2><h3 id="15-事务处理：分布式事务之TCC与SAGA"><a href="#15-事务处理：分布式事务之TCC与SAGA" class="headerlink" title="15.事务处理：分布式事务之TCC与SAGA"></a>15.事务处理：分布式事务之TCC与SAGA</h3>]]></content>
+    
+    <summary type="html">
+    
+      来了解一下事务处理的本质
+    
+    </summary>
+    
+      <category term="架构师视角" scheme="https://by1way.github.io/categories/%E6%9E%B6%E6%9E%84%E5%B8%88%E8%A7%86%E8%A7%92/"/>
+    
+    
+      <category term="事务处理" scheme="https://by1way.github.io/tags/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>14.事务处理</title>
+    <link href="https://by1way.github.io/2021/04/29/14-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+    <id>https://by1way.github.io/2021/04/29/14-事务处理/</id>
+    <published>2021-04-29T04:44:51.000Z</published>
+    <updated>2021-04-25T01:14:37.331Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="周志明架构课-架构师视角"><a href="#周志明架构课-架构师视角" class="headerlink" title="周志明架构课-架构师视角"></a>周志明架构课-架构师视角</h2><h3 id="14-事务处理：分布式事务之可靠消息队列"><a href="#14-事务处理：分布式事务之可靠消息队列" class="headerlink" title="14.事务处理：分布式事务之可靠消息队列"></a>14.事务处理：分布式事务之可靠消息队列</h3>]]></content>
+    
+    <summary type="html">
+    
+      来了解一下事务处理的本质
+    
+    </summary>
+    
+      <category term="架构师视角" scheme="https://by1way.github.io/categories/%E6%9E%B6%E6%9E%84%E5%B8%88%E8%A7%86%E8%A7%92/"/>
+    
+    
+      <category term="事务处理" scheme="https://by1way.github.io/tags/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>13.事务处理</title>
+    <link href="https://by1way.github.io/2021/04/28/13-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+    <id>https://by1way.github.io/2021/04/28/13-事务处理/</id>
+    <published>2021-04-28T04:44:51.000Z</published>
+    <updated>2021-04-25T01:12:57.905Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="周志明架构课-架构师视角"><a href="#周志明架构课-架构师视角" class="headerlink" title="周志明架构课-架构师视角"></a>周志明架构课-架构师视角</h2><h3 id="13-事务处理：全局事务和共享事务是如实现的"><a href="#13-事务处理：全局事务和共享事务是如实现的" class="headerlink" title="13.事务处理：全局事务和共享事务是如实现的"></a>13.事务处理：全局事务和共享事务是如实现的</h3>]]></content>
+    
+    <summary type="html">
+    
+      来了解一下事务的本质
+    
+    </summary>
+    
+      <category term="架构师视角" scheme="https://by1way.github.io/categories/%E6%9E%B6%E6%9E%84%E5%B8%88%E8%A7%86%E8%A7%92/"/>
+    
+    
+      <category term="事务处理" scheme="https://by1way.github.io/tags/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>12.事务处理</title>
+    <link href="https://by1way.github.io/2021/04/27/12-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+    <id>https://by1way.github.io/2021/04/27/12-事务处理/</id>
+    <published>2021-04-27T04:44:51.000Z</published>
+    <updated>2021-04-25T01:11:45.109Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="周志明架构课-架构师视角"><a href="#周志明架构课-架构师视角" class="headerlink" title="周志明架构课-架构师视角"></a>周志明架构课-架构师视角</h2><h3 id="12-事务处理：本地事务如何实现隔离性"><a href="#12-事务处理：本地事务如何实现隔离性" class="headerlink" title="12.事务处理：本地事务如何实现隔离性"></a>12.事务处理：本地事务如何实现隔离性</h3>]]></content>
+    
+    <summary type="html">
+    
+      来了解一下事务的本质
+    
+    </summary>
+    
+      <category term="架构师视角" scheme="https://by1way.github.io/categories/%E6%9E%B6%E6%9E%84%E5%B8%88%E8%A7%86%E8%A7%92/"/>
+    
+    
+      <category term="事务处理" scheme="https://by1way.github.io/tags/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11.事务处理</title>
+    <link href="https://by1way.github.io/2021/04/26/11-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+    <id>https://by1way.github.io/2021/04/26/11-事务处理/</id>
+    <published>2021-04-26T04:44:51.000Z</published>
+    <updated>2021-04-25T01:14:47.942Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="周志明架构课-架构师视角"><a href="#周志明架构课-架构师视角" class="headerlink" title="周志明架构课-架构师视角"></a>周志明架构课-架构师视角</h2><h3 id="11-事务处理：本地事务如何实现原子性和持久性"><a href="#11-事务处理：本地事务如何实现原子性和持久性" class="headerlink" title="11.事务处理：本地事务如何实现原子性和持久性"></a>11.事务处理：本地事务如何实现原子性和持久性</h3>]]></content>
+    
+    <summary type="html">
+    
+      来了解一下事务的本质
+    
+    </summary>
+    
+      <category term="架构师视角" scheme="https://by1way.github.io/categories/%E6%9E%B6%E6%9E%84%E5%B8%88%E8%A7%86%E8%A7%92/"/>
+    
+    
+      <category term="事务处理" scheme="https://by1way.github.io/tags/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>10.RESTful服务</title>
+    <link href="https://by1way.github.io/2021/04/25/10-RESTful%E6%9C%8D%E5%8A%A1/"/>
+    <id>https://by1way.github.io/2021/04/25/10-RESTful服务/</id>
+    <published>2021-04-25T04:44:51.000Z</published>
+    <updated>2021-04-26T07:01:23.855Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="周志明架构课-架构师视角"><a href="#周志明架构课-架构师视角" class="headerlink" title="周志明架构课-架构师视角"></a>周志明架构课-架构师视角</h2><h3 id="10-RESTful服务：如何评价服务是否RESTful"><a href="#10-RESTful服务：如何评价服务是否RESTful" class="headerlink" title="10.RESTful服务：如何评价服务是否RESTful"></a>10.RESTful服务：如何评价服务是否RESTful</h3><p><img src="/2021/04/25/10-RESTful服务/10-RESTful服务_files/2.jpg" alt="view"></p><h4 id="Richardson成熟度模型"><a href="#Richardson成熟度模型" class="headerlink" title="Richardson成熟度模型"></a>Richardson成熟度模型</h4><ol><li>第０级 The Swamp of Plain Old XML,完成不REST</li><li>Resource,开始引入资源的概念</li><li>HTTP Verbs,引入统一接口，映射到HTTP协议方法上</li><li>Hypermedia Controls,超文本驱动</li></ol><p>场景是这样的：<br>    以开发一个医生预约系统为例，让病人可以通过这个系统，知道自己想要预约的医生在指定日期是否有空闲时间，以方便就诊</p><h5 id="第0级成熟度：-The-Swamp-of-Plain-Old-XML"><a href="#第0级成熟度：-The-Swamp-of-Plain-Old-XML" class="headerlink" title="第0级成熟度： The Swamp of Plain Old XML"></a>第0级成熟度： The Swamp of Plain Old XML</h5><pre><code>医院开放一个/appointmentService的web api。传入日期、医生姓名作为参数，就可以得到该时间段内，该医生的空闲时间</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//请求</span></span><br><span class="line">POST /appointmentService?action=query HTTP/<span class="number">1.1</span></span><br><span class="line"></span><br><span class="line">&#123;date: <span class="string">"2020-03-04"</span>, doctor: <span class="string">"mjones"</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//响应</span></span><br><span class="line">HTTP/<span class="number">1.1</span> <span class="number">200</span> OK</span><br><span class="line"></span><br><span class="line">[</span><br><span class="line">    &#123;start:<span class="string">"14:00"</span>, end: <span class="string">"14:50"</span>, doctor: <span class="string">"mjones"</span>&#125;,</span><br><span class="line">    &#123;start:<span class="string">"16:00"</span>, end: <span class="string">"16:50"</span>, doctor: <span class="string">"mjones"</span>&#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">//请求</span></span><br><span class="line">POST /appointmentService?action=comfirm HTTP/<span class="number">1.1</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    appointment: &#123;date: <span class="string">"2020-03-04"</span>, start:<span class="string">"14:00"</span>, doctor: <span class="string">"mjones"</span>&#125;,</span><br><span class="line">    patient: &#123;name: xx, age: <span class="number">30</span>, ……&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//响应</span></span><br><span class="line"></span><br><span class="line">HTTP/<span class="number">1.1</span> <span class="number">200</span> OK</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    code: <span class="number">0</span>,</span><br><span class="line">    message: <span class="string">"Successful confirmation of appointment"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这是基于RPC风格的服务设计，很好的解决了这个问题</p><h5 id="第1级成熟度：Resources"><a href="#第1级成熟度：Resources" class="headerlink" title="第1级成熟度：Resources"></a>第1级成熟度：Resources</h5><pre><code>围绕资源而非过程来设计服务，Endpoint应该是一个名词而不是动词，此外每次请求都应该包含资源ID,所有操作均通过资源ID来进行。上述的场景中，&lt;font color=&quot;red&quot;&gt;应该把什么看成是一种资源呢？医生？不是吧，应该是把医生的档期视作为一种资源&lt;/font&gt;。具体过程，可以观察一下请求和响应的URI</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//请求医生档期</span></span><br><span class="line">POST /doctors/mjones HTTP/<span class="number">1.1</span></span><br><span class="line"></span><br><span class="line">&#123;date: <span class="string">"2020-03-04"</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//响应信息</span></span><br><span class="line">HTTP/<span class="number">1.1</span> <span class="number">200</span> OK</span><br><span class="line"></span><br><span class="line">[</span><br><span class="line">    &#123;id: <span class="number">1234</span>, start:<span class="string">"14:00"</span>, end: <span class="string">"14:50"</span>, doctor: <span class="string">"mjones"</span>&#125;,</span><br><span class="line">    &#123;id: <span class="number">5678</span>, start:<span class="string">"16:00"</span>, end: <span class="string">"16:50"</span>, doctor: <span class="string">"mjones"</span>&#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">//预约信息</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">POST /schedules/<span class="number">1234</span> HTTP/<span class="number">1.1</span></span><br><span class="line"></span><br><span class="line">&#123;name: xx, age: <span class="number">30</span>, ……&#125;</span><br></pre></td></tr></table></figure><p>这些个交互看起来解决了一些问题，而且抽象程度也第0级高了不少。但是还有一些问题需要解决</p><ol><li>只处理了查询和预约，没有提供调整或者取消预约的接口</li><li>处理结果响应时，只能靠结果中的code、message信息做判断，不通用</li><li>没有考虑到认证授权等安全方面的内容</li></ol><h5 id="第2级成熟度，HTTP-Verbs"><a href="#第2级成熟度，HTTP-Verbs" class="headerlink" title="第2级成熟度，HTTP Verbs"></a>第2级成熟度，HTTP Verbs</h5><pre><code>通过统一接口来解决第1成熟度的三个问题，统一接口是什么呢？就是HTTP协议的标准方法。这些方法都是经过精心设计的，几乎可以涵盖资源可能会遇到的所有操作场景。具体要如何理解呢？1.针对预约变更的问题，把不同的业务需求抽象为对资源的增加、修改、删除等操作来解决2.针对响应码的问题，可以直接使用HTTP协议的Status Code,这就可以涵盖大多数据资源操作可能会出现的异常问题3.安全性问题嘛，可以依靠着Http Header中携带的额外认证、授权信息来解决</code></pre><p>反应到代码请求中是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//请求</span><br><span class="line">GET /doctors/mjones/schedule?date=2020-03-04&amp;status=open HTTP/1.1</span><br><span class="line">//响应</span><br><span class="line"></span><br><span class="line">HTTP/1.1 200 OK</span><br><span class="line"></span><br><span class="line">[</span><br><span class="line">    &#123;id: 1234, start:&quot;14:00&quot;, end: &quot;14:50&quot;, doctor: &quot;mjones&quot;&#125;,</span><br><span class="line">    &#123;id: 5678, start:&quot;16:00&quot;, end: &quot;16:50&quot;, doctor: &quot;mjones&quot;&#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">//预约</span><br><span class="line"></span><br><span class="line">POST /schedules/1234 HTTP/1.1</span><br><span class="line"></span><br><span class="line">&#123;name: xx, age: 30, ……&#125;</span><br><span class="line"></span><br><span class="line">//预约成功</span><br><span class="line"></span><br><span class="line">HTTP/1.1 201 Created</span><br><span class="line"></span><br><span class="line">Successful confirmation of appointment</span><br></pre></td></tr></table></figure></p><h5 id="第3级成熟度：Hypermedia-Controls"><a href="#第3级成熟度：Hypermedia-Controls" class="headerlink" title="第3级成熟度：Hypermedia Controls"></a>第3级成熟度：Hypermedia Controls</h5><pre><code>大多数系统都能够达到第2级成熟度，但是这种还是有点问题，就是前后不连贯，也就是我知道医生的空闲时间以后，怎么知道预约的地址呢？当然这是浏览器的角度，咱们大多都是依靠在程序硬编码来实现的。这是我们习以为常的操作，但REST的目的并不是这样的，它想的是：&lt;strong&gt;除了第一请求是由你在浏览器地址栏中输入驱动的以外，其它所有后续请求都能够自己描述清楚后续可能发生的状态转移，由超文本自身来驱动。&lt;/strong&gt;唉多美好的愿望呀它的表现形式是这样的：</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//请求</span><br><span class="line"></span><br><span class="line">GET /doctors/mjones/schedule?date=2020-03-04&amp;statu s=open HTTP/1.1</span><br><span class="line"></span><br><span class="line">//响应</span><br><span class="line"></span><br><span class="line">HTTP/1.1 200 OK</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    schedules：[</span><br><span class="line">        &#123;</span><br><span class="line">            id: 1234, start:&quot;14:00&quot;, end: &quot;14:50&quot;, doctor: &quot;mjones&quot;,</span><br><span class="line">            links: [</span><br><span class="line">                &#123;rel: &quot;comfirm schedule&quot;, href: &quot;/schedules/1234&quot;&#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            id: 5678, start:&quot;16:00&quot;, end: &quot;16:50&quot;, doctor: &quot;mjones&quot;,</span><br><span class="line">            links: [</span><br><span class="line">                &#123;rel: &quot;comfirm schedule&quot;, href: &quot;/schedules/5678&quot;&#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">   ],</span><br><span class="line">   links: [</span><br><span class="line">       &#123;rel: &quot;doctor info&quot;, href: &quot;/doctors/mjones/info&quot;&#125;</span><br><span class="line">   ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这样的话，服务端的API和客户端的请求就能够做到完全解耦了，这个时候你再想调整什么东西是不是就很easy了</p><h4 id="REST的不足之处与争议"><a href="#REST的不足之处与争议" class="headerlink" title="REST的不足之处与争议"></a>REST的不足之处与争议</h4><h5 id="1-面向资源的编程思想只适合做CRUD-只有面向过程、面向对象编程才能处理真正复杂的业务逻辑"><a href="#1-面向资源的编程思想只适合做CRUD-只有面向过程、面向对象编程才能处理真正复杂的业务逻辑" class="headerlink" title="1.面向资源的编程思想只适合做CRUD,只有面向过程、面向对象编程才能处理真正复杂的业务逻辑"></a>1.面向资源的编程思想只适合做CRUD,只有面向过程、面向对象编程才能处理真正复杂的业务逻辑</h5><p>其实，面向资源的编程思想与面向过程、面向对象编程思想，只是抽象问题时所处的立场不同，只有选择问题，没有高下之分：</p><ul><li>面向过程编程时，为什么要以算法和处理过程为中心，输入数据，输出结果？当然是为符合计算机中主流的交互方式。</li><li>面向对象编程时，为什么要将数据和行为统一一起来、封闭成对象？当然是为符合现实民办的主流交互方式。</li><li>面向资源编程时，为什么要将数据作为抽象的主体，把行为看作是统一的接口，当然为是符合网络世界的主流交互方式。</li></ul><h5 id="2-REST与HTTP完全绑定，不适用于要求高性能传输的场景中"><a href="#2-REST与HTTP完全绑定，不适用于要求高性能传输的场景中" class="headerlink" title="2.REST与HTTP完全绑定，不适用于要求高性能传输的场景中"></a>2.REST与HTTP完全绑定，不适用于要求高性能传输的场景中</h5><p>REST的确依赖着HTTP协议的标准方法，状态码和协议头等，但我们要明确一个前提，HTTP协议是应用层协议，而不是传输层协议，如果在应用层协议追求传输效率，有点买椟还珠的意思。</p><h5 id="3-REST不利于事务支持"><a href="#3-REST不利于事务支持" class="headerlink" title="3.REST不利于事务支持"></a>3.REST不利于事务支持</h5><p>对事务的理解不一一致的话，在这块歧义也会比较大。<br>刚性ACID事务，<br>分布式事务。<br>最终一致性事务</p><h5 id="4-REST没有传输可靠性支持"><a href="#4-REST没有传输可靠性支持" class="headerlink" title="4.REST没有传输可靠性支持"></a>4.REST没有传输可靠性支持</h5><p>REST的可靠性需要很多其他策略的配合，比如重试机制、幂等机制</p><h5 id="5-REST缺乏对资源进行“部分”和“批量”的处理能力"><a href="#5-REST缺乏对资源进行“部分”和“批量”的处理能力" class="headerlink" title="5.REST缺乏对资源进行“部分”和“批量”的处理能力"></a>5.REST缺乏对资源进行“部分”和“批量”的处理能力</h5><p>这点还是挺有道理的，这可能也是未来面向资源思想和API设计风格发展的方向。<br>暂时的处理办法是：</p><ul><li>针对部分的应对手段是，通过位于中间节点或客户端缓存来缓解</li><li>针对整体，只能是再抽象出一些资源来应对。GraphQL就是一种解决批量操作类问题的解决方案，它是一种有协议地、更彻底地面向资源的服务方式。 </li></ul>]]></content>
+    
+    <summary type="html">
+    
+      来了解一下RESTful服务的相关知识
+    
+    </summary>
+    
+      <category term="架构师视角" scheme="https://by1way.github.io/categories/%E6%9E%B6%E6%9E%84%E5%B8%88%E8%A7%86%E8%A7%92/"/>
+    
+    
+      <category term="RESTful服务" scheme="https://by1way.github.io/tags/RESTful%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>09.RESTful服务</title>
+    <link href="https://by1way.github.io/2021/04/24/09-RESTful%E6%9C%8D%E5%8A%A1/"/>
+    <id>https://by1way.github.io/2021/04/24/09-RESTful服务/</id>
+    <published>2021-04-24T04:44:51.000Z</published>
+    <updated>2021-04-25T12:10:43.648Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="周志明架构课-架构师视角"><a href="#周志明架构课-架构师视角" class="headerlink" title="周志明架构课-架构师视角"></a>周志明架构课-架构师视角</h2><h3 id="09-RESTful服务：从面向过程编程到面向资源编程"><a href="#09-RESTful服务：从面向过程编程到面向资源编程" class="headerlink" title="09.RESTful服务：从面向过程编程到面向资源编程"></a>09.RESTful服务：从面向过程编程到面向资源编程</h3><p>行文思路：</p><ol><li>RESTful与RPC不是同一类型的东西</li><li>RESTful该怎么理解</li><li>RESTful有什么特征</li><li>有什么优势</li></ol><p>另一种主流的远程服务访问风格：RESTful服务</p><h4 id="RESTful与RPC区别的本质"><a href="#RESTful与RPC区别的本质" class="headerlink" title="RESTful与RPC区别的本质"></a>RESTful与RPC区别的本质</h4><p>其实两者另不是同一类型的东西，充其量只能算是有一些相似。在应用中会有一些重合的地方，两者差异的核心是抽象的目标不一样，也就是面向资源与面向过程的编程思想的区别。</p><p>RESTful并不是一种远程调用协议。说到协议啊，一般是都有一定规范性和强制性的。但RESTful却什么都没有，所以只能说RESTful只是一种风格。而这种风格一般还挺难达到的</p><p>在使用范围上RPC和RESTful是两种主流的远程调用方式，在使用上确实有重合。</p><p>RESTful讨论的是架构风格与网络的软件架构设计，RPC只是一种远程服务调用的方式。这逼格明显不一样好不啦。</p><h4 id="对于RESTful的理解"><a href="#对于RESTful的理解" class="headerlink" title="对于RESTful的理解"></a>对于RESTful的理解</h4><p>Representational State Transfer ，表征状态转移。</p><p>ps:哇塞，太抽象了。什么表征，什么的状态，从哪转移到哪儿。这算是什么狗屁定义呀</p><p>等会再来管个定义吧。先来看看几个概念</p><ul><li>资源，什么是资源？我理解的经常在网上看到的一些信息呀，内容呀，都可以称为资源。如果你喜欢用浏览器看小说的话，就可以把显示小说内容看作是一个资源。</li><li>表征，哪什么表征就是什么呢？显示小说的网页就是一种表征形式啦。所谓的表征就是一种资源的表现形式而矣</li><li>状态，什么的状态？在特定语境下产生的上下文信息就是状态，比如你在读小说的时候一章读完了，点下一章的按钮。但服务器那知道你现在读的是哪一章呀，所以现在读的这一章就可以称为是一个状态</li><li>转移，了解了上面的资源、表征、状态的例子，那转移就好理解了，由服务端通过某种方式，把这一章转变成下一章，这就是表征状态转移了。</li></ul><p>这几个概念还是挺好理解的，别放松，接着再来三个概念</p><ul><li>统一接口，  URI的含义是统一资源标识符，是一个名词，如何让他表示出动词的含义呢？其实这些HTTP协议都给提供好了一套标准的接口，你肯定很熟悉：GET\POST\HEAD\PUT\DELETE\TRACE\OPTIONS，也就是说通过HTTP协议定义好的这些动作就可以让服务器乖乖的听话了，要什么给什么</li><li>超文本驱动，这个有点意思，我们都是通过浏览器来操作从而向服务端发送请求的，但是作为通用客户端的浏览器，它是不用管这些的，只是给我们提供一个地址栏而矣，那在打开一个网页之后，其它所有在网页的操作，都是由网页本身来控制的。那网页有什么链接，有什么按钮，也都是它自己说了算。而这些也都是属于超文本的内容，在这里我们都需要有这样一个思路的细化，不能觉得浏览器是万能的，它也只是一个通用的工具，做好自己通用的事儿就行了。</li><li>自描述，由于表征是多种多样的，要想让浏览器（客户端）了解服务器到底响应了点啥内容，这还得在响应的信息里标识出来。我们常见的Content-Type,就是干这事儿的。</li></ul><h4 id="RESTful风格的特征"><a href="#RESTful风格的特征" class="headerlink" title="RESTful风格的特征"></a>RESTful风格的特征</h4><h5 id="服务端与客户端分离"><a href="#服务端与客户端分离" class="headerlink" title="服务端与客户端分离"></a>服务端与客户端分离</h5><p>这一个特征可以参考，前后端分离架构来理解</p><h5 id="无状态"><a href="#无状态" class="headerlink" title="无状态"></a>无状态</h5><p>REST不希望服务端维护状态，每次请求包含必要的上下文信息，会话由客户端保存，服务端根据客户状传递的状态信息进行处理，并驱动整个应用状态变迁</p><h5 id="可缓存"><a href="#可缓存" class="headerlink" title="可缓存"></a>可缓存</h5><p>由于无状态，所以每次请求都得带上大量的冗余信息，为了解决这个问题，提出的这么一个特征，也是一个用于提升响应性能的手段</p><h5 id="分层系统"><a href="#分层系统" class="headerlink" title="分层系统"></a>分层系统</h5><p>客户端一般不需要知道是否直接连接到了最终的服务器，或者是连接到路径上的中间服务器</p><h5 id="统一接口"><a href="#统一接口" class="headerlink" title="统一接口"></a>统一接口</h5><p>REST希望开发者可以面向资源来编程，希望软件系统的设计重点放在对抽象系统该有哪些资源上，而不是哪些行为上。一般来说面向资源的抽象程度通常比较高。<br>ps:我觉得这块一可以结合，软件的复杂度，以及领域驱动设计来理解。这样大家就不再纠结为什么抽象资源比面向过程更有优势这一点了。架构设计的本质，是降低软件复杂度再来的影响，那咋降低呢？把变化控制来一个小的范围内，这是一个思路。<br>那怎么才能在架构设计中合理恰当地利用统一接口呢？RESTful的提出者，Fielding 给出了三个建议</p><ul><li>第一，系统要能做到每次请求中都包含资源的 ID，所有操作均通过资源 ID 来进行；</li><li>第二，每个资源都应该是自描述的消息；</li><li>第三，通过超文本来驱动应用状态的转移。<h5 id="按需编码"><a href="#按需编码" class="headerlink" title="按需编码"></a>按需编码</h5>任何按照客户端（如浏览器）的请求，将可执行的软件程序从服务器发送到客户端的技术</li></ul><h4 id="面向资源设计有什么好处呢？"><a href="#面向资源设计有什么好处呢？" class="headerlink" title="面向资源设计有什么好处呢？"></a>面向资源设计有什么好处呢？</h4><ol><li>降低服务接口的学习成本</li><li>资源天然具有集合与层次结构：以方法为中心抽象的接口，由于方法是动词，逻辑上决定了每个接口都是互相独立的；但以资源为中心抽象的接口，由于资源是名词，天然就可以产生集合与层次结构。</li><li>REST绑定于HTTP协议</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      来了解一下RESTful服务的相关知识
+    
+    </summary>
+    
+      <category term="架构师视角" scheme="https://by1way.github.io/categories/%E6%9E%B6%E6%9E%84%E5%B8%88%E8%A7%86%E8%A7%92/"/>
+    
+    
+      <category term="RESTful服务" scheme="https://by1way.github.io/tags/RESTful%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://by1way.github.io/2021/03/31/32-point/"/>
+    <id>https://by1way.github.io/2021/03/31/32-point/</id>
+    <published>2021-03-31T08:21:12.448Z</published>
+    <updated>2021-03-31T10:06:51.001Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="操作系统与计算机网络"><a href="#操作系统与计算机网络" class="headerlink" title="操作系统与计算机网络"></a>操作系统与计算机网络</h2><h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><p><img src="/2021/03/31/32-point/32-point_files/1.jpg" alt="操作系统"></p><h4 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h4><ol><li>进程与线程的区别和联系<ul><li>进程是系统资源分配的最小单位，线程是程序执行的最小单位</li><li>进程使用独立的数据空间，而线程共享进程的数据空间</li></ul></li><li>线程调度，线程的几种调度算法<ul><li>时间片轮转算法</li><li>先来先服务调度</li><li>优先级调度</li><li>多级反馈队列调度</li><li>高响应比优先调度</li></ul></li><li>线程切换步骤，线程上下文切换，线程切换的代价</li><li>进程间通信，IPC,6种进程通信方式的原理与适用场景。<ul><li>进程间数据共享的场景可以使用共享内存</li><li>进程间数据交换的场景可以使用Unix Socket或消息队列</li></ul></li><li>协程，协程更加轻量化，是在用户态调度，切换的代价比线程上下文切换要低很多，Java的第三方协程框架，Kilim、Quasar</li></ol><h4 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h4><ul><li>AWK：处理文本文件的语言，是一个很强大的文件分析工具</li><li>Top</li><li>netstat</li><li>grep</li></ul><h4 id="扩展知识点（待补充）"><a href="#扩展知识点（待补充）" class="headerlink" title="扩展知识点（待补充）"></a>扩展知识点（待补充）</h4><ul><li>内存分页管理</li><li>Swap机制</li><li>任务队列</li><li><p>CPU Load</p></li><li><p>内存屏障</p></li><li>指令乱序</li><li>分支预测</li><li>NUMA</li><li>CPU亲和性</li></ul><h3 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h3><p><img src="/2021/03/31/32-point/32-point_files/2.jpg" alt="计算机网络"></p><h4 id="网络模型"><a href="#网络模型" class="headerlink" title="网络模型"></a>网络模型</h4><p>网络的4/7层模型</p><h4 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h4><ol><li>HTTP协议规范，Method、Header、Cookies,常见的状态码含义，404 502 503</li><li>HTTPS的交互流程</li><li>HTTP2多路复用、Stream流式交互，流量控制 、服务端推送、头部压缩等新特性</li></ol><h4 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h4><ol><li>三次握手建立连接</li><li>四次挥手断开连接</li><li>TCP的报文状态标志和链接状态</li><li>Nagel算法和ACK延迟，产生的背景，要解决小包问题，提高数据载荷比，对延迟比较敏感且发送数据频率低的场景可以关闭Nagel算法</li><li>TCP的KeepAlive,是一种长时间没有数据发送的场景下，TCP保持链接可用的机制，TCP KeepAlive开启和设置的方式</li><li>TCP是如何通过滑动窗口机制来实现流量控制的</li></ol><h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4><p>非链接、非可靠传输、效率非常高</p><h4 id="QUIC协议"><a href="#QUIC协议" class="headerlink" title="QUIC协议"></a>QUIC协议</h4><p>QUIC已被标准化为HTTP3协议，QUIC基于UDP协议，但QUIC提供了类似TCP的可靠性保证和流量控制，有效的避免了HTTP2协议的前序包阻塞的问题<br>能实现零RTT建连，提供FEC前向纠错能力。这是什么鬼一点都看不懂呀</p><h3 id="TCP协议特点"><a href="#TCP协议特点" class="headerlink" title="TCP协议特点"></a>TCP协议特点</h3><p>TCP是传输层协议，对应OSI网络模型的第四层传输层，特点如下：</p><ul><li>TCP协议是基于链接的，也就是传输数据前需要先建立 好链接，然后再进行传输</li><li>TCP链接一旦建立 ，就可以在链接上进行双向的通信</li><li>TCP的传输是基于字节流而不是报文，将数据按字节大小进行编号 ，接收端通过ACK来确认收到的数据编号 ，通过这种机制，TCP协议能够保证接收数据 的有序性和完整性，因此TCP能够提供可靠性的传输</li><li>TCP还能提供流量控制能力，通过滑动窗口来控制 数据的发送速率，滑动窗口的本质是动态缓冲区，接收端根据自己的处理能力在TCP的Header中动态调整窗口的大小，通过ACK应答包通知给发送端，发送端根据窗口大小调整发送的速度</li><li>仅仅有流量控制 能力还不够，TCP协议还考虑到网络问题可能会导致大量重传，进而导致网络情况进一步恶化，因此TCP协议还提供了拥塞控制 ，TCP处理拥塞控制 主要用到慢启动，拥塞避免、拥塞发生、快速恢复四个算法</li></ul><p>特定场景下，Nagel和ACK延迟机制配合使用可能会出现delay40ms超时后才回复ACK包的问题</p><h4 id="三次握手建连"><a href="#三次握手建连" class="headerlink" title="三次握手建连"></a>三次握手建连</h4><p>TCP是基于链接的，所以在传输数据前需要先建立链接，TCP在传输上双工传输，不区分Client端与Server端，我们把主动发起建连请求的一端称作Client端，把被动态建立链接的一端称作Server端<br><img src="/2021/03/31/32-point/32-point_files/3.jpg" alt="三次握手"></p><ol><li>首先建立 链接前需要Server端先监听端口，因此Server端建立 链接前的初始状态就是LISTEN状态，这时Client端准备建立链接，先发送一个SYN同步包，发送完同步包后，Client端的链接状态就变成了SYN_SENT状态.Server端收到SYN后，同意建立链接，会向Client端回复一个ACK。</li><li>由于TCP是双工传输，Server端也会同时向Client端发送一个SYN,申请 Server向Client方向建立链接，发送完ACK和SYN后，Server端链接状态就变成了SYN_RCVD.</li><li>Client收到Server的ACK后，Client端的链接状态就变成ESTABLISHED状态，同时Client向Server端发送ACK,回复Server端的SYN请求。</li><li>Server端收到Client端的ACK后，Server端的链接状态也就变成了ESTABLISHED状态，此时建连完成，双方随时可以进行数据传输。</li></ol><p>SYN洪水攻击发生的原因，就是Server端收到Client端的SYN请求后，发送了ACK和SYN,但是Client端不进行回复，导致Server端大量的链接处在SYN_RCVD状态，进而影响其他正常请求的建连。可以通过设计tcp_synack_retries=0 加快半链接的回收速度，或者调大tcp_max_syn_backlog来应对少量的SYN洪水攻击 。</p><h4 id="四次挥手断连"><a href="#四次挥手断连" class="headerlink" title="四次挥手断连"></a>四次挥手断连</h4><p><img src="/2021/03/31/32-point/32-point_files/4.jpg" alt="四次挥手断连"></p><p>TCP 链接的关闭通信双方都可以先发起，我们暂且把先发起的一方看作 Client。</p><ol><li>通信中 Client 和 Server 两端的链接都是 ESTABLISHED 状态，然后 Client 先主动发起了关闭链接请求，Client 向 Server 发送了一个 FIN 包，表示 Client 端已经没有数据要发送了，然后 Client 进入了 FIN_WAIT_1 状态。</li><li>Server 端收到 FIN 后，返回 ACK，然后进入 CLOSE_WAIT 状态。此时 Server 属于半关闭状态，因为此时 Client 向 Server 方向已经不会发送数据了，可是 Server 向 Client 端可能还有数据要发送。</li><li>当 Server 端数据发送完毕后，Server 端会向 Client 端发送 FIN，表示 Server 端也没有数据要发送了，此时 Server 进入 LAST_ACK 状态，就等待 Client 的应答就可以关闭链接了。</li><li>Client 端收到 Server 端的 FIN 后，回复 ACK，然后进入 TIME_WAIT 状态。TIME_WAIT 状态下需要等待 2 倍的最大报文段生存时间，来保证链接的可靠关闭，之后才会进入 CLOSED 关闭状态。而 Server 端收到 ACK 后直接就进入 CLOSED 状态。</li></ol><p>Q:为什么需要等待2倍最大报文段生存时间之后再关闭链接？</p><ul><li>保证TCP协议的全双工连接能够可靠关闭</li><li>保证这次连接的重复数据段从网络中消息，防止端口被重用时可能产生的数据混淆</li></ul><p>从这个交互流程可以看出，无论是建连还是断链，都是需要在两个方向上进行，只不过建连时，Server 端的 SYN 和 ACK 合并为一次发送，而断链时，两个方向上数据发送停止的时间可能不同，所以不能合并发送 FIN 和 ACK。这就是建连三次握手而断链需要四次的原因。 </p><p>实际应用中有可能遇到大量 Socket 处在 TIME_WAIT 或者 CLOSE_WAIT 状态的问题。一般开启 tcp_tw_reuse 和 tcp_tw_recycle 能够加快 TIME-WAIT 的 Sockets 回收；而大量 CLOSE_WAIT 可能是被动关闭的一方存在代码 bug，没有正确关闭链接导致的。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;操作系统与计算机网络&quot;&gt;&lt;a href=&quot;#操作系统与计算机网络&quot; class=&quot;headerlink&quot; title=&quot;操作系统与计算机网络&quot;&gt;&lt;/a&gt;操作系统与计算机网络&lt;/h2&gt;&lt;h3 id=&quot;操作系统&quot;&gt;&lt;a href=&quot;#操作系统&quot; class=&quot;head
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>08.远程服务调用</title>
-    <link href="https://by1way.github.io/2021/03/07/08/"/>
-    <id>https://by1way.github.io/2021/03/07/08/</id>
+    <link href="https://by1way.github.io/2021/03/07/08-%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/"/>
+    <id>https://by1way.github.io/2021/03/07/08-远程服务调用/</id>
     <published>2021-03-07T03:44:51.000Z</published>
     <updated>2021-03-17T11:37:54.894Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="周志明架构课-架构师视角"><a href="#周志明架构课-架构师视角" class="headerlink" title="周志明架构课-架构师视角"></a>周志明架构课-架构师视角</h2><h3 id="08-远程服务调用：如何选择适合自己的RPC框架"><a href="#08-远程服务调用：如何选择适合自己的RPC框架" class="headerlink" title="08.远程服务调用：如何选择适合自己的RPC框架"></a>08.远程服务调用：如何选择适合自己的RPC框架</h3><p>这一篇先来个图图：</p><p><img src="/2021/03/07/08/08.png" alt="如何选择适合自己的RPC框架？"></p><p>今天就看图说话啦。</p><p>大家先想一下，世面上有很多的RPC框架，各种讲解RPC框架的教程，大家也都是有一个学一个。今天学学dubbo，明天学学gRPC的，那这些RPC都有什么共性吗？为什么会有这么多RPC呢？为什么没有一个通用的RPC框架呢？这些问题是不是大家也都想过，不过存在即有理，接下来我们就从RPC最核心的内容来看看，这些问题有没有一个答案。</p><h4 id="RPC要解决什么问题？"><a href="#RPC要解决什么问题？" class="headerlink" title="RPC要解决什么问题？"></a>RPC要解决什么问题？</h4><p>看到这问题是不是有点懵圏了。RPC要解决什么问题？不就是解决远程服务通讯的问题吗？不是的这个问题的意思就是要想从0开发一个RPC，都需要解决什么问题。</p><h5 id="1-数据如何表示"><a href="#1-数据如何表示" class="headerlink" title="1. 数据如何表示"></a>1. 数据如何表示</h5><p>​    首先就是解决数据表示的问题，什么意思呢？各个语言各种操作系统都有不小的差异那怎么才能保证数据在源和在目标表示 的意义是一样的呢。这说的也就是数据如何表示 的意思了。再具体一点就是参数、返回值之类的这些玩艺儿。</p><p>​    在明确了问题之后，是不是得想办法解决了，有什么好的解决思路呢？单纯依靠某一方肯定是不行的，至少不公平也会产生不少的纠纷。那好吧，映射到现实社会中，自然而然就是找一个大家都看好的第三方喽。不是玩笑，真的是这么个思路。</p><p>​    因为RPC发展现在已经有很多成熟的方案的了。像gRPC的ProtocolBuffer ，web service的XML Serialization,以及很多轻量级RPC的Json Serialization都可以拿得出手的</p><h5 id="2-数据如何传输"><a href="#2-数据如何传输" class="headerlink" title="2. 数据如何传输"></a>2. 数据如何传输</h5><p>​    既然数据怎么表示这事儿咱们想明白了，那数据的传输过程又该是怎么样的呢？肯定不会是只搞一个序列化的数据流扔给底层传输协议就完事儿了，这里面需要考虑的东西太多了，像超时了怎么办，发生了异常怎么处理，安全认证怎么搞等等方面都是需要考虑的因素，不过既然能把数据如何表示这件事交给第三方，那第三方肯定也是提供了大量的解决办法的，提一个大家都比较熟悉的SOAP,它就能把这件事处理的明明白白的。</p><h5 id="3-方法如何表示"><a href="#3-方法如何表示" class="headerlink" title="3. 方法如何表示"></a>3. 方法如何表示</h5><p>​    这这这，又得解释一下了。先来对比一下本地方法的调用，本地调用某个方法，编译器会直接帮助我们把要调用的方法转换成内存中方法的入口地址，发生调用的时候你直接按顺序执行就ok了。那一换成远程调用，这点优势突然间就没了。那该怎么破呢？要不给每个方法编个号？也是一种办法哈。但更加靠谱的方法还是得搞一套与程序语言无关的接口描述语言（IDL），像WSDL,JSON-WSP都是基于这个参考这个方法来处理的。</p><h4 id="统一的RPC搞法"><a href="#统一的RPC搞法" class="headerlink" title="统一的RPC搞法"></a>统一的RPC搞法</h4><pre><code>怎么样，怎么样有没有发现一个问题，我好喜欢webservice那套产品呀，有了它岂不是也能一统江湖？用它来搞序列化、数据传输、接口描述，简直不能太美了。但是回过头来再瞅瞅WebService现在那副尿样子，真的是想完美想疯了，啥都很标准，啥都很规范。一点都不接地气，真正用过的人，想一想，它简单吗？它通用吗？它的性能好吗？其实通用方面我觉得做的还可以，如果大家都使用的话。可是它压根儿就没有把性能这事儿重视过哪怕一次。那你说说对得起现在这4G的网络，对得起互联网大厂飞速发展吗？更别提5G了。</code></pre><p>​    搞不成啊，搞不成。</p><p>​    不过说实话，要说把简单、通用、性能都完美的结合在一起真的不是那么容易的。</p><h4 id="RPC又要分裂了"><a href="#RPC又要分裂了" class="headerlink" title="RPC又要分裂了"></a>RPC又要分裂了</h4><p>​    既然Web service没戏了，大家就都取多长吧。这个时候各种RPC框架就开始hi了。什么RMI、Thrift、Dubbo、gRPC等等，发展的猛的很。发展归发展，虽然很多都是在重复造轮子，但大部分都还是很有方向的，有注重性能的、有注重简单的，还有注重通用的，但是大家都不会把追求完美做为首要目标了。</p><p>​    典型的发展方向，有这么几个：</p><ul><li>朝着面向对象发展的，比如RMI、.net Remoting，不用说这一派也是朝着通用发展</li><li>朝着性能方向发展的，比如gRPC、Thrift,就是使劲儿的优化。</li><li>朝着简化方向发展的，比如JSON-RPC，没别的就是简单。</li><li>还有更不要脸的，朝着整合方向发展，我自己有各种组件，诶，但我也允许 你用其他RPC的组件。</li></ul><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>​    总结一下吧，RPC要解决的三个问题是所有RPC框架都需要面临的问题，简单、通用、性能三个方面，不同的要求也有各自成熟的产品，你可以结合自己的需求选择最合适的那个，总有一款适合你。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="周志明架构课-架构师视角"><a href="#周志明架构课-架构师视角" class="headerlink" title="周志明架构课-架构师视角"></a>周志明架构课-架构师视角</h2><h3 id="08-远程服务调用：如何选择适合自己的RPC框架"><a href="#08-远程服务调用：如何选择适合自己的RPC框架" class="headerlink" title="08.远程服务调用：如何选择适合自己的RPC框架"></a>08.远程服务调用：如何选择适合自己的RPC框架</h3><p>这一篇先来个图图：</p><p><img src="/2021/03/07/08-远程服务调用/08/08.png" alt="如何选择适合自己的RPC框架？"></p><p>今天就看图说话啦。</p><p>大家先想一下，世面上有很多的RPC框架，各种讲解RPC框架的教程，大家也都是有一个学一个。今天学学dubbo，明天学学gRPC的，那这些RPC都有什么共性吗？为什么会有这么多RPC呢？为什么没有一个通用的RPC框架呢？这些问题是不是大家也都想过，不过存在即有理，接下来我们就从RPC最核心的内容来看看，这些问题有没有一个答案。</p><h4 id="RPC要解决什么问题？"><a href="#RPC要解决什么问题？" class="headerlink" title="RPC要解决什么问题？"></a>RPC要解决什么问题？</h4><p>看到这问题是不是有点懵圏了。RPC要解决什么问题？不就是解决远程服务通讯的问题吗？不是的这个问题的意思就是要想从0开发一个RPC，都需要解决什么问题。</p><h5 id="1-数据如何表示"><a href="#1-数据如何表示" class="headerlink" title="1. 数据如何表示"></a>1. 数据如何表示</h5><p>​    首先就是解决数据表示的问题，什么意思呢？各个语言各种操作系统都有不小的差异那怎么才能保证数据在源和在目标表示 的意义是一样的呢。这说的也就是数据如何表示 的意思了。再具体一点就是参数、返回值之类的这些玩艺儿。</p><p>​    在明确了问题之后，是不是得想办法解决了，有什么好的解决思路呢？单纯依靠某一方肯定是不行的，至少不公平也会产生不少的纠纷。那好吧，映射到现实社会中，自然而然就是找一个大家都看好的第三方喽。不是玩笑，真的是这么个思路。</p><p>​    因为RPC发展现在已经有很多成熟的方案的了。像gRPC的ProtocolBuffer ，web service的XML Serialization,以及很多轻量级RPC的Json Serialization都可以拿得出手的</p><h5 id="2-数据如何传输"><a href="#2-数据如何传输" class="headerlink" title="2. 数据如何传输"></a>2. 数据如何传输</h5><p>​    既然数据怎么表示这事儿咱们想明白了，那数据的传输过程又该是怎么样的呢？肯定不会是只搞一个序列化的数据流扔给底层传输协议就完事儿了，这里面需要考虑的东西太多了，像超时了怎么办，发生了异常怎么处理，安全认证怎么搞等等方面都是需要考虑的因素，不过既然能把数据如何表示这件事交给第三方，那第三方肯定也是提供了大量的解决办法的，提一个大家都比较熟悉的SOAP,它就能把这件事处理的明明白白的。</p><h5 id="3-方法如何表示"><a href="#3-方法如何表示" class="headerlink" title="3. 方法如何表示"></a>3. 方法如何表示</h5><p>​    这这这，又得解释一下了。先来对比一下本地方法的调用，本地调用某个方法，编译器会直接帮助我们把要调用的方法转换成内存中方法的入口地址，发生调用的时候你直接按顺序执行就ok了。那一换成远程调用，这点优势突然间就没了。那该怎么破呢？要不给每个方法编个号？也是一种办法哈。但更加靠谱的方法还是得搞一套与程序语言无关的接口描述语言（IDL），像WSDL,JSON-WSP都是基于这个参考这个方法来处理的。</p><h4 id="统一的RPC搞法"><a href="#统一的RPC搞法" class="headerlink" title="统一的RPC搞法"></a>统一的RPC搞法</h4><pre><code>怎么样，怎么样有没有发现一个问题，我好喜欢webservice那套产品呀，有了它岂不是也能一统江湖？用它来搞序列化、数据传输、接口描述，简直不能太美了。但是回过头来再瞅瞅WebService现在那副尿样子，真的是想完美想疯了，啥都很标准，啥都很规范。一点都不接地气，真正用过的人，想一想，它简单吗？它通用吗？它的性能好吗？其实通用方面我觉得做的还可以，如果大家都使用的话。可是它压根儿就没有把性能这事儿重视过哪怕一次。那你说说对得起现在这4G的网络，对得起互联网大厂飞速发展吗？更别提5G了。</code></pre><p>​    搞不成啊，搞不成。</p><p>​    不过说实话，要说把简单、通用、性能都完美的结合在一起真的不是那么容易的。</p><h4 id="RPC又要分裂了"><a href="#RPC又要分裂了" class="headerlink" title="RPC又要分裂了"></a>RPC又要分裂了</h4><p>​    既然Web service没戏了，大家就都取多长吧。这个时候各种RPC框架就开始hi了。什么RMI、Thrift、Dubbo、gRPC等等，发展的猛的很。发展归发展，虽然很多都是在重复造轮子，但大部分都还是很有方向的，有注重性能的、有注重简单的，还有注重通用的，但是大家都不会把追求完美做为首要目标了。</p><p>​    典型的发展方向，有这么几个：</p><ul><li>朝着面向对象发展的，比如RMI、.net Remoting，不用说这一派也是朝着通用发展</li><li>朝着性能方向发展的，比如gRPC、Thrift,就是使劲儿的优化。</li><li>朝着简化方向发展的，比如JSON-RPC，没别的就是简单。</li><li>还有更不要脸的，朝着整合方向发展，我自己有各种组件，诶，但我也允许 你用其他RPC的组件。</li></ul><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>​    总结一下吧，RPC要解决的三个问题是所有RPC框架都需要面临的问题，简单、通用、性能三个方面，不同的要求也有各自成熟的产品，你可以结合自己的需求选择最合适的那个，总有一款适合你。</p>]]></content>
     
     <summary type="html">
     
@@ -277,191 +452,6 @@
     
     
       <category term="事务处理" scheme="https://by1way.github.io/tags/%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MongoDB学习之旅</title>
-    <link href="https://by1way.github.io/2020/12/01/mongodb/index0/"/>
-    <id>https://by1way.github.io/2020/12/01/mongodb/index0/</id>
-    <published>2020-12-01T07:04:51.000Z</published>
-    <updated>2020-12-25T06:25:40.159Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><ol><li>什么MongoDb<br>一个以JSON为数据模型的文档数据库</li><li>为什么叫文档数据库<br>文档来自于“JSON Document”,并非我们理解 的pdf word文档</li><li>主要用途<br>应用数据库，类似于Oracle/MYSQL,海量数据处理，数据平台</li><li>主要特点<br>建模为可选，JSON数据模型比较适合开发者，横向扩展可以支撑很大数据量和并发</li></ol><p>ACID事务支持在4.0已经支持</p><ol start="5"><li>MongoDB VS. 关系型数据库<br><img src="/2020/12/01/mongodb/index0/index0_files/1.jpg" alt="对比"></li></ol><h3 id="MongoDB的特色及优势"><a href="#MongoDB的特色及优势" class="headerlink" title="MongoDB的特色及优势"></a>MongoDB的特色及优势</h3><p>优势1：面向开发者的易用+高效数据库</p><p>无模式设计</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">多形性：同一个集合中可以包含不同字段的文档对象</span><br><span class="line">动态性：线上修改数据模式，修改是应用与数据库均无须下线</span><br><span class="line">数据治理 ：支持使用JSON Schema来规范数据模式，在保证模式灵活动态的前提下，提供数据治理 能力</span><br><span class="line"></span><br><span class="line">JSON模型之快速特性：```技术优势</span><br></pre></td></tr></table></figure><ul><li>数据库引擎只需要在一个存储区读写</li><li>反范式、无关联的组织 极大优化查询速度</li><li>程序 API自然，开发快速</li></ul><p>优势2：原生的高可用和横向扩展能力<br>（分布式方面的优势）</p><p>默认3个节点的复制部署（最少2最多50个）<br>奇数</p><p>Application –&gt;Driver–&gt;Primary/Secondary/Secondary(Replication)</p><p>横向能力：需要的时候无缝扩展/应用全透明/多种数据分布策略/轻松支持TB/PB数量级</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> dbs</span><br><span class="line"><span class="keyword">show</span> collections</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> xx</span><br><span class="line"></span><br><span class="line">db.xx.findOne()</span><br><span class="line"></span><br><span class="line">db.fruit.insertOne(&#123;<span class="keyword">name</span>:<span class="string">"orangle"</span>&#125;)</span><br><span class="line"></span><br><span class="line">db.fruit.insertMany([&#123;<span class="keyword">name</span>:<span class="string">"orangle"</span>&#125;,&#123;<span class="keyword">name</span>:<span class="string">"pear"</span>&#125;,&#123;<span class="keyword">name</span>:<span class="string">"banana"</span>&#125;])</span><br><span class="line"></span><br><span class="line">db.fruit.find()</span><br><span class="line"></span><br><span class="line">db.fruit.find(&#123;<span class="string">"name"</span>:<span class="string">"apple"</span>&#125;)</span><br><span class="line"></span><br><span class="line">db.fruit.find(&#123;$<span class="keyword">and</span>:[&#123;<span class="keyword">name</span>:<span class="string">"apple"</span>&#125;,&#123;<span class="keyword">name</span>:<span class="string">"pear"</span>&#125;]&#125;)</span><br><span class="line"></span><br><span class="line">db.fruit.find(&#123;$<span class="keyword">or</span>:[&#123;<span class="keyword">name</span>:<span class="string">"apple"</span>&#125;,&#123;<span class="keyword">name</span>:<span class="string">"pear"</span>&#125;]&#125;)</span><br><span class="line"></span><br><span class="line">db.fruit.find(&#123;<span class="keyword">name</span>:/^p/&#125;)//以字母p开头的</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">&#123;a:1&#125;===&gt;a=1</span></span><br><span class="line"><span class="comment">&#123;a:&#123;$ne:1&#125;&#125;===&gt; a&lt;&gt;1</span></span><br><span class="line"><span class="comment">&#123;a:&#123;$gt:1&#125;&#125;===&gt; a&gt;1</span></span><br><span class="line"><span class="comment">&#123;a:&#123;$gte:1&#125;&#125;===&gt; a&gt;=1</span></span><br><span class="line"><span class="comment">&#123;a:&#123;$lt:1&#125;&#125;===&gt; a&lt;1</span></span><br><span class="line"><span class="comment">&#123;a:&#123;$lte:1&#125;&#125;===&gt; a&lt;=1</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">更复杂的条件</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">&#123;a:1,b:1&#125;或者&#123;$and:[&#123;a,1&#125;,&#123;b,1&#125;]&#125;===&gt; a=1 and b=1</span></span><br><span class="line"><span class="comment">&#123;$or:[&#123;a,1&#125;,&#123;b,1&#125;]&#125;===&gt; a=1 or b=1</span></span><br><span class="line"><span class="comment">&#123;a:&#123;$exists:false&#125;&#125;===&gt; a is NULL</span></span><br><span class="line"><span class="comment">&#123;a:&#123;$in:[1,2,3]&#125;&#125;===&gt; a IN(1,2,3)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">$lt</span></span><br><span class="line"><span class="comment">$lte</span></span><br><span class="line"><span class="comment">$gt</span></span><br><span class="line"><span class="comment">$gte</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure><h3 id="MongoDB分片集群架构"><a href="#MongoDB分片集群架构" class="headerlink" title="MongoDB分片集群架构"></a>MongoDB分片集群架构</h3><p>三种常见部署架构</p><p>单机版（20%）：开发测试，不推荐线上环境使用<br>复制集（70%）：高可用，一个二从或更多从节点<br>分片集群（10%）：横向扩展，最小分片集群9~10个实例，适用大型应用场景</p>]]></content>
-    
-    <summary type="html">
-    
-      MongoDB数据库学习。
-    
-    </summary>
-    
-      <category term="NoSQL数据" scheme="https://by1way.github.io/categories/NoSQL%E6%95%B0%E6%8D%AE/"/>
-    
-    
-      <category term="MongoDB" scheme="https://by1way.github.io/tags/MongoDB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>存储系统实战-2</title>
-    <link href="https://by1way.github.io/2020/10/27/memory-system-02/"/>
-    <id>https://by1way.github.io/2020/10/27/memory-system-02/</id>
-    <published>2020-10-27T01:38:22.000Z</published>
-    <updated>2020-10-27T09:00:51.669Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="基于ES的商品搜索系统"><a href="#基于ES的商品搜索系统" class="headerlink" title="基于ES的商品搜索系统"></a>基于ES的商品搜索系统</h3><h4 id="倒排索引机制"><a href="#倒排索引机制" class="headerlink" title="倒排索引机制"></a>倒排索引机制</h4>]]></content>
-    
-    <summary type="html">
-    
-      后端存储实战-专栏学习内容分享
-    
-    </summary>
-    
-      <category term="专栏学习" scheme="https://by1way.github.io/categories/%E4%B8%93%E6%A0%8F%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="课堂笔记" scheme="https://by1way.github.io/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="存储系统" scheme="https://by1way.github.io/tags/%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>存储系统实战-1</title>
-    <link href="https://by1way.github.io/2020/10/23/memory-system-01/"/>
-    <id>https://by1way.github.io/2020/10/23/memory-system-01/</id>
-    <published>2020-10-23T01:38:22.000Z</published>
-    <updated>2020-10-27T08:32:26.333Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="购物车如何设计"><a href="#购物车如何设计" class="headerlink" title="购物车如何设计"></a>购物车如何设计</h3><h4 id="购物车存储时需要考虑清楚的问题"><a href="#购物车存储时需要考虑清楚的问题" class="headerlink" title="购物车存储时需要考虑清楚的问题"></a>购物车存储时需要考虑清楚的问题</h4><ul><li>1.用户没登录，在浏览器中加购，关闭浏览器再打开，刚才回购的商品还在吗？(存在)</li><li>2.用户没登录，在浏览器中回购，然后登录，刚才回购的商品还在不在？(存在)</li><li>3.关闭浏览器再打开，上一步回购的商品还在不在？(不存在)</li><li>4.再打开手机，用相同的用户登录 ，第二步回购的商品还在不在？(存在)</li></ul><p><strong>暂存购物车</strong>、<strong>用户购物车</strong></p><h4 id="购物车设计原则"><a href="#购物车设计原则" class="headerlink" title="购物车设计原则"></a>购物车设计原则</h4><ul><li>如果未登录，需要临时暂存购物车的商品；</li><li>用户登录时，把暂存购物车的商品合并到用户购物车中，并且清除暂存购物车；</li><li>用户登陆后，购物车中的商品，需要在浏览器、手机 APP 和微信等等这些终端中都保持同步。</li></ul><h4 id="暂存购物车设计"><a href="#暂存购物车设计" class="headerlink" title="暂存购物车设计"></a>暂存购物车设计</h4><p>一般的设计都会将这批数据存储在客户端，采用Session、Cookie、LocalStorge,APP的本地存储原理也是类似</p><ul><li>Session的缺陷：保留时间短</li><li>Cookie：每次交互都需要把数据给带上，存储上限4K</li><li>LocalStorage:只能由客户端来访问,</li></ul><h4 id="用户购物车设计"><a href="#用户购物车设计" class="headerlink" title="用户购物车设计"></a>用户购物车设计</h4><p>使用关系型数据库来存储购物车数据，如果追求性能或者高开发，也可以选择Redis</p><h3 id="账户系统的设计"><a href="#账户系统的设计" class="headerlink" title="账户系统的设计"></a>账户系统的设计</h3><p><strong>对不上账，最本质的原因就是，冗余数据的一致性问题</strong></p><p>账户流水：每一笔交易记录，只能新增</p><h4 id="如何保证账户系统中流水和余额的一致"><a href="#如何保证账户系统中流水和余额的一致" class="headerlink" title="如何保证账户系统中流水和余额的一致"></a>如何保证账户系统中流水和余额的一致</h4><ol><li><p>使用数据库事务来保证数据一致性</p><ul><li>原子性</li><li>一致性</li><li>隔离性</li><li>持久性</li></ul></li><li><p>事务隔离级别<br> <img src="/2020/10/23/memory-system-01/memory-system-01_files/1.jpg" alt></p><ul><li>脏读：每个进行中事务的中间状态，对其他事务都是可见的</li><li>不可重复读：在同一个事务内两次读取同一条数据，读到的结果可能会不一样</li></ul></li></ol><h3 id="如何解决跨系统、跨数据库的数据一致性问题？"><a href="#如何解决跨系统、跨数据库的数据一致性问题？" class="headerlink" title="如何解决跨系统、跨数据库的数据一致性问题？"></a>如何解决跨系统、跨数据库的数据一致性问题？</h3><p>我们在使用分布式事务时，更多的情况都是使用分布式事务的理论来指导设计和开发。</p><h4 id="分布式事务的实现原理"><a href="#分布式事务的实现原理" class="headerlink" title="分布式事务的实现原理"></a>分布式事务的实现原理</h4><ol><li><p>2PC<br> 2PC引入了一个事务协调者的角色，来协调多个系统，协调者对客户端提供一个完整的服务，在这个服务内部，协调者再分别调用不同系统间的相应服务<br> 二阶段指的是准备阶段和提交阶段。<br> 在准备阶段，协调者对各系统发送【准备】指令，各系统在接收准备命令之后，开始执行准备操作。准备操作包括，除提交数据库事务之外的所有工作。等各个系统都准备完成后，就进入到了提交阶段。<br> 在提交阶段，协调者再给各系统发送【提交】指令，系统在接收到指令后，都提交自己的数据库事务，然后返回给协调者提交成功的响应。<br> 协调在接收到所提交成功的响应后，再给客户端返回成功的响应，这样整个分布式事务就完成了。</p><p> 以上都不是重点！！！！<br> 异常了怎么处理才是重点：</p><ul><li>在准备阶段：如果任何一步出现错误或者超时，协调者会马上给各系统发送回滚的请求</li><li><p>提交阶段：分布式事务只能成功不能失败！如果是超时那就一直重试，直到提交成功为止。</p><p>2PC适用于对数据一致性要求比较高的场景。要求强一致、并发量不大的情况下</p><p>缺点：整个事务的执行过程需要阻塞服务端的线程和数据库的会话，所以，2PC 在并发场景下的性能不会很高。并且，协调者是一个单点，一旦过程中协调者宕机，就会导致订单库或者促销库的事务会话一直卡在等待提交阶段，直到事务超时自动回滚。</p></li></ul></li></ol><ol start="2"><li><p>本地消息表<br> 本地消息表适合解决分布式最终一致性的问题</p><ul><li><p>实现思路：某一个系统在接收到请求后，正常的使用本地的数据库事务去更新数据库，同时在执行这个事务的过程中，在本地记录一条消息。然后再用一个异步的服务去读取刚刚记录的本地消息，调用自己的服务，这样的话如果是失败了也可以通过重试来解决。最终保证各系统的数据都是一致的。</p><p>本地消息表实现手段：消息队列、数据库、本地磁盘文件</p><p>本地消息表缺点：必须要有一个前提条件，那就是异步执行的那部分操作，不能有依赖的资源。</p></li></ul></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      后端存储实战-专栏学习内容分享
-    
-    </summary>
-    
-      <category term="专栏学习" scheme="https://by1way.github.io/categories/%E4%B8%93%E6%A0%8F%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="课堂笔记" scheme="https://by1way.github.io/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="存储系统" scheme="https://by1way.github.io/tags/%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>存储系统实战-0</title>
-    <link href="https://by1way.github.io/2020/10/22/memory-system-00/"/>
-    <id>https://by1way.github.io/2020/10/22/memory-system-00/</id>
-    <published>2020-10-22T01:38:22.000Z</published>
-    <updated>2020-10-22T10:03:59.879Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="基础的认识"><a href="#基础的认识" class="headerlink" title="基础的认识"></a>基础的认识</h3><p><strong>凡是那些特别难解决的、让你付出巨大代价的，或者损失惨重的技术问题，几乎都可以归结为存储系统的问题</strong></p><p><strong>存储是系统中最核心、最重要、最关键的组成部分，没有之一</strong></p><p><strong>MySQL、Redis、ElasticSearch、HBase、Hive、MongoDB、RocksDB、CockroachDB 等等，这些存储还真就是谁都替代不了谁，每一种都有它擅长的地方，有它适用的场景，当然也有很突出的短板。如何根据业务系统的特点，选择合适的存储来构建我们的系统，这也是需要学习和掌握的</strong></p><h3 id="如何保证数据准确无误"><a href="#如何保证数据准确无误" class="headerlink" title="如何保证数据准确无误"></a>如何保证数据准确无误</h3><p><strong>合格的订单系统，最基本的要求是数据不能出错</strong></p><h4 id="如何避免重复下单"><a href="#如何避免重复下单" class="headerlink" title="如何避免重复下单"></a>如何避免重复下单</h4><ul><li>让订单服务具备幂等性<ul><li>任意多次执行所产生的影响均与一次执行的影响相同</li><li>利用数据库主键的唯一性约束来解决创建订单服务的幂等性问题（自定义一个订单号生成的服务）</li></ul></li></ul><h4 id="如何解决ABA问题"><a href="#如何解决ABA问题" class="headerlink" title="如何解决ABA问题"></a>如何解决ABA问题</h4><p><strong>对数据的更新也要注意ABA问题</strong></p><ul><li>什么是ABA问题<ul><li>一个简单的例子，假如有两次请求，第一次要求把数据修改为666，当数据库修改成功，在返回响应的时候失败了，而此时第二个请求到了，要把数据修改为888，并且响应成功了。由于第一次申请没有收到正确的响应，所以进行了重试，这时数据又修改成了666。</li></ul></li></ul><ul><li>怎么解决呢？<ul><li>给数据库表增加一列version,也就是版本号的意思，每次查询version都随着数据返回，再更新的时候把version作为更新请求的参数，发送给更新服务</li><li>更新服务在接收到请求后，对比当前数据的version，是否与请求中的一致，如果不一致就拒绝更新。如果一致，就更新数据的同时把version+1。<strong>当前这个更新的过程必须在同一事务里面</strong></li></ul></li></ul><h3 id="商品详情页如何设计"><a href="#商品详情页如何设计" class="headerlink" title="商品详情页如何设计"></a>商品详情页如何设计</h3><h4 id="商品都包括哪些信息"><a href="#商品都包括哪些信息" class="headerlink" title="商品都包括哪些信息"></a>商品都包括哪些信息</h4><ul><li>基本信息</li><li>商品参数</li><li>商品介绍</li><li><h1 id="图片视频"><a href="#图片视频" class="headerlink" title="图片视频"></a>图片视频</h1></li><li>促销信息</li><li>推荐商品</li><li>评价信息</li><li>评论信息</li><li>配送信息</li><li>店铺信息</li></ul><h4 id="商品基本信息如何存储"><a href="#商品基本信息如何存储" class="headerlink" title="商品基本信息如何存储"></a>商品基本信息如何存储</h4><ol><li>商品基本信息的主副标题、价格、颜色等基本、主要属性，都是固定的。数据量不大，建议在数据库中建一张表来保存商品基本信息。然后在数据库前面加一道缓存，基于内存的KV存储。</li><li>前置缓存缓存商品数据，读取请求流程：<br> 2.1. 先去缓存查找，如果找到就直接返回数据<br> 2.2. 如果没有找到就去数据库查询，把返回结果返回，并缓存一份到缓存</li><li>更新时，在更新数据库的同时也要把缓存给删除，来保证数据一致性(Cache Aside缓存更新策略)</li></ol><p><strong>设计商品信息表时，一定要记得保留商品数据的每一个历史版本</strong></p><h5 id="缓存更新策略"><a href="#缓存更新策略" class="headerlink" title="缓存更新策略"></a>缓存更新策略</h5><ul><li>Cache Aside</li><li>Read/Write Through</li><li>Write Behind</li></ul><h4 id="商品参数如何存储"><a href="#商品参数如何存储" class="headerlink" title="商品参数如何存储"></a>商品参数如何存储</h4><p>使用MongoDB保存商品参数，和商品的基本属性一样，都是结构化数据，不同类型的商品，它的参数也完全不一样。</p><h5 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h5><p>MongoDB是一个面向文档存储的NoSQL数据库，在MongoDB中，表、行、列对应概念：Collection、document、field。<br>表结构是不需要事先定义，MongoDB没有表结构。支持把任意数据放在同一张表中。</p><p>MongoDB中的每一行数据，在存储层就是简单地转化成BSON格式。<strong>这是一种更紧凑的JSON</strong>，MongoDB 不支持 SQL，多表联查和复杂事务比较孱弱，不太适合存储一般的数据。对于商品参数信息，数据量大、数据结构不统一，这些 MongoDB 都可以很好的满足。我们也不需要事务和多表联查，MongoDB 简直就是为了保存商品参数量身定制的一样。</p><h4 id="图片和视频如何存储"><a href="#图片和视频如何存储" class="headerlink" title="图片和视频如何存储"></a>图片和视频如何存储</h4><p><strong>保存在对象存储中</strong></p><h5 id="对象存储"><a href="#对象存储" class="headerlink" title="对象存储"></a>对象存储</h5><p>对象存储可以简单理解为一个无限容量的大文件 KV 存储，它的存储单位是对象，其实就是文件，可以是一张图片，一个视频，也可以是其他任何文件。每个对象都有一个唯一的 key，利用这个 key 就可以随时访问对应的对象。基本的功能就是写入、访问和删除对象。</p><h4 id="商品介绍如何存储"><a href="#商品介绍如何存储" class="headerlink" title="商品介绍如何存储"></a>商品介绍如何存储</h4><p><strong>商品介绍的文本，一般都是随着商详页一起静态化，保存在 HTML 文件中</strong></p><p><strong>Tomcat 能能抗的并发量和 Nginx 完全不是一个数量级的</strong></p><p>商详页静态化之后，不仅仅是可以节省服务器资源，还可以利用 CDN 加速，把商详页放到离用户最近的 <strong>CDN 服务器</strong>上，让商详页访问更快。</p><p><code>商品系统的存储需要提供商品的基本信息、商品参数、图片和视频以及商品介绍等等这些数据。商品的基本信息和商品参数分别保存在 MySQL 和 MongoDB 中，用 Redis 作为前置缓存，图片和视频存放在对象存储中，商品介绍随着商详页一起静态化到商详静态页中。</code></p>]]></content>
-    
-    <summary type="html">
-    
-      后端存储实战-专栏学习内容分享
-    
-    </summary>
-    
-      <category term="专栏学习" scheme="https://by1way.github.io/categories/%E4%B8%93%E6%A0%8F%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="课堂笔记" scheme="https://by1way.github.io/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="存储系统" scheme="https://by1way.github.io/tags/%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>架构师训练营课堂笔记01周</title>
-    <link href="https://by1way.github.io/2020/09/28/SATR-01/"/>
-    <id>https://by1way.github.io/2020/09/28/SATR-01/</id>
-    <published>2020-09-28T01:38:22.000Z</published>
-    <updated>2020-09-28T10:15:33.469Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a>写在前面的话</h3><p>训练营已经结束一周了，虽然也做了课程总结以及整个课程的思维导图，脑子里也有了一些东西，但感觉还不是很清晰，所以我想再学习梳理一下。既然有这样的决心，那也一定要相应的计划。说到计划，又开始有点犯愁了，我怕我完不成呀，真的是有点犹豫。因为我还有别的课程要去学。好吧，在这儿经过一番挣扎之后，我还觉得好好计划一下这15周课的总结了。</p><ul><li>9.28-29，第一周</li><li>9.30-10.1，第二周</li><li>10.2-10.3，第三周</li><li>10.4-10.5，第四周</li><li>10.6-10.7，第五周</li><li>10.8-10.9，第六周</li><li>10.10-10.11，第七周</li><li>10.12-10.13，第八周</li><li>10.14-10.15，第九周</li><li>10.16-10.17，第十周</li><li>10.18-10.19，第十一周</li><li>10.20-10.21，第十二周</li><li>10.22-10.23，第十三周</li><li>10.24-10.25，第十四周</li><li>10.26-10.27，第十五周</li></ul><h3 id="第一周"><a href="#第一周" class="headerlink" title="第一周"></a>第一周</h3><p>本节重点</p><ol><li>课程学什么</li><li>课程是怎么设计的</li><li>如何学习这门课程</li><li>通过课程可以收获到什么</li></ol><p>希望训练营能带来一些收获：关于架构的思维方式，解决问题的一些方式，知识体系能够串起来能够领悟它，所以悟性很重要，明白为什么要这样。问题是什么，比如何做对架构而言都更重要一点</p><p>训练营不讲技术的应用，技术的应用不应该是架构所关注的点，用什么样的思维方式去面对问题，能够领悟到问题的本质是什么。</p><p>训练营想训练的是面对问题，思考问题的一种方式，解决问题的思路以及思路背后的关系，然后把这些再统统的整合在一起</p><p>悟性，悟性、悟性。</p><p>ppt是知识的架子。悟到是一层窗户纸</p><h3 id="架构方法（架构师如何做架构）"><a href="#架构方法（架构师如何做架构）" class="headerlink" title="架构方法（架构师如何做架构）"></a>架构方法（架构师如何做架构）</h3><p>架构师输出的是什么？ppt?</p><h4 id="如何成为架构师"><a href="#如何成为架构师" class="headerlink" title="如何成为架构师"></a>如何成为架构师</h4><pre><code>做架构是需要，架构方案、架构设计大家按这个设计进行分工开发做架构的途径：1、要有任命（跳槽、内部晋升）架构师面试大厂offer该如何获取</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      极客大学架构师训练营，主讲李智慧老师，随堂学习笔记
-    
-    </summary>
-    
-      <category term="架构师训练营" scheme="https://by1way.github.io/categories/%E6%9E%B6%E6%9E%84%E5%B8%88%E8%AE%AD%E7%BB%83%E8%90%A5/"/>
-    
-    
-      <category term="课堂笔记" scheme="https://by1way.github.io/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="分享" scheme="https://by1way.github.io/tags/%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>学习计划</title>
-    <link href="https://by1way.github.io/2020/09/28/plan/"/>
-    <id>https://by1way.github.io/2020/09/28/plan/</id>
-    <published>2020-09-28T01:38:22.000Z</published>
-    <updated>2020-10-23T06:54:25.759Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="到底应该先学哪一个呢？幸福来的太突然"><a href="#到底应该先学哪一个呢？幸福来的太突然" class="headerlink" title="到底应该先学哪一个呢？幸福来的太突然"></a>到底应该先学哪一个呢？幸福来的太突然</h3><p>每天三篇的话，最多也就一个月能完成一个专栏。是不是也挺实际的呀。哈哈</p><ul><li>左耳听风</li><li>DDD实战课（一定要把这个给啃下来）</li><li>许式伟架构课</li><li>消息队列高手课</li><li>Java性能调优实战</li><li>架构实战案例解析</li><li>Java业务开发觉错误100例：这个特配合代码来，没有那么多实践经验的话，也学不太深入，最多也只是走马观花，有个大概的印象，目前不太适合速读</li><li>JVM实战高手</li><li>MySQL实战优化高手</li><li>趣谈网络协议</li><li>重学前端</li><li>设计模式之美</li><li>Spring Cloud 微服务核心技术与实战</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      专栏学习内容分享
-    
-    </summary>
-    
-      <category term="专栏学习" scheme="https://by1way.github.io/categories/%E4%B8%93%E6%A0%8F%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="课堂笔记" scheme="https://by1way.github.io/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="分享" scheme="https://by1way.github.io/tags/%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://by1way.github.io/2020/09/15/readingmethod/"/>
-    <id>https://by1way.github.io/2020/09/15/readingmethod/</id>
-    <published>2020-09-15T06:47:57.035Z</published>
-    <updated>2020-09-15T06:48:03.361Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="7S阅读法"><a href="#7S阅读法" class="headerlink" title="7S阅读法"></a>7S阅读法</h2><h3 id="S1-提问，阅读一篇文章或一本书之前自问四个问题"><a href="#S1-提问，阅读一篇文章或一本书之前自问四个问题" class="headerlink" title="S1 提问，阅读一篇文章或一本书之前自问四个问题"></a>S1 提问，阅读一篇文章或一本书之前自问四个问题</h3><ol><li>我为什么想要读它</li><li>它对我来说有多重要</li><li>我要获得哪些信息</li><li>我打算把阅读获得的知识有在哪些方面</li></ol><h3 id="S2-速览"><a href="#S2-速览" class="headerlink" title="S2 速览"></a>S2 速览</h3><p>​    通过快速扫视全文，发现关键词和关键句子，在大脑中进行整合，简单理解作者传达的信息。</p><p><code>S1和S2就是快速阅读法，适用于休闲读书或深度阅读之前的准备</code></p><h3 id="S3-融合，用摘录法记录关键词和标记不易理解的段落"><a href="#S3-融合，用摘录法记录关键词和标记不易理解的段落" class="headerlink" title="S3 融合，用摘录法记录关键词和标记不易理解的段落"></a>S3 融合，用摘录法记录关键词和标记不易理解的段落</h3><h3 id="S4-重构，用自己的语言，重述内容"><a href="#S4-重构，用自己的语言，重述内容" class="headerlink" title="S4 重构，用自己的语言，重述内容"></a>S4 重构，用自己的语言，重述内容</h3><h3 id="S5-回忆，通过提问回忆习得的知识"><a href="#S5-回忆，通过提问回忆习得的知识" class="headerlink" title="S5 回忆，通过提问回忆习得的知识"></a>S5 回忆，通过提问回忆习得的知识</h3><pre><code>1. 作者是在文中讲了什么2. 作者是如何讲述认证的3. 内容和我有什么关系4. 读完后对我来说有什么用</code></pre><p><code>S3、S4、S5是深度阅读阶段，回忆与重构正是我所用的阅读笔记的做法</code></p><h3 id="S6-延伸，寻找相关材料，扩展知识的深度和广度"><a href="#S6-延伸，寻找相关材料，扩展知识的深度和广度" class="headerlink" title="S6 延伸，寻找相关材料，扩展知识的深度和广度"></a>S6 延伸，寻找相关材料，扩展知识的深度和广度</h3><h3 id="S7-交流，包括书面、口头、行动等沟通形式"><a href="#S7-交流，包括书面、口头、行动等沟通形式" class="headerlink" title="S7 交流，包括书面、口头、行动等沟通形式"></a>S7 交流，包括书面、口头、行动等沟通形式</h3><pre><code>1. 提出疑问，解决作者未能回答的问题2. 结合自身情况，把知识变成行动指南3. 分享观点，在与他人的碰撞中得到新思路</code></pre><h2 id="读书若是缺少思考和行动，还真不如闭目养神"><a href="#读书若是缺少思考和行动，还真不如闭目养神" class="headerlink" title="读书若是缺少思考和行动，还真不如闭目养神"></a>读书若是缺少思考和行动，还真不如闭目养神</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;7S阅读法&quot;&gt;&lt;a href=&quot;#7S阅读法&quot; class=&quot;headerlink&quot; title=&quot;7S阅读法&quot;&gt;&lt;/a&gt;7S阅读法&lt;/h2&gt;&lt;h3 id=&quot;S1-提问，阅读一篇文章或一本书之前自问四个问题&quot;&gt;&lt;a href=&quot;#S1-提问，阅读一篇文章或一本书之
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>第二周作业</title>
-    <link href="https://by1way.github.io/2020/06/16/architect02/"/>
-    <id>https://by1way.github.io/2020/06/16/architect02/</id>
-    <published>2020-06-16T07:43:51.000Z</published>
-    <updated>2020-06-16T14:28:29.455Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="作业一"><a href="#作业一" class="headerlink" title="作业一"></a>作业一</h4><ul><li>请描述什么是依赖倒置原则，为什么有时候依赖倒置原则又被称为好莱坞原则？</li></ul><p>在理解什么依赖倒置原则之前，先思考一个问题，诸如Tomcat/Jetty等容器，是如何做到不依赖其代码却能复用它的功能呢？<br>依赖倒置原则规定如下：</p><ul><li>高层模块不应该依赖于低层模块，二者都应该依赖于抽象</li><li>抽象不应该依赖具体实现，具体实现应该依赖于抽象 </li></ul><p>来细细的品读一下这两条规则：</p><ol><li><p>如果要是高层模块依赖了低层模块会出现什么情况呢？维护起来困难，低层只要发生变化高层势必跟着变；复用困难，这里的复用主要是指对高层模块的应用，也就是业务层面的应用。怎么解决这个问题呢？最直观的一种就是再提出一抽象层出来，双方都依赖于抽象的接口，大家只需实现接口和使用接口即可。还是先前的那个问题，Tomcat这些容器是如何做到它的功能被利用的呢，也就是说web应用在部署到tomcat之后怎么能保证，同样的程序部署到jetty中也同样能运行呢？道理其实很简单，这些web容器都实现了J2EE的规范，web应用都实现了j2EE的Servlet接口。类似的还有JDBC,程序访问数据库都不依赖于数据库驱动包，而是直接调用JDBC提供好的接口，这些接口呢被各种驱动所实现。MVC，ORM框架从这个角度上来看也都是一样的套路。</p></li><li><p>在咱们的日常开发中也常常需要依赖抽象接口，而不是具体的实现。比如Web 开发中，Service 层依赖 DAO 层，并不是直接依赖 DAO 的具体实现，而是依赖 DAO 提供的抽象接口。那么这种依赖是否是依赖倒置呢？其实并不是，依赖倒置原则中，除了具体实现要依赖抽象，最重要的是，抽象是属于谁的抽象。</p></li></ol><p>要理解依赖倒置原则的关键是要理清接口所有权的问题，即这些接口是被谁定义的，又被谁实现的？<br>接口被高层定义，高层模块拥有接口，低层模块实现接口。而不是高层模块依赖底层模块的接口，而是低层模块依赖高层的模块的接口，从而实现依赖关系的倒置。至于倒置，只是一个叫法。</p><p>好莱坞原则：Don’t call me，I will call you。对应到软件里面就是，应用程序不需要调用 Tomcat 或者 Spring 这样的框架，而是框架调用应用程序。而实现这一特性的前提就是应用程序必须实现框架的接口规范，比如实现 Servlet 接口。</p><h4 id="作业二"><a href="#作业二" class="headerlink" title="作业二"></a>作业二</h4><ul><li>请描述一个你熟悉的框架，是如何实现依赖倒置原则的。</li></ul><p>分析shiro安全框架如何实现依赖倒置原则：我觉得最契合依赖倒置原则的应该是Realm这一块。首先来发解一下Realm。Realm,就是域,shiro可以从Realm获取安全数据（如用户、角色、权限）,就是说SecurityManager要验证用户身份,那么它需要从Realm获取相应的用户进行比较以确定用户身份是否合法；也需要从Realm得到用户相应的角色/权限进行验证用户是否能进行操作。所以可以把Realm看成是一个安全数据源。<br>简单了解了一下Realm,都知道在我们的应用是可以定义多个Realm的，在运行期securityManager会按照Realm的顺序，进行身份认证。<br>对于依赖倒置的实现，我的理解是类似于Tomcat，shiro实现了Realm的规范，在应用中自定义的Realm只需实现Realm的接口，在运行期架构会自行调用自定义的Realm。这也就印证了，如何不依赖代码却可以复用它的功能。</p><h4 id="作业三"><a href="#作业三" class="headerlink" title="作业三"></a>作业三</h4><ul><li>请用接口隔离原则优化 Cache 类的设计，画出优化后的类图。</li></ul><p><img src="/2020/06/16/architect02/architect_files/1.jpg" alt="类图"></p><p>cache 实现类中有四个方法，其中 put get delete 方法是需要暴露给应用程序的，rebuild 方法是需要暴露给系统进行远程调用的。如果将 rebuild 暴露给应用程序，应用程序可能会错误调用 rebuild 方法，导致 cache 服务失效。按照接口隔离原则：不应该强迫客户程序依赖它们不需要的方法。也就是说，应该使 cache 类实现两个接口，一个接口包含 get put delete 暴露给应用程序，一个接口包含 rebuild 暴露给系统远程调用。从而实现接口隔离，使应用程序看不到 rebuild 方法。</p>]]></content>
-    
-    <summary type="html">
-    
-      参加了一个架构师培训班，用他来记录一下作业吧。
-    
-    </summary>
-    
-      <category term="架构师训练营" scheme="https://by1way.github.io/categories/%E6%9E%B6%E6%9E%84%E5%B8%88%E8%AE%AD%E7%BB%83%E8%90%A5/"/>
-    
-    
-      <category term="资源" scheme="https://by1way.github.io/tags/%E8%B5%84%E6%BA%90/"/>
     
   </entry>
   

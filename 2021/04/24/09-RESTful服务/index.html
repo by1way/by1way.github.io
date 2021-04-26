@@ -1,0 +1,63 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>09.RESTful服务 | By1way</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + '23548c5ffb96043176d784e058b0ea36';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">09.RESTful服务</h1><a id="logo" href="/.">By1way</a><p class="description">用心记录每一份成长、每一滴收获、每一个新奇</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">09.RESTful服务</h1><div class="post-meta">Apr 24, 2021<span> | </span><span class="category"><a href="/categories/架构师视角/">架构师视角</a></span><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="post-content"><h2 id="周志明架构课-架构师视角"><a href="#周志明架构课-架构师视角" class="headerlink" title="周志明架构课-架构师视角"></a>周志明架构课-架构师视角</h2><h3 id="09-RESTful服务：从面向过程编程到面向资源编程"><a href="#09-RESTful服务：从面向过程编程到面向资源编程" class="headerlink" title="09.RESTful服务：从面向过程编程到面向资源编程"></a>09.RESTful服务：从面向过程编程到面向资源编程</h3><p>行文思路：</p>
+<ol>
+<li>RESTful与RPC不是同一类型的东西</li>
+<li>RESTful该怎么理解</li>
+<li>RESTful有什么特征</li>
+<li>有什么优势</li>
+</ol>
+<p>另一种主流的远程服务访问风格：RESTful服务</p>
+<h4 id="RESTful与RPC区别的本质"><a href="#RESTful与RPC区别的本质" class="headerlink" title="RESTful与RPC区别的本质"></a>RESTful与RPC区别的本质</h4><p>其实两者另不是同一类型的东西，充其量只能算是有一些相似。在应用中会有一些重合的地方，两者差异的核心是抽象的目标不一样，也就是面向资源与面向过程的编程思想的区别。</p>
+<p>RESTful并不是一种远程调用协议。说到协议啊，一般是都有一定规范性和强制性的。但RESTful却什么都没有，所以只能说RESTful只是一种风格。而这种风格一般还挺难达到的</p>
+<p>在使用范围上RPC和RESTful是两种主流的远程调用方式，在使用上确实有重合。</p>
+<p>RESTful讨论的是架构风格与网络的软件架构设计，RPC只是一种远程服务调用的方式。这逼格明显不一样好不啦。</p>
+<h4 id="对于RESTful的理解"><a href="#对于RESTful的理解" class="headerlink" title="对于RESTful的理解"></a>对于RESTful的理解</h4><p>Representational State Transfer ，表征状态转移。</p>
+<p>ps:哇塞，太抽象了。什么表征，什么的状态，从哪转移到哪儿。这算是什么狗屁定义呀</p>
+<p>等会再来管个定义吧。先来看看几个概念</p>
+<ul>
+<li>资源，什么是资源？我理解的经常在网上看到的一些信息呀，内容呀，都可以称为资源。如果你喜欢用浏览器看小说的话，就可以把显示小说内容看作是一个资源。</li>
+<li>表征，哪什么表征就是什么呢？显示小说的网页就是一种表征形式啦。所谓的表征就是一种资源的表现形式而矣</li>
+<li>状态，什么的状态？在特定语境下产生的上下文信息就是状态，比如你在读小说的时候一章读完了，点下一章的按钮。但服务器那知道你现在读的是哪一章呀，所以现在读的这一章就可以称为是一个状态</li>
+<li>转移，了解了上面的资源、表征、状态的例子，那转移就好理解了，由服务端通过某种方式，把这一章转变成下一章，这就是表征状态转移了。</li>
+</ul>
+<p>这几个概念还是挺好理解的，别放松，接着再来三个概念</p>
+<ul>
+<li>统一接口，  URI的含义是统一资源标识符，是一个名词，如何让他表示出动词的含义呢？其实这些HTTP协议都给提供好了一套标准的接口，你肯定很熟悉：GET\POST\HEAD\PUT\DELETE\TRACE\OPTIONS，也就是说通过HTTP协议定义好的这些动作就可以让服务器乖乖的听话了，要什么给什么</li>
+<li>超文本驱动，这个有点意思，我们都是通过浏览器来操作从而向服务端发送请求的，但是作为通用客户端的浏览器，它是不用管这些的，只是给我们提供一个地址栏而矣，那在打开一个网页之后，其它所有在网页的操作，都是由网页本身来控制的。那网页有什么链接，有什么按钮，也都是它自己说了算。而这些也都是属于超文本的内容，在这里我们都需要有这样一个思路的细化，不能觉得浏览器是万能的，它也只是一个通用的工具，做好自己通用的事儿就行了。</li>
+<li>自描述，由于表征是多种多样的，要想让浏览器（客户端）了解服务器到底响应了点啥内容，这还得在响应的信息里标识出来。我们常见的Content-Type,就是干这事儿的。</li>
+</ul>
+<h4 id="RESTful风格的特征"><a href="#RESTful风格的特征" class="headerlink" title="RESTful风格的特征"></a>RESTful风格的特征</h4><h5 id="服务端与客户端分离"><a href="#服务端与客户端分离" class="headerlink" title="服务端与客户端分离"></a>服务端与客户端分离</h5><p>这一个特征可以参考，前后端分离架构来理解</p>
+<h5 id="无状态"><a href="#无状态" class="headerlink" title="无状态"></a>无状态</h5><p>REST不希望服务端维护状态，每次请求包含必要的上下文信息，会话由客户端保存，服务端根据客户状传递的状态信息进行处理，并驱动整个应用状态变迁</p>
+<h5 id="可缓存"><a href="#可缓存" class="headerlink" title="可缓存"></a>可缓存</h5><p>由于无状态，所以每次请求都得带上大量的冗余信息，为了解决这个问题，提出的这么一个特征，也是一个用于提升响应性能的手段</p>
+<h5 id="分层系统"><a href="#分层系统" class="headerlink" title="分层系统"></a>分层系统</h5><p>客户端一般不需要知道是否直接连接到了最终的服务器，或者是连接到路径上的中间服务器</p>
+<h5 id="统一接口"><a href="#统一接口" class="headerlink" title="统一接口"></a>统一接口</h5><p>REST希望开发者可以面向资源来编程，希望软件系统的设计重点放在对抽象系统该有哪些资源上，而不是哪些行为上。一般来说面向资源的抽象程度通常比较高。<br>ps:我觉得这块一可以结合，软件的复杂度，以及领域驱动设计来理解。这样大家就不再纠结为什么抽象资源比面向过程更有优势这一点了。架构设计的本质，是降低软件复杂度再来的影响，那咋降低呢？把变化控制来一个小的范围内，这是一个思路。<br>那怎么才能在架构设计中合理恰当地利用统一接口呢？RESTful的提出者，Fielding 给出了三个建议</p>
+<ul>
+<li>第一，系统要能做到每次请求中都包含资源的 ID，所有操作均通过资源 ID 来进行；</li>
+<li>第二，每个资源都应该是自描述的消息；</li>
+<li>第三，通过超文本来驱动应用状态的转移。<h5 id="按需编码"><a href="#按需编码" class="headerlink" title="按需编码"></a>按需编码</h5>任何按照客户端（如浏览器）的请求，将可执行的软件程序从服务器发送到客户端的技术</li>
+</ul>
+<h4 id="面向资源设计有什么好处呢？"><a href="#面向资源设计有什么好处呢？" class="headerlink" title="面向资源设计有什么好处呢？"></a>面向资源设计有什么好处呢？</h4><ol>
+<li>降低服务接口的学习成本</li>
+<li>资源天然具有集合与层次结构：以方法为中心抽象的接口，由于方法是动词，逻辑上决定了每个接口都是互相独立的；但以资源为中心抽象的接口，由于资源是名词，天然就可以产生集合与层次结构。</li>
+<li>REST绑定于HTTP协议</li>
+</ol>
+</div><div class="tags"><a href="/tags/RESTful服务/">RESTful服务</a></div><div class="post-nav"><a class="pre" href="/2021/04/25/10-RESTful服务/">10.RESTful服务</a><a class="next" href="/2021/03/31/32-point/"></a></div><div id="lv-container" data-id="city" data-uid="MTAyMC80MzczNi8yMDI3NQ=="><script>(function(d, s) {
+   var j, e = d.getElementsByTagName(s)[0];
+   if (typeof LivereTower === 'function') { return; }
+   j = d.createElement(s);
+   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+   j.async = true;
+   e.parentNode.insertBefore(j, e);
+})(document, 'script');
+</script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/NoSQL数据/">NoSQL数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/attendance/">attendance</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/专业英语/">专业英语</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/专栏学习/">专栏学习</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/分享/">分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/宝库/">宝库</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/文档服务器/">文档服务器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构师视角/">架构师视角</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构师训练营/">架构师训练营</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/架构探索/">架构探索</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/">读书</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/重启/">重启</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/原始分布式时代/" style="font-size: 15px;">原始分布式时代</a> <a href="/tags/重启/" style="font-size: 15px;">重启</a> <a href="/tags/单体系统/" style="font-size: 15px;">单体系统</a> <a href="/tags/SOA时代/" style="font-size: 15px;">SOA时代</a> <a href="/tags/后微服务时代/" style="font-size: 15px;">后微服务时代</a> <a href="/tags/无服务时代/" style="font-size: 15px;">无服务时代</a> <a href="/tags/微服务时代/" style="font-size: 15px;">微服务时代</a> <a href="/tags/远程服务调用/" style="font-size: 15px;">远程服务调用</a> <a href="/tags/ARTS/" style="font-size: 15px;">ARTS</a> <a href="/tags/Link/" style="font-size: 15px;">Link</a> <a href="/tags/资源/" style="font-size: 15px;">资源</a> <a href="/tags/课堂笔记/" style="font-size: 15px;">课堂笔记</a> <a href="/tags/分享/" style="font-size: 15px;">分享</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/Echarts/" style="font-size: 15px;">Echarts</a> <a href="/tags/阅读/" style="font-size: 15px;">阅读</a> <a href="/tags/FastDFS/" style="font-size: 15px;">FastDFS</a> <a href="/tags/分布式文档服务器/" style="font-size: 15px;">分布式文档服务器</a> <a href="/tags/存储系统/" style="font-size: 15px;">存储系统</a> <a href="/tags/事务处理/" style="font-size: 15px;">事务处理</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a> <a href="/tags/RESTful服务/" style="font-size: 15px;">RESTful服务</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/04/30/15-事务处理/">15.事务处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/29/14-事务处理/">14.事务处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/28/13-事务处理/">13.事务处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/27/12-事务处理/">12.事务处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/26/11-事务处理/">11.事务处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/25/10-RESTful服务/">10.RESTful服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/24/09-RESTful服务/">09.RESTful服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/31/32-point/">32-point</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/07/08-远程服务调用/">08.远程服务调用</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/02/07/07-远程服务调用/">07.远程服务调用</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://wild2pro.com/" title="写程序的厨子" target="_blank">写程序的厨子</a><ul></ul><a href="https://lilyssh.cn/" title="lilyssh(新认识的一个技术牛人)" target="_blank">lilyssh(新认识的一个技术牛人)</a><ul></ul><a href="https://www.byway.xyz/" title="我自己" target="_blank">我自己</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2021 <a href="/." rel="nofollow">By1way.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Carol.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.2/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
